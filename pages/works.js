@@ -1,12 +1,9 @@
 import {Container, Heading, SimpleGrid, Divider} from '@chakra-ui/react'
 import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-item'
-import thumbInkdrop from '../components/logo.png'
-import thumbWalknote from '../components/logo.png'
-import thumbFourPainters from '../components/logo.png'
-import thumbMenkiki from '../components/logo.png'
+import calendars from '../components/logo.png'
+import portfo from '../components/logo.png'
 import Layout from '../components/layouts/article'
-import thumbnail from '../components/logo.png'
 
 const Works = () => (
     <Layout title="Works">
@@ -17,35 +14,18 @@ const Works = () => (
 
         <SimpleGrid columns={[1, 1, 2]} gap={6}>
             <Section>
-            <WorkGridItem id="inkdrop" title="Inkdrop" thumbnail={thumbInkdrop}>
-                A Markdown note-taking app with 100+ plugins, cross-platform and
-                encrypted data sync support
+            <WorkGridItem id="calendar" title="Calendar Connect" thumbnail={calendars}>
+                Calendar Connect is a website built to allow users to enter multiple different Universities add see 
+                a simple and good looking overlap of the universities academic calendars. 
             </WorkGridItem>
             </Section>
             <Section>
             <WorkGridItem
-                id="walknote"
-                title="walknote"
-                thumbnail={thumbWalknote}
+                id="portfolio"
+                title="Portfolio Website"
+                thumbnail={portfo}
             >
-                Music recommendation app for iOS
-            </WorkGridItem>
-            </Section>
-
-            <Section delay={0.1}>
-            <WorkGridItem
-                id="fourpainters"
-                title="The four painters"
-                thumbnail={thumbFourPainters}
-            >
-                A video work generated with deep learning, imitating famous four
-                painters like Van Gogh
-            </WorkGridItem>
-            </Section>
-            <Section delay={0.1}>
-            <WorkGridItem id="menkiki" thumbnail={thumbMenkiki} title="Menkiki">
-                An app that suggests ramen(noodle) shops based on a given photo of
-                the ramen you want to eat
+                Personal Portfolio Website
             </WorkGridItem>
             </Section>
         </SimpleGrid>

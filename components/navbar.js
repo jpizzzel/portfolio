@@ -67,8 +67,11 @@ const Navbar = props => {
                     <LinkItem href="/works" path={path}>
                         <div>Works</div>
                     </LinkItem>
-                    <LinkItem href="/posts" path={path}>
-                        <div>Posts</div>
+                    <LinkItem href="/resume" path={path}>
+                        <div>Résumé</div>
+                    </LinkItem>
+                    <LinkItem href="/contact" path={path}>
+                        <div>Contact</div>
                     </LinkItem>
                 </Stack>
                 <Box flex={1} align="right">
@@ -87,10 +90,10 @@ const Navbar = props => {
                             <NextLink href="/works" passHref>
                                 <MenuItem as={Link}>Works</MenuItem>
                             </NextLink>
-                            <NextLink href="/posts" passHref>
-                                <MenuItem as={Link}>Posts</MenuItem>
+                            <NextLink href="/resume" passHref>
+                                <MenuItem as={Link}>Résumé</MenuItem>
                             </NextLink>
-                            <MenuItem as={Link} href="https://github.com/jpizzzel">GitHub</MenuItem>
+                            <MenuItem as={Link} href="https://github.com/jpizzzel/portfolio">GitHub Source</MenuItem>
                         </MenuList>
                     </Menu>
                 </Box>

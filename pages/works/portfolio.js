@@ -12,20 +12,21 @@ import {
   import Layout from '../../components/layouts/article'
   
   const Work = () => (
-    <Layout title="Inkdrop">
+    <Layout title="Calendar Connect">
       <Container>
         <Title>
-          Inkdrop <Badge>2016-</Badge>
+          Jonah's Portfolio Website<Badge>2024</Badge>
         </Title>
         <P>
-          A Markdown note-taking app with 100+ plugins, cross-platform and
-          encrypted data sync support. The life-time revenue is more than $300k.
+        This is website that you are currently on! I made this in the summer of 2024 to showcase different projects from my past and projects I am currently working on.
+        I also wanted to display my website design, three.js, javascript and 3D design skills through a portfolio site. I am not quite sure how else I want to add to this 
+        site currently but I know in the future I want to continue to improve this site and experiment with new technologies I come across.
         </P>
         <List ml={4} my={4}>
           <ListItem>
             <Meta>Website</Meta>
-            <Link href="https://www.inkdrop.app/">
-              https://www.inkdrop.app/ <ExternalLinkIcon mx="2px" />
+            <Link href="">
+              Back to Homepage <ExternalLinkIcon mx="2px" />
             </Link>
           </ListItem>
           <ListItem>
@@ -34,28 +35,17 @@ import {
           </ListItem>
           <ListItem>
             <Meta>Stack</Meta>
-            <span>NodeJS, Electron, React Native</span>
+            <span>NodeJS, React, Three.js, Blender </span>
           </ListItem>
           <ListItem>
-            <Meta>Blogpost</Meta>
-            <Link href="https://blog.inkdrop.app/how-ive-attracted-the-first-500-paid-users-for-my-saas-that-costs-5-mo-7a5b94b8e820">
-              How I’ve Attracted The First 500 Paid Users For My SaaS That Costs
-              $5/mo <ExternalLinkIcon mx="2px" />
+            <Meta>Inspiration From</Meta>
+            <Link href="https://www.craftz.dog/">
+                Takuya Matsuyama <ExternalLinkIcon mx="2px" />
             </Link>
           </ListItem>
         </List>
-  
         <WorkImage src="/images/works/inkdrop_01.png" alt="Inkdrop" />
         <WorkImage src="/images/works/inkdrop_02.png" alt="Inkdrop" />
-        <AspectRatio maxW="640px" ratio={1.7} my={4}>
-          <iframe
-            src="https://www.youtube.com/embed/-qBavwqc_mY"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </AspectRatio>
       </Container>
     </Layout>
   )

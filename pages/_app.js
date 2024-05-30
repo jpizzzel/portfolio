@@ -13,6 +13,9 @@ const Website = ({Component, pageProps, router}) => {
                     <Component {...pageProps} key={router.route} />
                 </AnimatePresence>
             </Layout>
+            <footer style={{ textAlign: "center", fontSize: "14px", color: "#666", fontFamily: "Arial, sans-serif", paddingBottom: "20px" }}>
+                <p>© 2024 Jonah Pflaster. All Rights Reserved. Inspired By Takuya Matsuyama.</p>
+            </footer>
         </ChakraProvider>
     )
 }

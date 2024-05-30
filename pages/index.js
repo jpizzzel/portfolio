@@ -18,6 +18,7 @@ import Section from '../components/section'
 import Paragraph from '../components/paragraph'
 import { BioSection, BioYear} from '../components/bio'
 import { GridItem } from '../components/grid-item'
+import profileImages from '../public/profileim2.jpg';
 import {
     IoLogoInstagram,
     IoLogoGithub,
@@ -33,29 +34,37 @@ const Page = () => {
                     Hello, I am a current 2nd year engineering student at Tufts!
                 </Box>
                     
-                <Box display={{ md: 'flex'}}>
+                <Box display={{ md: 'flex' }}>
                     <Box flexGrow={1}>
-                        <Heading as="h2" variant="page-title">
-                            Jonah Pflaster
-                        </Heading>
-                        <p>Mechanical Engineering Major</p>
-                        <p>Computer Science Minor</p>
+                    <Heading as="h2" variant="page-title">
+                        Jonah Pflaster
+                    </Heading>
+                    <p>Mechanical Engineering Major</p>
+                    <p>Computer Science Minor</p>
                     </Box>
-                    <Box flexShrink={0} 
-                    mt={{base: 4, md: 0}} 
-                    ml={{ md:6 }}
-                    align="center"
+                    <Box
+                    flexShrink={0}
+                    mt={{ base: 4, md: 0 }}
+                    ml={{ md: 6 }}
+                    textAlign="center"
                     >
-                        <Image 
-                        borderColor="whiteAlpha.800" 
+                    <Box
+                        borderColor="whiteAlpha.800"
                         borderWidth={2}
                         borderStyle="solid"
-                        maxWidth="100px"
+                        w="200px"
+                        h="200px"
                         display="inline-block"
                         borderRadius="full"
-                        src=""
-                        alt="Profile Image"
+                        overflow="hidden"
+                    >
+                        <Image
+                        src={profileImages}
+                        alt="Profile image"
+                        width="500"
+                        height="500"
                         />
+                    </Box>
                     </Box>
                 </Box>
 
@@ -63,7 +72,7 @@ const Page = () => {
                     <Heading as="h3" variant="section-title">
                         Work
                     </Heading>
-                    <Paragraph>I am an undergraduate student at tufts university 
+                    <Paragraph>I am an undergraduate student at Tufts University 
                         studying mechanical engineering and computer science. 
                     </Paragraph>
                     <Box align="center" my={4}>
@@ -102,8 +111,8 @@ const Page = () => {
                     <Heading as="h3" variant="section-title">
                         My Hobbies
                     </Heading>
-                    <Paragraph> I love to play soccer, go surfing, skiing, play basketball and 
-                        explore new technology.
+                    <Paragraph> I love to play soccer, basketball, chess, go surfing, skiing and 
+                        explore new technologies. 
                     </Paragraph>
                 </Section>
 
