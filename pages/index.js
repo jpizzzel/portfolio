@@ -4,20 +4,18 @@ import {
     Container,
     Heading,
     Box,
-    SimpleGrid,
     Button,
     Icon,
     List,
     ListItem,
     useColorModeValue
 } from '@chakra-ui/react'
-import { ChevronRightIcon, EmailIcon } from '@chakra-ui/icons'
+import { ChevronRightIcon } from '@chakra-ui/icons'
 import Layout from '../components/layouts/article'
 import Image from 'next/image'
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
 import { BioSection, BioYear} from '../components/bio'
-import { GridItem } from '../components/grid-item'
 import profileImages from '../public/profileim2.jpg';
 import {
     IoLogoInstagram,

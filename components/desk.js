@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
-import * as THREE from 'three'
+import * as three from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { loadGLTFModel } from '../lib/model'
 import { DeskSpinner, DeskContainer } from './desk-loader'
@@ -12,7 +12,7 @@ const Desk = () => {
   const refContainer = useRef()
   const [loading, setLoading] = useState(true)
   const refRenderer = useRef()
-  const urldeskGLB = (process.env.NODE_ENV === 'production' ? '' : '') + '/desk_table.glb'
+  const urldeskGLB = '/desk_table.glb'
 
   const handleWindowResize = useCallback(() => {
     const { current: renderer } = refRenderer
@@ -31,19 +31,19 @@ const Desk = () => {
       const scW = container.clientWidth
       const scH = container.clientHeight
 
-      const renderer = new THREE.WebGLRenderer({
+      const renderer = new three.WebGLRenderer({
         antialias: true,
         alpha: true
       })
       renderer.setPixelRatio(window.devicePixelRatio)
       renderer.setSize(scW, scH)
-      renderer.outputEncoding = THREE.sRGBEncoding
+      renderer.outputEncoding = three.sRGBEncoding
       container.appendChild(renderer.domElement)
       refRenderer.current = renderer
-      const scene = new THREE.Scene()
+      const scene = new three.Scene()
 
-      const target = new THREE.Vector3(-0.5, 1.2, 0)
-      const initialCameraPosition = new THREE.Vector3(
+      const target = new three.Vector3(-0.5, 1.2, 0)
+      const initialCameraPosition = new three.Vector3(
         20 * Math.sin(0.2 * Math.PI),
         10,
         20 * Math.cos(0.2 * Math.PI)
@@ -52,7 +52,7 @@ const Desk = () => {
       // 640 -> 240
       // 8   -> 6
       const scale = scH * 0.005 + 4.8
-      const camera = new THREE.OrthographicCamera(
+      const camera = new three.OrthographicCamera(
         -scale,
         scale,
         scale,
@@ -63,7 +63,7 @@ const Desk = () => {
       camera.position.copy(initialCameraPosition)
       camera.lookAt(target)
 
-      const ambientLight = new THREE.AmbientLight(0xcccccc, Math.PI)
+      const ambientLight = new three.AmbientLight(0xcccccc, Math.PI)
       scene.add(ambientLight)
 
       const controls = new OrbitControls(camera, renderer.domElement)

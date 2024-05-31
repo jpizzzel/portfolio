@@ -1,21 +1,7 @@
 import Logo from './logo';
 import React, { useState, useEffect } from 'react';
 import NextLink from 'next/link';
-import { MotionConfig, motion } from "framer-motion";
-import {
-    Container,
-    Box,
-    Link,
-    Stack,
-    Heading,
-    Flex,
-    Menu,
-    MenuItem,
-    MenuList,
-    MenuButton,
-    IconButton,
-    useColorModeValue
-} from '@chakra-ui/react';
+import { Container, Box, Link, Stack, Heading, Flex, Menu, MenuItem, MenuList, MenuButton, IconButton, useColorModeValue } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import ThemeToggleButton from './theme-toggle-button';
 
@@ -33,6 +19,10 @@ const LinkItem = ({ href, path, children }) => {
 
 const Navbar = props => {
     const { path } = props;
+
+    // Ensure useColorModeValue is called unconditionally
+    const bg = useColorModeValue('#ffffff40', '#20202380');
+
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
@@ -46,7 +36,7 @@ const Navbar = props => {
             position="fixed"
             as="nav"
             w="100%"
-            bg={useColorModeValue('#ffffff40', '#20202380')}
+            bg={bg}
             style={{ backdropFilter: 'blur(10px)' }}
             zIndex={1}
             {...props}
