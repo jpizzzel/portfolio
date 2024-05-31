@@ -77,6 +77,9 @@ const Contact = () => {
               </Button>
             </form>
           </Box>
+          <Box fontSize= "12px">
+            If there are any issues with the contact page you can always email me at jonahpflaster23pj@gmail.com.
+          </Box>
         </SimpleGrid>
       </Container>
     </Layout>

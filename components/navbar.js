@@ -1,5 +1,5 @@
 import Logo from './logo';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import NextLink from 'next/link';
 import { MotionConfig, motion } from "framer-motion";
 import {
@@ -32,37 +32,44 @@ const LinkItem = ({ href, path, children }) => {
 };
 
 const Navbar = props => {
-    const { path } = props
+    const { path } = props;
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) return null;
 
     return (
         <Box
-        position="fixed"
-        as="nav"
-        w="100%"
-        bg={useColorModeValue('#ffffff40', '#20202380')}
-        style={{backdropFilter:'blur(10px'}}
-        zIndex={1}
-        {...props}
+            position="fixed"
+            as="nav"
+            w="100%"
+            bg={useColorModeValue('#ffffff40', '#20202380')}
+            style={{ backdropFilter: 'blur(10px)' }}
+            zIndex={1}
+            {...props}
         >
             <Container 
-            display="flex" 
-            p={2} 
-            maxW="container.md" 
-            wrap="wrap" 
-            align="center" 
-            justify="space-between">
+                display="flex" 
+                p={2} 
+                maxW="container.md" 
+                wrap="wrap" 
+                align="center" 
+                justify="space-between">
                 <Flex align="center" mr={5}>
                     <Heading as="h1" size="lg" letterSpacing={'tighter'}>
                         <Logo />
                     </Heading>
                 </Flex>
                 <Stack
-                    direction={{ base: 'column', md: 'row'}}
-                    display={{ base: 'none', md: 'flex'}}
-                    width={{ base: 'full', md: 'auto'}}
+                    direction={{ base: 'column', md: 'row' }}
+                    display={{ base: 'none', md: 'flex' }}
+                    width={{ base: 'full', md: 'auto' }}
                     alignItems="center"
                     flexGrow={1}
-                    mt={{ base: 4, nmd:0}}
+                    mt={{ base: 4, nmd: 0 }}
                 >
                     <LinkItem href="/works" path={path}>
                         <div>Works</div>
@@ -76,12 +83,12 @@ const Navbar = props => {
                 </Stack>
                 <Box flex={1} align="right">
                     <ThemeToggleButton />
-                    <Menu> 
+                    <Menu>
                         <MenuButton 
-                        as={IconButton} 
-                        icon={<HamburgerIcon />}
-                        variant="outline"
-                        aria-label="Options"
+                            as={IconButton} 
+                            icon={<HamburgerIcon />}
+                            variant="outline"
+                            aria-label="Options"
                         />
                         <MenuList>
                             <NextLink href="/" passHref>
@@ -102,5 +109,4 @@ const Navbar = props => {
     )
 }
 
-
-export default Navbar
+export default Navbar;
