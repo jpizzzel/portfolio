@@ -1,6 +1,5 @@
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
-import Paragraph from '../components/paragraph'
 import NextLink from 'next/link'
 import {
   Container,
@@ -41,10 +40,6 @@ const Posts = () => (
         <Heading as="h3" variant="section-title">
           Experience
         </Heading>
-        <Paragraph>
-          I am an undergraduate student at Tufts University 
-          studying mechanical engineering and computer science.
-        </Paragraph>
       </Section>
     </Container>
   </Layout>

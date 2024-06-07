@@ -15,8 +15,9 @@ import Layout from '../components/layouts/article'
 import Image from 'next/image'
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
-import { BioSection, BioYear} from '../components/bio'
+// import { BioSection, BioYear} from '../components/bio'
 import profileImages from '../public/profileim2.jpg';
+import Timeline from '../components/timeline'
 import {
     IoLogoInstagram,
     IoLogoGithub,
@@ -90,7 +91,8 @@ const Page = () => {
                     <Heading as="h3" variant="section-title">
                     Bio
                     </Heading>
-                    <BioSection>
+                    <Timeline />
+                    {/* <BioSection>
                         <BioYear>2005</BioYear>
                         Born in Long Island, NY.
                     </BioSection>
@@ -102,7 +104,7 @@ const Page = () => {
                     <BioSection>
                         <BioYear>Present</BioYear>
                         Engineering Internship in summer of 2024
-                    </BioSection>
+                    </BioSection> */}
                 </Section>
 
                 <Section delay={0.1}>
