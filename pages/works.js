@@ -42,6 +42,15 @@ const Works = () => (
                   Assisted in the creation of the Malawi Greenhouse Project
               </WorkGridItem>
             </Section>
+            <Section>
+              <WorkGridItem
+                  id="upcoming"
+                  title="Ideas/In-progress"
+                  thumbnail={portfo}
+              >
+                  Project I'm Currently Working On
+              </WorkGridItem>
+            </Section>
         </SimpleGrid>
       </Container>
       
