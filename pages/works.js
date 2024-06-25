@@ -48,7 +48,7 @@ const Works = () => (
                   title="Ideas/In-progress"
                   thumbnail={portfo}
               >
-                  Project I'm Currently Working On
+                  Project I am Currently Working On
               </WorkGridItem>
             </Section>
         </SimpleGrid>

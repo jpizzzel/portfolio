@@ -1,10 +1,6 @@
 import {
     Container,
     Badge,
-    Link,
-    Heading,
-    List,
-    ListItem,
     Tabs,
     Tab,
     TabList,
@@ -12,7 +8,6 @@ import {
     TabPanels
   } from '@chakra-ui/react'
   import Section from '../../components/section'
-  import { ExternalLinkIcon } from '@chakra-ui/icons'
   import { Title, Meta } from '../../components/work'
   import P from '../../components/paragraph'
   import Layout from '../../components/layouts/article'
