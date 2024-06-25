@@ -3,13 +3,11 @@ import Layout from '../components/layouts/main'
 import Fonts from '../components/fonts'
 import theme from '../lib/theme'
 import '../components/waves.css'
-import DynamicBackgroundComponent from '../components/dynamic'
 import { AnimatePresence } from 'framer-motion'
 
 const Website = ({Component, pageProps, router}) => {
     return (
         <ChakraProvider theme={theme}>
-            
             <Fonts />
             <Layout router={router}>
                 <AnimatePresence mode="wait" initial={true}>

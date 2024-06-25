@@ -92,19 +92,6 @@ const Page = () => {
                     Bio
                     </Heading>
                     <Timeline />
-                    {/* <BioSection>
-                        <BioYear>2005</BioYear>
-                        Born in Long Island, NY.
-                    </BioSection>
-                    <BioSection>
-                        <BioYear>2023</BioYear>
-                        Graduated from Earl L Vandermuelen High School and then
-                        began my education at Tufts University.
-                    </BioSection>
-                    <BioSection>
-                        <BioYear>Present</BioYear>
-                        Engineering Internship in summer of 2024
-                    </BioSection> */}
                 </Section>
 
                 <Section delay={0.1}>

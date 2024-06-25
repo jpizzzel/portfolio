@@ -7,7 +7,7 @@ import { FaSchool, FaHome } from 'react-icons/fa';
 
 const TimelineContainer = styled(Box)`
   padding: 20px;
-  background-color: ${() => useColorModeValue('#caf0f8', '#2D3748')}; /* Use colors from your Chakra UI theme */
+  background-color: ${() => useColorModeValue('#7e9296', '#2D3748')}; /* Use colors from your Chakra UI theme */
   color: ${() => useColorModeValue('#03045e', '#0077b6')}; /* Light text color in light mode, dark text color in dark mode */
   border-radius: 20px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
