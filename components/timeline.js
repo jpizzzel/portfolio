@@ -47,13 +47,13 @@ const Timeline = () => {
         </VerticalTimelineElement>
         <VerticalTimelineElement
           className="vertical-timeline-element--internship"
-          date="2019 - 2023"
+          date="2023-2027"
           iconStyle={{ background: iconBgColorEducation, color: '#fff' }}
           icon={<FaSchool />}
         >
-          <h3 className="vertical-timeline-element-title">Earl L Vandermuelen High School</h3>
+          <h3 className="vertical-timeline-element-title">Tufts University</h3>
           <p>
-            Finished my High School Education to then go on to Tufts University!
+            Studying Mechanical Engineering and Computer Science
           </p>
         </VerticalTimelineElement>
         {/* Add more timeline elements as needed */}

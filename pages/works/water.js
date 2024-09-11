@@ -15,7 +15,7 @@ import grh2 from '../../public/greenhouse2.png';
 import Image from 'next/image'
 
 const Work = () => (
-<Layout title="Calendar Connect">
+<Layout title="EWB">
     <Container>
     <Title>
         Engineering Without Borders (EWB) Greenhouse Automation<Badge>2024</Badge>

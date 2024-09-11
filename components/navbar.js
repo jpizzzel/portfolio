@@ -21,7 +21,7 @@ const Navbar = props => {
     const { path } = props;
 
     // Ensure useColorModeValue is called unconditionally
-    const bg = useColorModeValue('#ffffff40', '#20202380');
+    const bg = useColorModeValue('gray.100', '#20202380');
 
     const [mounted, setMounted] = useState(false);
 

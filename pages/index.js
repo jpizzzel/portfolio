@@ -17,7 +17,7 @@ import Section from '../components/section'
 import Paragraph from '../components/paragraph'
 // import { BioSection, BioYear} from '../components/bio'
 import profileImages from '../public/profileim2.jpg';
-import Timeline from '../components/timeline'
+import BentoGrid from '../components/bento'
 import {
     IoLogoInstagram,
     IoLogoGithub,
@@ -89,18 +89,9 @@ const Page = () => {
 
                 <Section delay={0.2}>
                     <Heading as="h3" variant="section-title">
-                    Bio
+                        About me!
                     </Heading>
-                    <Timeline />
-                </Section>
-
-                <Section delay={0.1}>
-                    <Heading as="h3" variant="section-title">
-                        My Hobbies
-                    </Heading>
-                    <Paragraph> I love to play soccer, basketball, chess, go surfing, skiing and 
-                        explore new technologies. 
-                    </Paragraph>
+                    <BentoGrid />
                 </Section>
 
                 <Section delay={0.3}>

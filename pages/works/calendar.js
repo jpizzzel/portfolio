@@ -6,9 +6,12 @@ import {
   ListItem
 } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
-import { Title, WorkImage, Meta } from '../../components/work'
+import { Title, Meta } from '../../components/work'
 import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
+import cal from '../../public/CalendarSS.png';
+import cal2 from '../../public/searchSS.png';
+import Image from 'next/image'
 
 const Work = () => (
   <Layout title="Calendar Connect">
@@ -17,14 +20,14 @@ const Work = () => (
         Calendar Connect <Badge>2024</Badge>
       </Title>
       <P>
-        The Academic Calendar project&apos;s goal is to create an easy and accessible way for students at 
-        different universities to compare schedules.
+        CalendarConnect&apos;s goal is to create an easy and accessible way for students at 
+        different universities to see overlap between their schools breaks and important events.
       </P>
       <List ml={4} my={4}>
         <ListItem>
           <Meta>Website</Meta>
-          <Link href="">
-            Coming Soon <ExternalLinkIcon mx="2px" />
+          <Link href="https://calendar-connect.vercel.app/#/home">
+            CalendarConnect <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
         <ListItem>
@@ -33,11 +36,21 @@ const Work = () => (
         </ListItem>
         <ListItem>
           <Meta>Stack</Meta>
-          <span>NodeJS, React Native</span>
+          <span>NodeJS, React, Chakra UI, Selenium</span>
         </ListItem>
       </List>
-      <WorkImage src="/images/works/inkdrop_01.png" alt="Inkdrop" />
-      <WorkImage src="/images/works/inkdrop_02.png" alt="Inkdrop" />
+      <Image 
+        src={cal}
+        alt="Calendar"
+        width = "1000"
+        height = "1000"
+      />
+      <Image 
+          src={cal2}
+          alt="Calendar2"
+          width = "1000"
+          height = "1000"
+      />
     </Container>
   </Layout>
 )
