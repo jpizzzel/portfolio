@@ -18,7 +18,7 @@ const Posts = () => (
       </Heading>
 
       <Section delay={0.1}>
-        <NextLink href="/static/resumepdf.pdf" passHref>
+        <NextLink href="/static/resume.pdf" passHref>
           <Button
             as="a"
             download

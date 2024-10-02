@@ -18,11 +18,20 @@ import {
         <Title>
           My Current Projects/Ideas<Badge>2024</Badge>
         </Title>
+        <P>
+        This page is currently in progress, but soon it will display videos, 
+        CAD files, sideprojects, etc. that I have working on. Most of these 
+        projects are just for fun however they will display my skills, ideas, 
+        and inovation. Below is an example of some things I have been working on
+        that I either have finished but it isn't anything special to display, I 
+        have been working on and am probably stuck/have no time, or I have not
+        started yet but hope to one day.
+        </P>
         <Section>
             <Tabs variant='soft-rounded' colorScheme='green'>
                 <TabList>
                     <Tab>Physics Simulator</Tab>
-                    <Tab>Interactive RaspberryPi</Tab>
+                    <Tab>Arduino Controlled Door Lock</Tab>
                     <Tab>OpenAI project</Tab>
                     <Tab>Chessbot</Tab>
                     <Tab>AI Simulation</Tab>
@@ -36,9 +45,18 @@ import {
                     </TabPanel>
                     <TabPanel>
                     <Meta>Description</Meta>
-                      <P>Just learning more about circuits and different sensors and motors that I can code to make some sort of interactive design.</P>
+                      <P>The door to my room at university requires a physical 
+                        to lock and unlock which seems pretty normal to most 
+                        but compared to my dorm last year which had a key card 
+                        lock it is quite annoying. For this reason I decided to
+                        create a device that can lock and unlock my door from 
+                        me and my roomates phones. I 3D printed a storage 
+                        device for an arudino to mount onto my door (near the 
+                        lock). And then I hooked up a servo motor which can turn the door lock either way. 
+                        Then utilizing an api system can interact with the arduino and thus the servo motor from
+                        our phones. This allows us to lock and unlock our door from our phones.</P>
                       <Meta>Stack</Meta>
-                      <span>RaspberryPi, Python</span>
+                      <span>Arduino, Python</span>
                     </TabPanel>
                     <TabPanel>
                     <Meta>Description</Meta>

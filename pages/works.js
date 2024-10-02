@@ -4,6 +4,7 @@ import { WorkGridItem } from '../components/grid-item'
 import calendars from '../public/searchSS.png'
 import portfo from '../components/logo.png'
 import wate from '../public/ewbim.png'
+import jcode from '../public/JumboCode.png'
 import Layout from '../components/layouts/article'
 
 const Works = () => (
@@ -52,6 +53,16 @@ const Works = () => (
                   Leading an Engineering Without Borders tech group, 10-20 
                   undergraduate engineers, in developing a Mapping Software for 
                   a community in Malawi and data analysis/storage for the club
+              </WorkGridItem>
+            </Section>
+
+            <Section>
+              <WorkGridItem
+                  id="jumbocode"
+                  title="JumboCode Project"
+                  thumbnail={jcode}
+              >
+                  Bread and Roses Project in progress
               </WorkGridItem>
             </Section>
 

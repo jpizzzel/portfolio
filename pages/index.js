@@ -71,8 +71,10 @@ const Page = () => {
                     <Heading as="h3" variant="section-title">
                         Work
                     </Heading>
-                    <Paragraph>I am an undergraduate student at Tufts University 
-                        studying mechanical engineering and computer science. 
+                    <Paragraph>Currently I am a Tech group leader for the Tufts
+                    Chapter of Engineering Without Borders, a full stack 
+                    developer for JumboCode, and the treasurer of Tufts Chess 
+                    Club. Feel free to check out my works by clicking the button below.
                     </Paragraph>
                     <Box align="center" my={4}>
                         <Button
