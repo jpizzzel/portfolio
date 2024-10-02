@@ -4,7 +4,7 @@ import { WorkGridItem } from '../components/grid-item'
 import calendars from '../public/searchSS.png'
 import portfo from '../components/logo.png'
 import wate from '../public/ewbim.png'
-import jcode from '../public/JumboCode.png'
+import jcode from '../public/jumbocode.png'
 import Layout from '../components/layouts/article'
 
 const Works = () => (
