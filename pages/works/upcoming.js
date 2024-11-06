@@ -7,10 +7,10 @@ import {
     TabPanel,
     TabPanels
   } from '@chakra-ui/react'
-  import Section from '../../components/section'
-  import { Title, Meta } from '../../components/work'
-  import P from '../../components/paragraph'
-  import Layout from '../../components/layouts/article'
+import Section from '../../components/section'
+import { Title, Meta } from '../../components/work'
+import P from '../../components/paragraph'
+import Layout from '../../components/layouts/article'
   
   const Work = () => (
     <Layout title="Upcoming">
@@ -79,7 +79,6 @@ import {
                 </TabPanels>
             </Tabs>
         </Section>
-        
       </Container>
       
     </Layout>

@@ -90,7 +90,7 @@ const Navbar = props => {
                             <NextLink href="/resume" passHref>
                                 <MenuItem as={Link}>Résumé</MenuItem>
                             </NextLink>
-                            <MenuItem as={Link} href="https://github.com/jpizzzel/portfolio">GitHub Source</MenuItem>
+                            <MenuItem as={Link} href="https://github.com/jpizzzel">GitHub</MenuItem>
                         </MenuList>
                     </Menu>
                 </Box>

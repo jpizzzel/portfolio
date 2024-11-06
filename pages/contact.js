@@ -8,11 +8,13 @@ import {
   FormLabel,
   Input,
   Textarea,
+  Center,
   Button,
   useToast
 } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import axios from 'axios'
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
@@ -54,6 +56,17 @@ const Contact = () => {
   return (
     <Layout title="Contact Me">
       <Container>
+        <Center>
+          <Box mb={4}>
+                jonahpflaster23pj@gmail.com or jonah.pflaster@tufts.edu
+          </Box>
+        </Center>
+        <Center>
+          <Box mb={4}>
+              OR
+          </Box>
+        </Center>
+        
         <Heading as="h3" fontSize={20} mb={4}>
           Contact Me
         </Heading>
@@ -77,9 +90,7 @@ const Contact = () => {
               </Button>
             </form>
           </Box>
-          <Box fontSize= "12px">
-            If there are any issues with the contact page you can always email me at jonahpflaster23pj@gmail.com.
-          </Box>
+          
         </SimpleGrid>
       </Container>
     </Layout>

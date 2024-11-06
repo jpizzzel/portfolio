@@ -38,8 +38,9 @@ const Page = () => {
                     <Heading as="h2" variant="page-title">
                         Jonah Pflaster
                     </Heading>
-                    <p>Mechanical Engineering Major</p>
-                    <p>Computer Science Minor</p>
+                    <p>Computer Engineering Major</p>
+                    <p>Medford, MA</p>
+                    <p>LI, NY</p>
                     </Box>
                     <Box
                     flexShrink={0}

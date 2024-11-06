@@ -22,14 +22,7 @@ const BentoGrid = () => {
   };
 
   return (
-    <Grid
-      templateColumns="repeat(6, 1fr)"
-      gap={8}
-      p={5}
-      bg={useColorModeValue('#fafafa', '#1c1c1e')}
-      borderRadius="lg"
-      boxShadow="2xl"
-    >
+    <Grid>
       {/* Top Row */}
       <GridItem colSpan={[6, 3]} rowSpan={1}>
         <Box
@@ -48,7 +41,7 @@ const BentoGrid = () => {
             About
           </Heading>
           <Text fontSize="md">
-            I am Jonah Pflaster, a Mechanical Engineering Major and Computer Science Minor. 
+            I am Jonah Pflaster, a Computer Engineering Major, however potentailly looking at completing the electrical engineering degree. 
             I love solving problems that deal with both the physical and digital world.
           </Text>
         </Box>
