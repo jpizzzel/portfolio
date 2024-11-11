@@ -40,7 +40,7 @@ const BentoGrid = () => {
             <FaUser style={{ display: 'inline-block', marginRight: '8px' }} />
             About
           </Heading>
-          <Text fontSize="md">
+          <Text fontSize="md" textAlign="center">
             I am Jonah Pflaster, a Computer Engineering Major, however potentailly looking at completing the electrical engineering degree. 
             I love solving problems that deal with both the physical and digital world.
           </Text>
@@ -63,7 +63,7 @@ const BentoGrid = () => {
             <FaBriefcase style={{ display: 'inline-block', marginRight: '8px' }} />
             Education
           </Heading>
-          <Text fontSize="md">
+          <Text fontSize="md" textAlign="center">
             Graduated from Earl L. Vandermuelen High School in Spring of 2023. 
             Now I am current sophomore at Tufts University School of Engineering
             and expect to graduate spring of 2027.
@@ -87,7 +87,7 @@ const BentoGrid = () => {
             <FaLaptopCode style={{ display: 'inline-block', marginRight: '8px' }} />
             Skills/Projects
           </Heading>
-          <Text fontSize="md">
+          <Text fontSize="md" textAlign="center">
             I love working on projects that deal with web development, 3D printing,
             programming, design, and more! You can find out more about specific projects,
             experiences, and skills on both my works page and/or in my resume.
@@ -112,7 +112,7 @@ const BentoGrid = () => {
             <FaFutbol style={{ display: 'inline-block', marginRight: '8px' }} />
             Hobbies
           </Heading>
-          <Text fontSize="md">
+          <Text fontSize="md" textAlign="center">
             I love to stay active and competitive. I am a part of the Tufts Club
              soccer team and also enjoy playing basketball, going surfing and skiing.
             When I am not doing one of those I am probably inside experimenting with 
@@ -138,7 +138,7 @@ const BentoGrid = () => {
             <FaClipboard style={{ display: 'inline-block', marginRight: '8px' }} />
             Goals/Future
           </Heading>
-          <Text fontSize="md">
+          <Text fontSize="md" textAlign="center">
             Currently I would like to finish up my project, CalendarConnect. Next summer I want to gain more work experience in an engineering field.
           </Text>
         </Box>
@@ -160,7 +160,7 @@ const BentoGrid = () => {
             <FaLaptopCode style={{ display: 'inline-block', marginRight: '8px' }} />
             Latest Project
           </Heading>
-          <Text fontSize="md">
+          <Text fontSize="md" textAlign="center">
             CalendarConnect is the project that I have been developing for the past few months and will hopefully have finished soon. It is a website with the main goal of connecting universities academic calendars all in one easily accessible place. You can find more info on CalendarConnect as well as the link in the works page.
           </Text>
         </Box>
@@ -182,7 +182,7 @@ const BentoGrid = () => {
             <FaEarlybirds style={{ display: 'inline-block', marginRight: '8px' }} />
               Need Help?
           </Heading>
-          <Text fontSize="md">
+          <Text fontSize="md" textAlign="center">
             Go to Contact Page or email me at Jonah.pflaster@tufts.edu.
           </Text>
         </Box>
