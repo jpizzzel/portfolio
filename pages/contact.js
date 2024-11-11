@@ -30,11 +30,18 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
+    const templateParams = {
+      to_name: 'Jonah', // This is the recipient's name
+      from_name: formData.name,
+      message: formData.message,
+      reply_to: formData.email // Allows you to reply directly to the sender's email
+    }
+
     // Use EmailJS to send email
     emailjs.send(
       process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
       process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-      formData,
+      templateParams,
       process.env.NEXT_PUBLIC_EMAILJS_USER_ID
     )
     .then((response) => {
