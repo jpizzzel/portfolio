@@ -1,14 +1,13 @@
-import Layout from '../components/layouts/article'
-import Section from '../components/section'
+import dynamic from 'next/dynamic'
 import NextLink from 'next/link'
-import {
-  Container,
-  Heading,
-  Button,
-} from '@chakra-ui/react'
+import { Container, Heading, Button } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
-import thumbPortfolio from '../public/resume.png';
+import thumbPortfolio from '../public/resume.png'
 import Image from 'next/image'
+
+// Lazy load components
+const Layout = dynamic(() => import('../components/layouts/article'), { ssr: false })
+const Section = dynamic(() => import('../components/section'), { ssr: false })
 
 const Posts = () => (
   <Layout title="Posts">
@@ -17,22 +16,21 @@ const Posts = () => (
         Résumé
       </Heading>
 
-      <Section delay={0.1}>
+      <Section delay={0}>
         <NextLink href="/static/resume.pdf" passHref>
-          <Button
-            as="a"
-            download
-            colorScheme="teal"
-          >
+          <Button as="a" download colorScheme="teal" mb={4}>
             Download Résumé <ExternalLinkIcon mx="2px" />
           </Button>
         </NextLink>
-        <br />
+
         <Image
           src={thumbPortfolio}
           alt="Thumbnail of the portfolio"
-          width="1000"
-          height="1000"
+          width={500}
+          height={500}
+          placeholder="blur" 
+          quality={75}
+          loading="lazy"
         />
       </Section>
     </Container>
@@ -40,4 +38,4 @@ const Posts = () => (
 )
 
 export default Posts
-export { getServerSideProps } from '../components/chakra'
+export { getStaticProps } from '../components/chakra'
