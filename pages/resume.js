@@ -1,13 +1,10 @@
-import dynamic from 'next/dynamic'
 import NextLink from 'next/link'
 import { Container, Heading, Button } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import thumbPortfolio from '../public/resume.png'
 import Image from 'next/image'
-
-// Lazy load components
-const Layout = dynamic(() => import('../components/layouts/article'), { ssr: false })
-const Section = dynamic(() => import('../components/section'), { ssr: false })
+import Layout from '../components/layouts/article'
+import Section from '../components/section'
 
 const Posts = () => (
   <Layout title="Posts">
@@ -17,10 +14,13 @@ const Posts = () => (
       </Heading>
 
       <Section delay={0}>
-        <NextLink href="/static/resume.pdf" passHref>
-          <Button as="a" download colorScheme="teal" mb={4}>
-            Download Résumé <ExternalLinkIcon mx="2px" />
-          </Button>
+        {/* Use legacyBehavior with NextLink and wrap Button in <a> */}
+        <NextLink href="/static/resume.pdf" passHref legacyBehavior>
+          <a download>
+            <Button colorScheme="teal" mb={4}>
+              Download Résumé <ExternalLinkIcon mx="2px" />
+            </Button>
+          </a>
         </NextLink>
 
         <Image
