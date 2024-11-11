@@ -3,6 +3,7 @@ import Layout from '../components/layouts/main'
 import Fonts from '../components/fonts'
 import theme from '../lib/theme'
 import { AnimatePresence } from 'framer-motion'
+import { Analytics } from "@vercel/analytics/react"
 
 const Website = ({Component, pageProps, router}) => {
     return (
@@ -16,7 +17,7 @@ const Website = ({Component, pageProps, router}) => {
             <footer style={{ textAlign: "center", fontSize: "14px", color: "#666", fontFamily: "Arial, sans-serif", paddingBottom: "20px" }}>
                 <p>© 2024 Jonah Pflaster. All Rights Reserved.</p>
             </footer>
-            
+            <Analytics />
         </ChakraProvider>
     )
 }
