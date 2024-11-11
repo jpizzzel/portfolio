@@ -13,8 +13,7 @@ import {
   useToast
 } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
-import axios from 'axios'
-
+import emailjs from 'emailjs-com'
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
@@ -30,19 +29,27 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    try {
-      const response = await axios.post('http://localhost:5000/send-email', formData)
-      if (response.status === 200) {
-        toast({
-          title: 'Message Sent.',
-          description: "Thank you for your message! I will get back to you soon.",
-          status: 'success',
-          duration: 5000,
-          isClosable: true,
-        })
-        setFormData({ name: '', email: '', message: '' }) // Clear form after submission
-      }
-    } catch (error) {
+
+    // Use EmailJS to send email
+    emailjs.send(
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+      formData,
+      process.env.NEXT_PUBLIC_EMAILJS_USER_ID
+    )
+    .then((response) => {
+      console.log('SUCCESS!', response.status, response.text)
+      toast({
+        title: 'Message Sent.',
+        description: "Thank you for your message! I will get back to you soon.",
+        status: 'success',
+        duration: 5000,
+        isClosable: true,
+      })
+      setFormData({ name: '', email: '', message: '' }) // Clear form after submission
+    })
+    .catch((error) => {
+      console.log('FAILED...', error)
       toast({
         title: 'An error occurred.',
         description: 'Unable to send message.',
@@ -50,7 +57,7 @@ const Contact = () => {
         duration: 5000,
         isClosable: true,
       })
-    }
+    })
   }
 
   return (
@@ -58,12 +65,12 @@ const Contact = () => {
       <Container>
         <Center>
           <Box mb={4}>
-                jonahpflaster23pj@gmail.com or jonah.pflaster@tufts.edu
+            jonahpflaster23pj@gmail.com or jonah.pflaster@tufts.edu
           </Box>
         </Center>
         <Center>
           <Box mb={4}>
-              OR
+            OR
           </Box>
         </Center>
         
@@ -90,7 +97,6 @@ const Contact = () => {
               </Button>
             </form>
           </Box>
-          
         </SimpleGrid>
       </Container>
     </Layout>

@@ -99,7 +99,7 @@ const Page = () => {
 
                 <Section delay={0.3}>
                     <Heading as="h3" variant="section-title">
-                        On the Web
+                        Links
                     </Heading>
                     <List>
                         <ListItem>
