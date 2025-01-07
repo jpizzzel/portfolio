@@ -12,7 +12,7 @@ const FeaturedProjects = () => {
       title: 'C++ Projects',
       description: 'Exploring Data Structures and Algorithms through C++.',
       thumbnail: Cplus,
-      badges: ['C++', 'Algorithms', 'Data Structures'],
+      badges: ["C++", "Algorithms", "Data Structures"],
       href: '/projects/cplus', // Link to the C++ Projects page
     },
     {
@@ -20,7 +20,7 @@ const FeaturedProjects = () => {
       title: 'Calendar Connect',
       description: 'A web app to compare academic calendars across universities.',
       thumbnail: calendar,
-      badges: ['React', 'Web Scraping', 'Full-Stack'],
+      badges: ["React", "Full-Stack", "Data Organization"],
       href: '/projects/calendar', // Link to the Calendar Connect page
     },
   ];
