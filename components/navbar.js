@@ -1,16 +1,42 @@
 import Logo from './logo';
 import React, { useState, useEffect } from 'react';
 import NextLink from 'next/link';
-import { Container, Box, Link, Stack, Heading, Flex, Menu, MenuItem, MenuList, MenuButton, IconButton, useColorModeValue } from '@chakra-ui/react';
+import {
+    Container,
+    Box,
+    Link,
+    Stack,
+    Heading,
+    Flex,
+    Menu,
+    MenuItem,
+    MenuList,
+    MenuButton,
+    IconButton,
+    useColorModeValue,
+} from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import ThemeToggleButton from './theme-toggle-button';
+import { FaBriefcase, FaFileAlt, FaEnvelope } from 'react-icons/fa';
 
-const LinkItem = ({ href, path, children }) => {
+const LinkItem = ({ href, path, children, icon }) => {
     const active = path === href;
     const inactiveColor = useColorModeValue('gray200', 'whiteAlpha900');
     return (
         <NextLink href={href} passHref legacyBehavior>
-            <Link p={2} bg={active ? 'glassTeal' : undefined} color={active ? '#dec973' : inactiveColor}>
+            <Link
+                p={2}
+                display="flex"
+                alignItems="center"
+                bg={active ? 'yellow.400' : undefined}
+                color={active ? useColorModeValue('gray.500', 'gray.400') : inactiveColor}
+                borderRadius="md"
+                _hover={{
+                    bg: useColorModeValue('yellow.200', 'yellow.600'),
+                    color: useColorModeValue('gray.500', 'gray.400'),
+                }}
+            >
+                {icon && <Box mr={2}>{icon}</Box>}
                 {children}
             </Link>
         </NextLink>
@@ -20,9 +46,7 @@ const LinkItem = ({ href, path, children }) => {
 const Navbar = props => {
     const { path } = props;
 
-    // Ensure useColorModeValue is called unconditionally
-    const bg = useColorModeValue('gray.100', '#20202380');
-
+    const bg = useColorModeValue('linear(to-r, gray.100, yellow.300)', 'linear(to-r, gray.900, yellow.600)');
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
@@ -36,18 +60,19 @@ const Navbar = props => {
             position="fixed"
             as="nav"
             w="100%"
-            bg={bg}
+            bgGradient={bg}
             style={{ backdropFilter: 'blur(10px)' }}
             zIndex={1}
             {...props}
         >
-            <Container 
-                display="flex" 
-                p={2} 
-                maxW="container.md" 
-                wrap="wrap" 
-                align="center" 
-                justify="space-between">
+            <Container
+                display="flex"
+                p={2}
+                maxW="container.md"
+                wrap="wrap"
+                align="center"
+                justify="space-between"
+            >
                 <Flex align="center" mr={5}>
                     <Heading as="h1" size="lg" letterSpacing={'tighter'}>
                         <Logo />
@@ -61,14 +86,14 @@ const Navbar = props => {
                     flexGrow={1}
                     mt={{ base: 4, nmd: 0 }}
                 >
-                    <LinkItem href="/works" path={path}>
-                        <div>Works</div>
+                    <LinkItem href="/projects" path={path} icon={<FaBriefcase />}>
+                        Projects
                     </LinkItem>
-                    <LinkItem href="/resume" path={path}>
-                        <div>Résumé</div>
+                    <LinkItem href="/resume" path={path} icon={<FaFileAlt />}>
+                        Résumé
                     </LinkItem>
-                    <LinkItem href="/contact" path={path}>
-                        <div>Contact</div>
+                    <LinkItem href="/contact" path={path} icon={<FaEnvelope />}>
+                        Contact
                     </LinkItem>
                 </Stack>
                 <Box flex={1} align="right">
@@ -84,8 +109,8 @@ const Navbar = props => {
                             <NextLink href="/" passHref>
                                 <MenuItem as={Link}>About</MenuItem>
                             </NextLink>
-                            <NextLink href="/works" passHref>
-                                <MenuItem as={Link}>Works</MenuItem>
+                            <NextLink href="/projects" passHref>
+                                <MenuItem as={Link}>Projects</MenuItem>
                             </NextLink>
                             <NextLink href="/resume" passHref>
                                 <MenuItem as={Link}>Résumé</MenuItem>
@@ -96,7 +121,7 @@ const Navbar = props => {
                 </Box>
             </Container>
         </Box>
-    )
-}
+    );
+};
 
-export default Navbar;
+export default Navbar

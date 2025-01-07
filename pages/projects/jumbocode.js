@@ -12,7 +12,7 @@ import {
   } from '@chakra-ui/react'
 import Section from '../../components/section'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
-import { Title, Meta } from '../../components/work'
+import { Title, Meta } from '../../components/project'
 import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
 
@@ -50,6 +50,7 @@ const Work = () => (
                 <TabList>
                     <Tab>Statscard</Tab>
                     <Tab>User notifications</Tab>
+                    <Tab>Volunteer List</Tab>
                 </TabList>
                 <TabPanels>
                     <TabPanel>
@@ -59,6 +60,10 @@ const Work = () => (
                     <TabPanel>
                     <Meta>Description</Meta>
                       <P>Created various notification components that will appear on a users screen in response to various actions, etc.</P>
+                    </TabPanel>
+                    <TabPanel>
+                    <Meta>Description</Meta>
+                      <P>Created a feature which allows admins and volunteers to view and interact with list of volunteers for an event</P>
                     </TabPanel>
                 </TabPanels>
             </Tabs>

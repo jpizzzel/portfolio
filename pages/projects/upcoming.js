@@ -8,7 +8,7 @@ import {
     TabPanels
   } from '@chakra-ui/react'
 import Section from '../../components/section'
-import { Title, Meta } from '../../components/work'
+import { Title, Meta } from '../../components/project'
 import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
   
