@@ -16,7 +16,7 @@ import Layout from '../../components/layouts/article'
     <Layout title="Upcoming">
       <Container>
         <Title>
-          My Current Projects/Ideas<Badge>2024</Badge>
+          C++ Projects<Badge>2024</Badge>
         </Title>
         <P>
         This is a description of multiple of my key C++ projects which focus on data structure and algorithms. All source code is available for request from jonah.pflaster@tufts.edu
@@ -32,7 +32,7 @@ import Layout from '../../components/layouts/article'
                 <TabPanels>
                     <TabPanel>
                       <Meta>Description</Meta>
-                      <P>This program is a re-creation of the linux command grep and features a from-scratch implementation of a template hashtable class. Given a root directory the program traverses each subdirectory and all files within. For each file in the tree, each word of each line is indexed into a robust, O(n) time access index which can locate every occurrence of a given word (case sensitive or insensitive) in any file contained by the root or the root's subdirectories. This project taught me the ins and outs of template classes/containers and to be intentional in system design as to prioritize both time and space efficiency.</P>
+                      <P>This program is a re-creation of the linux command grep and features a from-scratch implementation of a hashtable class. Given a root directory the program traverses each subdirectory and all files within. For each file in the tree, each word of each line is indexed into a robust, O(n) time access index which can locate every occurrence of a given word (case sensitive or insensitive) in any file contained by the root or the root's subdirectories. This project taught me the ins and outs of template classes/containers and to be intentional in system design as to prioritize both time and space efficiency.</P>
                       <Meta>Created</Meta>
                       <span>11/23/2024</span>
                     </TabPanel>

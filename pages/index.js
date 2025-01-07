@@ -95,7 +95,7 @@ const Page = () => {
                                 boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.3)',
                             }}
                         >
-                            My portfolio
+                            Portfolio
                         </Button>
                     </Box>
                 </Section>
