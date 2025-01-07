@@ -22,6 +22,10 @@ import { FaBriefcase, FaFileAlt, FaEnvelope } from 'react-icons/fa';
 const LinkItem = ({ href, path, children, icon }) => {
     const active = path === href;
     const inactiveColor = useColorModeValue('gray200', 'whiteAlpha900');
+    const activeColor = useColorModeValue('gray.500', 'gray.400');
+    const hoverBg = useColorModeValue('yellow.200', 'yellow.600');
+    const hoverColor = useColorModeValue('gray.500', 'gray.400');
+
     return (
         <NextLink href={href} passHref legacyBehavior>
             <Link
@@ -29,11 +33,11 @@ const LinkItem = ({ href, path, children, icon }) => {
                 display="flex"
                 alignItems="center"
                 bg={active ? 'yellow.400' : undefined}
-                color={active ? useColorModeValue('gray.500', 'gray.400') : inactiveColor}
+                color={active ? activeColor : inactiveColor}
                 borderRadius="md"
                 _hover={{
-                    bg: useColorModeValue('yellow.200', 'yellow.600'),
-                    color: useColorModeValue('gray.500', 'gray.400'),
+                    bg: hoverBg,
+                    color: hoverColor,
                 }}
             >
                 {icon && <Box mr={2}>{icon}</Box>}

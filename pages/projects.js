@@ -5,7 +5,6 @@ import {
   Box,
   Badge,
   Stack,
-  Text,
 } from "@chakra-ui/react";
 import Section from "../components/section";
 import Layout from "../components/layouts/article";
