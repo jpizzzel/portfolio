@@ -14,6 +14,7 @@ import { WorkGridItem } from "../components/grid-item";
 import wate from "../public/ewbim.png";
 import jcode from "../public/jumbocode.png";
 import Cplus from "../public/c++_logo.png";
+import table from "../public/foosball.jpg";
 
 const Projects = () => (
   <Layout title="Projects">
@@ -54,6 +55,13 @@ const Projects = () => (
               "Working on the Bread and Roses project for social impact.",
             thumbnail: jcode,
             badges: ["Full-Stack", "Social Impact", "Teamwork"],
+          },
+          {
+            id: "foosball",
+            title: "Foosball Table",
+            description: "Designed and developed a small Foosball table",
+            thumbnail: table,
+            badges: ["CAD", "Mechanics", "Design"],
           },
           {
             id: "portfolio",
