@@ -18,8 +18,7 @@ import Layout from '../../components/layouts/article'
         </Title>
         <P>
             Leading an Engineering Without Borders tech group, 10-20 
-            undergraduate engineers, in developing a Mapping Software for 
-            a community in Malawi and data analysis/storage for the club
+            undergraduate engineers. My groups focus is on creating a water source mapping software, hardware design and data storage/analytics.
         </P>
         <List ml={4} my={4}>
           <ListItem>
