@@ -15,6 +15,7 @@ import wate from "../public/ewbim.png";
 import jcode from "../public/jumbocode.png";
 import Cplus from "../public/c++_logo.png";
 import table from "../public/foosball.jpg";
+import CAD from "../public/CAD_GEN.png";
 
 const Projects = () => (
   <Layout title="Projects">
@@ -25,6 +26,13 @@ const Projects = () => (
 
       <SimpleGrid columns={[1, 1, 2]} spacing={8}>
         {[
+          {
+            id: "AI-CAD",
+            title: "AI CAD Project Builder",
+            description: "Utilized AI to better develop CAD models.",
+            thumbnail: CAD,
+            badges: ["AI", "Hugging Face", "Python"],
+          },
           {
             id: "cplus",
             title: "C++ Projects",

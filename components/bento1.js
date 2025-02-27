@@ -4,9 +4,18 @@ import Image from 'next/image'; // Next.js Image component for static assets
 import NextLink from 'next/link'; // For navigation
 import calendar from "../public/CalendarSS.png";
 import Cplus from "../public/c++_logo.png";
+import CAD from "../public/CAD_GEN.png";
 
 const FeaturedProjects = () => {
   const projects = [
+    {
+      id: 'AI-CAD',
+      title: 'AI-CAD Project Builder',
+      description: 'Utilized AI to better develop CAD models.',
+      thumbnail: CAD,
+      badges: ["AI", "Hugging Face", "Python"],
+      href: '/projects/AI-CAD', 
+    },
     {
       id: 'cplus',
       title: 'C++ Projects',
