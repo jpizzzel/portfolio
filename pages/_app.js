@@ -23,7 +23,7 @@ const Website = ({ Component, pageProps, router }) => {
           paddingBottom: '20px',
         }}
       >
-        <p>© 2024 Jonah Pflaster. All Rights Reserved.</p>
+        <p>© 2025 Jonah Pflaster. All Rights Reserved.</p>
       </footer>
       <Analytics />
     </ChakraProvider>
