@@ -25,7 +25,12 @@ const Work = () => (
         interactive 3D renderings directly in the browser. The user can also chat
         with an AI Assistant who will help the user solve any bugs with the project,
         find ways to overcome challenges, give ideas on how to better
-        prompt the AI-CAD generater, etc.
+        prompt the AI-CAD generater, etc. 
+    </P>
+    <P>
+        Currently the open source version is available through the github link below.
+        If you would like to see a live demo or have any troubles with the github 
+        feel free to contact me via the contact page.
     </P>
     <List ml={4} my={4}>
         <ListItem>
@@ -36,7 +41,7 @@ const Work = () => (
         </ListItem>
         <ListItem>
         <Meta>Platform</Meta>
-        <span>Web</span>
+        <span>Web App</span>
         </ListItem>
         <ListItem>
         <Meta>Stack</Meta>
