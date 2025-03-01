@@ -40,7 +40,7 @@ const Work = () => (
         </ListItem>
         <ListItem>
         <Meta>Stack</Meta>
-        <span>React, Chakra UI, Three.js, Node.js, Python, Zoo.dev ML-lphant API</span>
+        <span>React, Node.js, Python, JavaScript, Zoo.dev ML-lphant API, Three.js</span>
         </ListItem>
     </List>
     <Image 
