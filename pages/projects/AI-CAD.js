@@ -9,8 +9,7 @@ import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, Meta } from '../../components/project'
 import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
-import cadGen from '../../public/CAD_GEN.png'
-import Image from 'next/image'
+// import demoVid from '../assets/zoo_dev_demoVid.mp4';
 
 const Work = () => (
 <Layout title="AI CAD Project Builder">
@@ -29,12 +28,13 @@ const Work = () => (
     </P>
     <P>
         Currently the open source version is available through the github link below.
-        If you would like to see a live demo or have any troubles with the github 
-        feel free to contact me via the contact page.
+        There is also a short 2 minute demo video of how the current version
+        works. If you would like to see a more indepth live demo or have any 
+        troubles with the github feel free to contact me via the contact page.
     </P>
     <List ml={4} my={4}>
         <ListItem>
-        <Meta>Website</Meta>
+        <Meta>Source</Meta>
         <Link href="https://github.com/jpizzzel/AI-CAD-Project">
             Github Source <ExternalLinkIcon mx="2px" />
         </Link>
@@ -48,12 +48,26 @@ const Work = () => (
         <span>React, Node.js, Python, JavaScript, Zoo.dev ML-lphant API, Three.js</span>
         </ListItem>
     </List>
-    <Image 
-        src={cadGen}
-        alt="CAD Generation Screen"
-        width="1000"
-        height="1000"
-    />
+    <List ml={4} my={4}>
+        <ListItem>
+            <Meta>DEMO VIDEO</Meta>
+        </ListItem>
+        <ListItem>
+            <Meta>Time Stamps:</Meta>
+        </ListItem>
+        <ListItem>
+            <span>0-0:56   Chatting with AI-Chat bot</span>
+        </ListItem>
+        <ListItem>
+            <span>1:22   First CAD model generated</span>
+        </ListItem>
+        <ListItem>
+            <span>2:07   Second CAD model generated</span>
+        </ListItem>
+    </List>
+        <video width="640" height="360" controls>
+            <source src={`/zoo_dev_demoVid.mp4`} type="video/mp4" />
+        </video>
     </Container>
 </Layout>
 )
