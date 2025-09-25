@@ -32,7 +32,7 @@ const Page = () => {
         <Layout>
             <Container>
                 <Box borderRadius="lg" bg={useColorModeValue('gray.100', 'whiteAlpha.200')} p={3} mb={6} align="center">
-                    Hello, I am a current 2nd year engineering student at Tufts!
+                    Hello, I am a current 3rd year engineering student at Tufts!
                 </Box>
                     
                 <Box display={{ md: 'flex' }}>
