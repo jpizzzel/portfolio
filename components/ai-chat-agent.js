@@ -1,23 +1,19 @@
 import React, { useState, useRef, useEffect } from 'react';
 import {
   Box,
-  Button,
   Input,
   VStack,
   HStack,
   Text,
   IconButton,
-  useColorModeValue,
   useDisclosure,
   Collapse,
   Badge,
-  Avatar,
-  Divider,
   Spinner,
   Alert,
   AlertIcon,
 } from '@chakra-ui/react';
-import { ChatIcon, CloseIcon, ArrowUpIcon } from '@chakra-ui/icons';
+import { ChatIcon, ArrowUpIcon } from '@chakra-ui/icons';
 import ReactMarkdown from 'react-markdown';
 // Removed direct Gemini import - using API route instead
 
@@ -36,12 +32,6 @@ const AI_CHAT_AGENT = () => {
   const [error, setError] = useState('');
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
-
-  const bgColor = useColorModeValue('white', 'gray.800');
-  const borderColor = useColorModeValue('gray.200', 'gray.600');
-  const textColor = useColorModeValue('gray.800', 'white');
-  const aiBgColor = useColorModeValue('blue.50', 'blue.900');
-  const userBgColor = useColorModeValue('green.50', 'green.900');
 
 
   const scrollToBottom = () => {
