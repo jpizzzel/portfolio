@@ -4,6 +4,7 @@ import Fonts from '../components/fonts';
 import theme from '../lib/theme';
 import { AnimatePresence } from 'framer-motion';
 import { Analytics } from '@vercel/analytics/react';
+import AI_CHAT_AGENT from '../components/ai-chat-agent';
 
 const Website = ({ Component, pageProps, router }) => {
   return (
@@ -25,6 +26,7 @@ const Website = ({ Component, pageProps, router }) => {
       >
         <p>© 2025 Jonah Pflaster. All Rights Reserved.</p>
       </footer>
+      <AI_CHAT_AGENT />
       <Analytics />
     </ChakraProvider>
   );
