@@ -118,10 +118,35 @@ const TabsW = () => {
         {/* Work Experience Tab */}
         <TabPanel>
           <TimelineRoot>
+
+          <TimelineItem>
+              <TimelineConnector icon={<LuChartNetwork />} />
+              <TimelineContent>
+                <TimelineDescription>May 2025 - Present</TimelineDescription>
+                <TimelineTitle>Watershed Ventures</TimelineTitle>
+                <JobDescription>AI Software Engineering Intern</JobDescription>
+                <Text>
+                    - Developed a multi-agent AI system that automated venture capital research and data enrichment processes
+                </Text>
+                <Text>
+                    - Built specialized agents for company retrieval, data enrichment, and database management using Google Gemini
+                </Text>
+                <Text>
+                    - Created automated pipelines for importing CSVs, enriching missing fields, and updating investor portfolios
+                </Text>
+                <Text>
+                    - Designed Supabase/Postgres schema with JSONB fields and SQL triggers for automatic indexing and search
+                </Text>
+                <Text>
+                    - Cut manual research and data entry time by over 50% while providing real-time startup data across accelerators
+                </Text>
+              </TimelineContent>
+            </TimelineItem>
+
             <TimelineItem>
               <TimelineConnector icon={<LuComputer />} />
               <TimelineContent>
-                <TimelineDescription>Sept 2024 - Present</TimelineDescription>
+                <TimelineDescription>Sept 2024 - May 2025</TimelineDescription>
                 <TimelineTitle>JumboCode</TimelineTitle>
                 <JobDescription>Full Stack Engineer</JobDescription>
                 <Text>
@@ -130,10 +155,12 @@ const TabsW = () => {
               </TimelineContent>
             </TimelineItem>
 
+            
+
             <TimelineItem>
               <TimelineConnector icon={<LuChartNetwork />} />
               <TimelineContent>
-                <TimelineDescription>Aug 2024 - Present</TimelineDescription>
+                <TimelineDescription>Aug 2024 - May 2025</TimelineDescription>
                 <TimelineTitle>Engineers Without Borders</TimelineTitle>
                 <JobDescription>Data Analytics Tech Group Lead</JobDescription>
                 <Text>

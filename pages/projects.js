@@ -17,6 +17,7 @@ import Cplus from "../public/c++_logo.png";
 import table from "../public/foosball.jpg";
 import CAD from "../public/CAD_GEN.png";
 import hand from "../public/hj.jpg";
+import watershed from "../public/watershed.png";
 
 const Projects = () => (
   <Layout title="Projects">
@@ -27,13 +28,20 @@ const Projects = () => (
 
       <SimpleGrid columns={[1, 1, 2]} spacing={8}>
         {[
-          {
-            id: "HandJam",
-            title: "HandJam",
-            description: "Created an instrument using Machine Learning",
-            thumbnail: hand,
-            badges: ["ML", "Embedded Systems", "C", "Python"],
-          },
+        {
+          id: "watershed-ai",
+          title: "Multi System AI Agent",
+          description: "Automated venture capital research and data enrichment system using multi-agent AI architecture.",
+          thumbnail: watershed,
+          badges: ["AI", "Multi-Agent", "Python", "Supabase"],
+        },
+        {
+          id: "HandJam",
+          title: "HandJam",
+          description: "Created an instrument using Machine Learning",
+          thumbnail: hand,
+          badges: ["ML", "Embedded Systems", "C", "Python"],
+        },
           {
             id: "AI-CAD",
             title: "AI CAD Project Builder",

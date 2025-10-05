@@ -4,17 +4,17 @@ import Image from 'next/image'; // Next.js Image component for static assets
 import NextLink from 'next/link'; // For navigation
 import calendar from "../public/CalendarSS.png";
 import Cplus from "../public/c++_logo.png";
-import CAD from "../public/CAD_GEN.png";
+import watershed from "../public/watershed.png";
 
 const FeaturedProjects = () => {
   const projects = [
     {
-      id: 'AI-CAD',
-      title: 'AI-CAD Project Builder',
-      description: 'Utilized AI to better develop CAD models.',
-      thumbnail: CAD,
-      badges: ["AI", "Hugging Face", "Python"],
-      href: '/projects/AI-CAD', 
+      id: 'watershed-ai',
+      title: 'Multi System AI Agent',
+      description: 'Automated venture capital research and data enrichment system using multi-agent AI architecture.',
+      thumbnail: watershed,
+      badges: ["AI", "Multi-Agent", "Python", "Supabase"],
+      href: '/projects/watershed-ai', 
     },
     {
       id: 'cplus',
@@ -26,10 +26,10 @@ const FeaturedProjects = () => {
     },
     {
       id: 'calendar',
-      title: 'Calendar Connect',
-      description: 'A web app to compare academic calendars across universities.',
+      title: 'CalendarConnect',
+      description: 'All-in-one student life organization tool with Google Calendar, Drive, Gmail, and Canvas integrations.',
       thumbnail: calendar,
-      badges: ["React", "Full-Stack", "Data Organization"],
+      badges: ["React", "Google APIs", "Automation"],
       href: '/projects/calendar', // Link to the Calendar Connect page
     },
   ];
