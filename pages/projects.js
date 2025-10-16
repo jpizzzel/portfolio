@@ -18,6 +18,7 @@ import table from "../public/foosball.jpg";
 import CAD from "../public/CAD_GEN.png";
 import hand from "../public/hj.jpg";
 import watershed from "../public/watershed.png";
+import studentLifeManager from "../public/student_life_manager.png";
 
 const Projects = () => (
   <Layout title="Projects">
@@ -28,6 +29,13 @@ const Projects = () => (
 
       <SimpleGrid columns={[1, 1, 2]} spacing={8}>
         {[
+        {
+          id: "student-life-organizer",
+          title: "Student Life Organizer",
+          description: "Personal student life management system with Canvas, Google Drive, Calendar, and Gmail integrations for optimized workflows.",
+          thumbnail: studentLifeManager,
+          badges: ["Next.js", "API Integration", "Productivity", "Automation"],
+        },
         {
           id: "watershed-ai",
           title: "Multi System AI Agent",
