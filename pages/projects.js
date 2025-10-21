@@ -34,7 +34,7 @@ const Projects = () => (
           title: "Student Life Organizer",
           description: "Personal student life management system with Canvas, Google Drive, Calendar, and Gmail integrations for optimized workflows.",
           thumbnail: studentLifeManager,
-          badges: ["Next.js", "API Integration", "Productivity", "Automation"],
+          badges: ["Next.js", "Automation", "Productivity"],
         },
         {
           id: "watershed-ai",
