@@ -10,12 +10,16 @@ import Section from "../components/section";
 import Layout from "../components/layouts/article";
 import calendars from "../public/searchSS.png";
 import portfo from "../public/logo.png";
+import logo from "../public/logo.png";
 import { WorkGridItem } from "../components/grid-item";
 import wate from "../public/ewbim.png";
 import jcode from "../public/jumbocode.png";
 import Cplus from "../public/c++_logo.png";
 import table from "../public/foosball.jpg";
+import arm from "../public/leg64.png";
+import ee31 from "../public/ee31.jpeg";
 import CAD from "../public/CAD_GEN.png";
+import smoosh from "../public/smoosh_bros.jpeg";
 import hand from "../public/hj.jpg";
 import watershed from "../public/watershed.png";
 import studentLifeManager from "../public/student_life_manager.png";
@@ -29,6 +33,27 @@ const Projects = () => (
 
       <SimpleGrid columns={[1, 1, 2]} spacing={8}>
         {[
+        {
+          id: "arm-legv8-processor",
+          title: "64-bit ARM LEGv8 Processor",
+          description: "VHDL implementation of a LEGv8 Processor",
+          thumbnail: arm,
+          badges: ["VHDL", "Computer Architecture"],
+        },
+        {
+          id: "smoosh-bros",
+          title: "Smoosh Bros",
+          description: "A Super Smash Bros-style fighting game built entirely in SystemVerilog on an FPGA",
+          thumbnail: smoosh, // placeholder
+          badges: ["SystemVerilog", "FPGA", "Game Development"],
+        },
+        {
+          id: "junior-design-project",
+          title: "EE31 Junior Design Project",
+          description: "Autonomous robot with WebSocket communication and sensor system",
+          thumbnail: ee31, // placeholder
+          badges: ["Arduino", "WebSocket", "Embedded Systems"],
+        },
         {
           id: "student-life-organizer",
           title: "Student Life Organizer",
