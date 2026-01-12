@@ -24,7 +24,7 @@ const Work = () => (
   <Layout title="5-Stage Pipelined ARM CPU">
     <Container>
       <Title>
-        5-Stage Pipelined ARM CPU <Badge>2024</Badge>
+        5-Stage Pipelined ARM CPU <Badge>2025</Badge>
       </Title>
       <Heading as="h3" fontSize={20} mb={4} fontWeight="normal">
         A 64-bit ARM LEGv8 Processor in VHDL
