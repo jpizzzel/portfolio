@@ -10,7 +10,6 @@ import Section from "../components/section";
 import Layout from "../components/layouts/article";
 import calendars from "../public/searchSS.png";
 import portfo from "../public/logo.png";
-import logo from "../public/logo.png";
 import { WorkGridItem } from "../components/grid-item";
 import wate from "../public/ewbim.png";
 import jcode from "../public/jumbocode.png";
