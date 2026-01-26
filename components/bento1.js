@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Grid, Stack, Badge, Text, Heading } from '@chakra-ui/react';
 import Image from 'next/image'; // Next.js Image component for static assets
 import NextLink from 'next/link'; // For navigation
-import calendar from "../public/CalendarSS.png";
+import watershed from "../public/watershed.png";
 import Leg64 from "../public/leg64.png";
 import smoosh_bros from "../public/smoosh_bros.jpeg";
 
