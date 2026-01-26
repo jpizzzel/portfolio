@@ -3,8 +3,8 @@ import { Box, Grid, Stack, Badge, Text, Heading } from '@chakra-ui/react';
 import Image from 'next/image'; // Next.js Image component for static assets
 import NextLink from 'next/link'; // For navigation
 import calendar from "../public/CalendarSS.png";
-import Cplus from "../public/c++_logo.png";
-import watershed from "../public/watershed.png";
+import Leg64 from "../public/leg64.png";
+import smoosh_bros from "../public/smoosh_bros.jpeg";
 
 const FeaturedProjects = () => {
   const projects = [
@@ -13,24 +13,24 @@ const FeaturedProjects = () => {
       title: 'Multi System AI Agent',
       description: 'Automated venture capital research and data enrichment system using multi-agent AI architecture.',
       thumbnail: watershed,
-      badges: ["AI", "Multi-Agent", "Python", "Supabase"],
+      badges: ["Python", "Supabase", "AWS", "Nextjs"],
       href: '/projects/watershed-ai', 
     },
     {
-      id: 'cplus',
-      title: 'C++ Projects',
-      description: 'Exploring Data Structures and Algorithms through C++.',
-      thumbnail: Cplus,
-      badges: ["C++", "Algorithms", "Data Structures"],
-      href: '/projects/cplus', // Link to the C++ Projects page
+      id: 'arm-legv8-processor',
+      title: 'Arm Legv8 Processor',
+      description: 'A 64-bit ARM LEGv8 Processor in VHDL',
+      thumbnail: Leg64,
+      badges: ["VHDL", "Computer Architecture"],
+      href: '/projects/arm-legv8-processor', 
     },
     {
-      id: 'calendar',
-      title: 'CalendarConnect',
-      description: 'All-in-one student life organization tool with Google Calendar, Drive, Gmail, and Canvas integrations.',
-      thumbnail: calendar,
-      badges: ["React", "Google APIs", "Automation"],
-      href: '/projects/calendar', // Link to the Calendar Connect page
+      id: 'smoosh-bros',
+      title: 'Smoosh Bros',
+      description: 'A Super Smash Bros-style fighting game built entirely in SystemVerilog on an FPGA',
+      thumbnail: smoosh_bros,
+      badges: ["System Verilog", "FPGA", "Game Development"],
+      href: '/projects/smoosh-bros', 
     },
   ];
 
