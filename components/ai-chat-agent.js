@@ -12,6 +12,7 @@ import {
   Spinner,
   Alert,
   AlertIcon,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { ChatIcon, ArrowUpIcon } from '@chakra-ui/icons';
 import ReactMarkdown from 'react-markdown';
@@ -22,7 +23,7 @@ const AI_CHAT_AGENT = () => {
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: "Hi! I'm Jonah's AI assistant. I can answer questions about his projects, skills, experience, and background. What would you like to know?",
+      text: "Hi, I’m Jonah’s portfolio assistant. I can help you explore his projects, work experience, education, and skills. Try asking about a specific project, role, or technology you see on this site.",
       sender: 'ai'
     }
   ]);
@@ -31,6 +32,14 @@ const AI_CHAT_AGENT = () => {
   const [error, setError] = useState('');
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
+
+  const cardBg = useColorModeValue('white', '#1c1c1e');
+  const borderColor = useColorModeValue('gray.200', 'gray.700');
+  const headerBg = useColorModeValue('gray.50', 'rgba(0, 0, 0, 0.7)');
+  const headerText = useColorModeValue('gray.800', 'whiteAlpha.900');
+  const mutedText = useColorModeValue('gray.600', 'gray.400');
+  const userBubbleBorder = useColorModeValue('yellow.400', 'yellow.300');
+  const aiBubbleBorder = useColorModeValue('gray.200', 'whiteAlpha.200');
 
 
   const scrollToBottom = () => {
@@ -115,7 +124,7 @@ const AI_CHAT_AGENT = () => {
     setMessages([
       {
         id: 1,
-        text: "Hi! I'm Jonah's AI assistant. I can answer questions about his projects, skills, experience, and background. What would you like to know?",
+        text: "Hi, I’m Jonah’s portfolio assistant. I can help you explore his projects, work experience, education, and skills. Try asking about a specific project, role, or technology you see on this site.",
         sender: 'ai'
       }
     ]);
@@ -133,153 +142,30 @@ const AI_CHAT_AGENT = () => {
     >
       {/* AI Chat Button */}
       {!isOpen && (
-        <Box
+        <IconButton
+          aria-label="Open Jonah's assistant"
+          icon={<ChatIcon />}
+          onClick={onToggle}
           position="absolute"
           bottom="0"
           right="0"
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          w="60px"
-          h="60px"
-          cursor="pointer"
-          onClick={onToggle}
-          flexShrink={0}
-          overflow="hidden"
-          borderRadius="50%"
-          backgroundSize="300% 300%"
-          backdropFilter="blur(1rem)"
-          transition="0.5s"
-          animation="gradient_301 5s ease infinite"
-          border="double 3px transparent"
-          backgroundImage="linear-gradient(#212121, #212121), linear-gradient(137.48deg, #ffdb3b 10%, #fe53bb 45%, #8f51ea 67%, #0044ff 87%)"
-          backgroundOrigin="border-box"
-          backgroundClip="content-box, border-box"
-          sx={{
-            '&:hover': {
-              transform: 'scale(1.1)',
-              '& .container-stars': {
-                zIndex: 1,
-                backgroundColor: '#212121',
-              },
-            },
-            '&:active': {
-              border: 'double 3px #fe53bb',
-              backgroundOrigin: 'border-box',
-              backgroundClip: 'content-box, border-box',
-              animation: 'none',
-              '& .glow-circle': {
-                background: '#fe53bb',
-              },
-            },
-            '@keyframes gradient_301': {
-              '0%': { backgroundPosition: '0% 50%' },
-              '50%': { backgroundPosition: '100% 50%' },
-              '100%': { backgroundPosition: '0% 50%' },
-            },
-            '@keyframes animStar': {
-              'from': { transform: 'translateY(0)' },
-              'to': { transform: 'translateY(-135rem)' },
-            },
-            '@keyframes animStarRotate': {
-              'from': { transform: 'rotate(360deg)' },
-              'to': { transform: 'rotate(0)' },
-            },
-            '@keyframes pulse_3011': {
-              '0%': { transform: 'scale(0.75)', boxShadow: '0 0 0 0 rgba(0, 0, 0, 0.7)' },
-              '70%': { transform: 'scale(1)', boxShadow: '0 0 0 10px rgba(0, 0, 0, 0)' },
-              '100%': { transform: 'scale(0.75)', boxShadow: '0 0 0 0 rgba(0, 0, 0, 0)' },
-            },
+          w="56px"
+          h="56px"
+          borderRadius="full"
+          color="white"
+          bgGradient="linear(to-r, yellow.400, yellow.500)"
+          boxShadow="0 10px 25px rgba(0, 0, 0, 0.45)"
+          _hover={{
+            transform: 'translateY(-2px)',
+            boxShadow: '0 14px 30px rgba(0, 0, 0, 0.5)',
+            bgGradient: 'linear(to-r, yellow.400, yellow.600)',
           }}
-        >
-          {/* Container Stars */}
-          <Box
-            className="container-stars"
-            position="absolute"
-            zIndex="-1"
-            width="100%"
-            height="100%"
-            overflow="hidden"
-            transition="0.5s"
-            backdropFilter="blur(1rem)"
-            borderRadius="50%"
-          >
-            <Box
-              position="relative"
-              background="transparent"
-              width="200rem"
-              height="200rem"
-              sx={{
-                '&::after': {
-                  content: '""',
-                  position: 'absolute',
-                  top: '-10rem',
-                  left: '-100rem',
-                  width: '100%',
-                  height: '100%',
-                  animation: 'animStarRotate 90s linear infinite',
-                  backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1%)',
-                  backgroundSize: '50px 50px',
-                },
-                '&::before': {
-                  content: '""',
-                  position: 'absolute',
-                  top: 0,
-                  left: '-50%',
-                  width: '170%',
-                  height: '500%',
-                  animation: 'animStar 60s linear infinite',
-                  backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1%)',
-                  backgroundSize: '50px 50px',
-                  opacity: 0.5,
-                },
-              }}
-            />
-          </Box>
-
-          {/* Glow Effect */}
-          <Box
-            position="absolute"
-            display="flex"
-            width="48px"
-            height="24px"
-            sx={{
-              '& .glow-circle': {
-                width: '100%',
-                height: '24px',
-                filter: 'blur(2rem)',
-                animation: 'pulse_3011 4s infinite',
-                zIndex: '-1',
-              },
-              '& .glow-circle:nth-of-type(1)': {
-                background: 'rgba(254, 83, 186, 0.636)',
-              },
-              '& .glow-circle:nth-of-type(2)': {
-                background: 'rgba(142, 81, 234, 0.704)',
-              },
-            }}
-          >
-            <Box className="glow-circle" />
-            <Box className="glow-circle" />
-          </Box>
-
-          {/* Chat Icon */}
-          <Box
-            position="relative"
-            zIndex="2"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            width="100%"
-            height="100%"
-          >
-            <ChatIcon 
-              color="white" 
-              boxSize={6}
-              filter="drop-shadow(0 0 4px white)"
-            />
-          </Box>
-        </Box>
+          _active={{
+            transform: 'translateY(0)',
+            boxShadow: '0 8px 20px rgba(0, 0, 0, 0.4)',
+          }}
+          transition="all 0.18s ease-out"
+        />
       )}
 
       {/* Chat Window */}
@@ -291,23 +177,10 @@ const AI_CHAT_AGENT = () => {
           borderRadius="12px"
           overflow="hidden"
           position="relative"
-          background="linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)"
-          border="1px solid"
-          borderColor="rgba(255, 255, 255, 0.1)"
-          boxShadow="0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05)"
-          backdropFilter="blur(10px)"
-          sx={{
-            '&::before': {
-              content: '""',
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              background: 'radial-gradient(circle at 20% 20%, rgba(254, 83, 186, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(142, 81, 234, 0.1) 0%, transparent 50%)',
-              zIndex: 0,
-            },
-          }}
+          bg={cardBg}
+          borderWidth="1px"
+          borderColor={borderColor}
+          boxShadow="0 16px 32px rgba(0, 0, 0, 0.4)"
         >
           {/* Header */}
           <Box
@@ -321,26 +194,26 @@ const AI_CHAT_AGENT = () => {
             px={4}
             py={2}
             borderBottom="1px solid"
-            borderColor="rgba(255, 255, 255, 0.1)"
-            background="rgba(0, 0, 0, 0.2)"
+            borderColor={borderColor}
+            background={headerBg}
           >
             <HStack spacing={3}>
               <Box
                 w="8px"
                 h="8px"
                 borderRadius="50%"
-                background="linear-gradient(45deg, #ffdb3b, #fe53bb)"
-                animation="pulse 2s ease-in-out infinite"
+                bg="green.400"
               />
-              <Text color="white" fontSize="sm" fontWeight="bold" letterSpacing="1px">
-                AI CHAT
+              <Text color={headerText} fontSize="sm" fontWeight="bold" letterSpacing="0.08em">
+                JONAH'S ASSISTANT
               </Text>
               <Badge
                 size="sm"
-                bg="rgba(34, 197, 94, 0.2)"
-                color="green.300"
-                border="1px solid"
-                borderColor="rgba(34, 197, 94, 0.3)"
+                bg="green.50"
+                color="green.700"
+                _dark={{ bg: "green.900", color: "green.200" }}
+                borderWidth="1px"
+                borderColor="green.300"
                 borderRadius="full"
                 px={2}
                 py={1}
@@ -442,11 +315,11 @@ const AI_CHAT_AGENT = () => {
                 width: '4px',
               },
               '&::-webkit-scrollbar-track': {
-                background: 'rgba(255, 255, 255, 0.1)',
+                background: 'transparent',
                 borderRadius: '2px',
               },
               '&::-webkit-scrollbar-thumb': {
-                background: 'linear-gradient(45deg, #ffdb3b, #fe53bb)',
+                background: '#d4ac0d',
                 borderRadius: '2px',
               },
             }}
@@ -464,8 +337,10 @@ const AI_CHAT_AGENT = () => {
                     position="relative"
                     sx={{
                       ...(message.sender === 'user' ? {
-                        background: 'linear-gradient(135deg, #fe53bb 0%, #8f51ea 100%)',
-                        color: 'white',
+                        background: 'linear-gradient(135deg, #f1c40f 0%, #d4ac0d 100%)',
+                        color: '#1c1c1e',
+                        border: `1px solid`,
+                        borderColor: userBubbleBorder,
                         '&::before': {
                           content: '""',
                           position: 'absolute',
@@ -474,12 +349,14 @@ const AI_CHAT_AGENT = () => {
                           width: 0,
                           height: 0,
                           borderLeft: '8px solid transparent',
-                          borderTop: '8px solid #8f51ea',
+                          borderTop: '8px solid #d4ac0d',
                         },
                       } : {
-                        background: 'rgba(255, 255, 255, 0.1)',
-                        color: 'white',
-                        border: '1px solid rgba(255, 255, 255, 0.2)',
+                        background: 'rgba(0, 0, 0, 0.02)',
+                        _dark: { background: 'rgba(255, 255, 255, 0.04)' },
+                        color: headerText,
+                        border: '1px solid',
+                        borderColor: aiBubbleBorder,
                         '&::before': {
                           content: '""',
                           position: 'absolute',
@@ -556,8 +433,10 @@ const AI_CHAT_AGENT = () => {
                   <Box
                     p={3}
                     borderRadius="12px"
-                    background="rgba(255, 255, 255, 0.1)"
-                    border="1px solid rgba(255, 255, 255, 0.2)"
+                    background="rgba(0, 0, 0, 0.02)"
+                    _dark={{ background: 'rgba(255, 255, 255, 0.04)' }}
+                    border="1px solid"
+                    borderColor={aiBubbleBorder}
                     position="relative"
                     sx={{
                       '&::before': {
@@ -574,7 +453,7 @@ const AI_CHAT_AGENT = () => {
                   >
                     <HStack spacing={2}>
                       <Spinner size="sm" color="white" />
-                      <Text fontSize="sm" color="white">
+                      <Text fontSize="sm" color={headerText}>
                         Thinking...
                       </Text>
                     </HStack>
@@ -589,9 +468,14 @@ const AI_CHAT_AGENT = () => {
           {/* Error Message */}
           {error && (
             <Box position="relative" zIndex={1} p={3}>
-              <Alert status="error" borderRadius="md" bg="rgba(255, 0, 0, 0.1)" border="1px solid rgba(255, 0, 0, 0.3)">
-                <AlertIcon color="red.400" />
-                <Text fontSize="sm" color="red.400">{error}</Text>
+              <Alert
+                status="error"
+                borderRadius="md"
+                bg="rgba(254, 178, 178, 0.16)"
+                border="1px solid rgba(248, 113, 113, 0.6)"
+              >
+                <AlertIcon />
+                <Text fontSize="sm">{error}</Text>
               </Alert>
             </Box>
           )}
@@ -602,16 +486,16 @@ const AI_CHAT_AGENT = () => {
             zIndex={1}
             p={3}
             borderTop="1px solid"
-            borderColor="rgba(255, 255, 255, 0.1)"
-            background="rgba(0, 0, 0, 0.2)"
+            borderColor={borderColor}
+            background={headerBg}
           >
             <HStack
               spacing={2}
               p={2}
               borderRadius="8px"
-              background="rgba(255, 255, 255, 0.05)"
+              background={cardBg}
               border="1px solid"
-              borderColor="rgba(255, 255, 255, 0.1)"
+              borderColor={borderColor}
               _focusWithin={{
                 borderColor: "rgba(254, 83, 186, 0.5)",
                 boxShadow: "0 0 0 1px rgba(254, 83, 186, 0.2)",
@@ -622,13 +506,13 @@ const AI_CHAT_AGENT = () => {
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
-                placeholder="Ask about Jonah's projects, skills, or experience..."
+                placeholder="Ask about a project, role, or skill..."
                 size="sm"
                 disabled={isLoading}
                 border="none"
                 background="transparent"
-                color="white"
-                _placeholder={{ color: "gray.400" }}
+                color={headerText}
+                _placeholder={{ color: mutedText }}
                 _focus={{ boxShadow: "none" }}
                 flex="1"
               />
@@ -637,13 +521,13 @@ const AI_CHAT_AGENT = () => {
                 icon={<ArrowUpIcon />}
                 size="sm"
                 borderRadius="6px"
-                background="linear-gradient(135deg, #fe53bb 0%, #8f51ea 100%)"
+                bgGradient="linear(to-r, yellow.400, yellow.500)"
                 color="white"
                 onClick={handleSendMessage}
                 disabled={!inputValue.trim() || isLoading}
                 isLoading={isLoading}
                 _hover={{
-                  background: "linear-gradient(135deg, #ff6b9d 0%, #9d5ae8 100%)",
+                  bgGradient: "linear(to-r, yellow.400, yellow.600)",
                   transform: "scale(1.05)",
                 }}
                 transition="all 0.2s ease"
