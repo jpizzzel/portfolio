@@ -23,8 +23,7 @@ const AI_CHAT_AGENT = () => {
     {
       id: 1,
       text: "Hi! I'm Jonah's AI assistant. I can answer questions about his projects, skills, experience, and background. What would you like to know?",
-      sender: 'ai',
-      timestamp: new Date(),
+      sender: 'ai'
     }
   ]);
   const [inputValue, setInputValue] = useState('');
@@ -117,8 +116,7 @@ const AI_CHAT_AGENT = () => {
       {
         id: 1,
         text: "Hi! I'm Jonah's AI assistant. I can answer questions about his projects, skills, experience, and background. What would you like to know?",
-        sender: 'ai',
-        timestamp: new Date(),
+        sender: 'ai'
       }
     ]);
     setError('');
@@ -541,12 +539,14 @@ const AI_CHAT_AGENT = () => {
                         message.text
                       )}
                     </Text>
-                    <Text fontSize="xs" opacity={0.7} mt={1}>
-                      {message.timestamp.toLocaleTimeString([], { 
-                        hour: '2-digit', 
-                        minute: '2-digit' 
-                      })}
-                    </Text>
+                    {message.sender === 'user' && message.timestamp && (
+                      <Text fontSize="xs" opacity={0.7} mt={1}>
+                        {message.timestamp.toLocaleTimeString([], { 
+                          hour: '2-digit', 
+                          minute: '2-digit' 
+                        })}
+                      </Text>
+                    )}
                   </Box>
                 </Box>
               ))}
