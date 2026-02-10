@@ -1,215 +1,150 @@
 import {
+  Accordion,
+  AccordionButton,
+  AccordionIcon,
+  AccordionItem,
+  AccordionPanel,
   Box,
-  Flex,
-  Tabs,
-  TabList,
-  TabPanels,
-  Tab,
-  TabPanel,
+  Heading,
+  HStack,
+  Stack,
   Text,
-  VStack,
-  Circle,
+  useColorModeValue,
 } from "@chakra-ui/react";
-import { LuBookText, LuSchool, LuFileChartColumnIncreasing, LuChartNetwork, LuComputer } from "react-icons/lu";
+import { LuBriefcase, LuSchool } from "react-icons/lu";
 
-// Timeline Components
-export const TimelineRoot = ({ children, ...props }) => (
-  <VStack align="stretch" spacing={6} {...props}>
-    {children}
-  </VStack>
-);
+const workItems = [
+  {
+    dates: "May 2025 – Present",
+    organization: "Watershed Ventures",
+    role: "AI Software Engineering Intern",
+    details: [
+      "https://watershed.vc/",
+      "Developing a multi-agent AI system that automates VC research, data enrichment, database management, and memo generation.",
+      "Reducing manual research and data entry time by over 90% while maintaining real-time startup data quality.",
+      "Utilzing: Python, Supabase, AWS, Next.js, Postgres.",
+    ],
+  },
+  {
+    dates: "Sept 2025 – Dec 2025",
+    organization: "Tufts University",
+    role: "CS Teaching Assistant",
+    details: [
+      "TA for the CS 11: C++ course.",
+    ],
+  },
+  {
+    dates: "Jun 2024 – Aug 2024",
+    organization: "SoundSense",
+    role: "Engineering Intern",
+    details: [
+      "https://www.soundsense.com/",
+      "Shadowed a senior engineer across project management, consulting, and data analysis.",
+    ],
+  },
+];
 
-export const TimelineItem = ({ children, ...props }) => (
-  <Flex align="flex-start" {...props}>
-    {children}
-  </Flex>
-);
+const educationItems = [
+  {
+    dates: "Expected 2027",
+    organization: "Tufts University",
+    role: "B.S. in Computer Engineering",
+    details: [ "JumboCode Developer", "EWB Tech Group Lead", "Club Soccer Captain", "Chess Club Treasurer"
+      ],
+  },
+];
 
-export const TimelineConnector = ({ icon, ...props }) => (
-  <Circle size="10" bg="#d4ac0d" color="white" {...props}>
-    {icon}
-  </Circle>
-);
+const ExperienceSection = ({ title, icon: IconComponent, items }) => {
+  const cardBg = useColorModeValue("white", "#1c1c1e");
+  const cardBorder = useColorModeValue("gray.200", "gray.700");
+  const headingColor = useColorModeValue("gray.800", "gray.100");
+  const muted = useColorModeValue("gray.600", "gray.400");
 
-export const TimelineContent = ({ children, ...props }) => (
-  <Box flex="1" pl={4} {...props}>
-    {children}
-  </Box>
-);
+  return (
+    <Box
+      borderWidth="1px"
+      borderColor={cardBorder}
+      borderRadius="lg"
+      p={4}
+      mb={6}
+      bg={cardBg}
+      boxShadow="sm"
+    >
+      <HStack spacing={2} mb={2}>
+        {IconComponent && (
+          <Box
+            as={IconComponent}
+            boxSize={4}
+            color="#d4ac0d"
+          />
+        )}
+        <Heading as="h3" size="sm" color={headingColor}>
+          {title}
+        </Heading>
+      </HStack>
 
-export const TimelineTitle = ({ children, ...props }) => (
-  <Text fontSize="lg" fontWeight="bold" {...props}>
-    {children}
-  </Text>
-);
-
-export const TimelineDescription = ({ children, ...props }) => (
-  <Text fontSize="sm" color="gray.600" {...props}>
-    {children}
-  </Text>
-);
-
-export const JobDescription = ({ children, ...props }) => (
-  <Text fontSize="md" fontWeight="bold" {...props}>
-    {children}
-  </Text>
-);
+      <Accordion allowMultiple border="none">
+        {items.map((item) => (
+          <AccordionItem key={`${item.organization}-${item.dates}`} border="none">
+            <h2>
+              <AccordionButton px={0} py={3}>
+                <HStack
+                  w="full"
+                  align="flex-start"
+                  justify="space-between"
+                  spacing={4}
+                >
+                  <Stack spacing={0} align="flex-start">
+                    <Text fontWeight="semibold">{item.organization}</Text>
+                    <Text fontSize="sm" color={muted}>
+                      {item.role}
+                    </Text>
+                  </Stack>
+                  <Text
+                    fontSize="sm"
+                    color={muted}
+                    textAlign="right"
+                    whiteSpace="nowrap"
+                  >
+                    {item.dates}
+                  </Text>
+                </HStack>
+                <AccordionIcon ml={2} />
+              </AccordionButton>
+            </h2>
+            {item.details && item.details.length > 0 && (
+              <AccordionPanel px={0} pt={0} pb={3}>
+                <Stack spacing={1}>
+                  {item.details.map((line, idx) => (
+                    <Text key={idx} fontSize="sm" color={muted}>
+                      {line}
+                    </Text>
+                  ))}
+                </Stack>
+              </AccordionPanel>
+            )}
+          </AccordionItem>
+        ))}
+      </Accordion>
+    </Box>
+  );
+};
 
 // Main Component
 const TabsW = () => {
   return (
-    <Tabs
-      variant="unstyled"
-      maxW="lg"
-      defaultIndex={0}
-      align="start"
-      orientation="horizontal"
-    >
-      <TabList
-        display="flex"
-        flexDirection={{ base: "column", md: "row" }} // Stack vertically on smaller screens
-        bg="white"
-        _dark={{ bg: "#1c1c1e", borderColor: "gray.700" }}
-        rounded="lg"
-        p={1}
-        shadow="md"
-        border="1px solid"
-        borderColor="gray.300"
-        >
-        <Tab
-            _selected={{ bg: "#d4ac0d", color: "white", shadow: "sm" }}
-            px={{ base: 8, md: 24 }} // Adjust padding for smaller screens
-            py={1}
-            rounded="md"
-            display="flex"
-            alignItems="center"
-            gap={1}
-        >
-            Work
-        </Tab>
-        <Tab
-            _selected={{ bg: "#d4ac0d", color: "white", shadow: "sm" }}
-            px={{ base: 8, md: 24 }} // Adjust padding for smaller screens
-            py={1}
-            rounded="md"
-            display="flex"
-            alignItems="center"
-            gap={0}
-        >
-            Education
-        </Tab>
-        </TabList>
-      <TabPanels
-        mt={4}
-        rounded="lg"
-        p={4}
-        shadow="md"
-        border="1px"
-        borderColor="gray.300"
-        bg="white"
-        _dark={{ bg: "#1c1c1e", borderColor: "gray.700" }}
-        overflow="hidden"
-        transition="transform 0.3s ease, box-shadow 0.3s ease"
-        _hover={{
-            transform: 'scale(1.05)',
-            boxShadow: '0px 4px 15px #d4ac0d',
-        }}
-      >
-        {/* Work Experience Tab */}
-        <TabPanel>
-          <TimelineRoot>
-
-          <TimelineItem>
-              <TimelineConnector icon={<LuChartNetwork />} />
-              <TimelineContent>
-                <TimelineDescription>May 2025 - Present</TimelineDescription>
-                <TimelineTitle>Watershed Ventures</TimelineTitle>
-                <JobDescription>AI Software Engineering Intern</JobDescription>
-                <Text>
-                    - Developed a multi-agent AI system that automated venture capital research and data enrichment processes
-                </Text>
-                <Text>
-                    - Built specialized agents for company retrieval, data enrichment, and database management using Google Gemini
-                </Text>
-                <Text>
-                    - Created automated pipelines for importing CSVs, enriching missing fields, and updating investor portfolios
-                </Text>
-                <Text>
-                    - Designed Supabase/Postgres schema with JSONB fields and SQL triggers for automatic indexing and search
-                </Text>
-                <Text>
-                    - Cut manual research and data entry time by over 50% while providing real-time startup data across accelerators
-                </Text>
-              </TimelineContent>
-            </TimelineItem>
-
-            <TimelineItem>
-              <TimelineConnector icon={<LuComputer />} />
-              <TimelineContent>
-                <TimelineDescription>Sept 2024 - May 2025</TimelineDescription>
-                <TimelineTitle>JumboCode</TimelineTitle>
-                <JobDescription>Full Stack Engineer</JobDescription>
-                <Text>
-                    - Building pro-bono web and mobile apps for nonprofit clients, working on both Frontend and Backend software development
-                </Text>
-              </TimelineContent>
-            </TimelineItem>
-
-            
-
-            <TimelineItem>
-              <TimelineConnector icon={<LuChartNetwork />} />
-              <TimelineContent>
-                <TimelineDescription>Aug 2024 - May 2025</TimelineDescription>
-                <TimelineTitle>Engineers Without Borders</TimelineTitle>
-                <JobDescription>Data Analytics Tech Group Lead</JobDescription>
-                <Text>
-                    - I manage a group of 10-20 undergraduate engineers for a non-profit organization dedicated to building a better world
-                </Text>
-                    
-                <Text>
-                    - Technologies we use include arduinos, raspberrypis, CAD software, github and python
-                </Text>
-              </TimelineContent>
-            </TimelineItem>
-
-            <TimelineItem>
-              <TimelineConnector icon={<LuFileChartColumnIncreasing />} />
-              <TimelineContent>
-                <TimelineDescription>Jun 2024 - Aug 2024</TimelineDescription>
-                <TimelineTitle>SoundSense</TimelineTitle>
-                <JobDescription>Engineering Intern</JobDescription>
-                <Text>
-                    - Shadowing a senior engineer in project management, consulting, data anaylsis and more
-                </Text>
-              </TimelineContent>
-            </TimelineItem>
-
-          </TimelineRoot>
-        </TabPanel>
-
-        {/* Education Tab */}
-        <TabPanel>
-          <TimelineRoot>
-            <TimelineItem>
-              <TimelineConnector icon={<LuBookText />} />
-              <TimelineContent>
-                <TimelineDescription>Expected 2027</TimelineDescription>
-                <TimelineTitle>Bachelors Degree in Computer Engineering</TimelineTitle>
-              </TimelineContent>
-            </TimelineItem>
-
-            <TimelineItem>
-              <TimelineConnector icon={<LuSchool />} />
-              <TimelineContent>
-                <TimelineDescription>2019 - 2023</TimelineDescription>
-                <TimelineTitle>Earl L. Vandermeulen High School</TimelineTitle>
-              </TimelineContent>
-            </TimelineItem>
-          </TimelineRoot>
-        </TabPanel>
-      </TabPanels>
-    </Tabs>
+    <Box maxW="lg">
+      <ExperienceSection
+        title="Work"
+        icon={LuBriefcase}
+        items={workItems}
+      />
+      <ExperienceSection
+        title="Education"
+        icon={LuSchool}
+        items={educationItems}
+      />
+    </Box>
   );
 };
 
