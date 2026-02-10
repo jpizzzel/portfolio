@@ -74,7 +74,8 @@ const Page = () => {
                         About Me!
                     </Heading>
                     <Paragraph>
-                        I am currently an AI Software Engineering Intern at Watershed Ventures and a 3rd year Computer Engineering student at Tufts.
+                        I am currently an AI Software Engineering Intern at Watershed Ventures and a 3rd year Computer Engineering student at Tufts. 
+                        When I'm not working on a project I am either playing fútbol, skiing, surfing, or just messing around with new technologies.
                     </Paragraph>
                     <Box align="center" my={4}>
                         <Button
