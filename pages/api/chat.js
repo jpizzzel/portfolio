@@ -114,7 +114,7 @@ FILTERING RULES:
         Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
       },
       body: JSON.stringify({
-        model: 'openai/gpt-4.1-mini',
+        model: 'openrouter/aurora-alpha',
         messages: [
           { role: 'system', content: jonahContext },
           { role: 'user', content: message },
