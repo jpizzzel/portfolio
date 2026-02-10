@@ -11,7 +11,6 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { LuBriefcase, LuSchool } from "react-icons/lu";
 
 const workItems = [
   {
@@ -136,12 +135,10 @@ const TabsW = () => {
     <Box maxW="lg">
       <ExperienceSection
         title="Work"
-        icon={LuBriefcase}
         items={workItems}
       />
       <ExperienceSection
         title="Education"
-        icon={LuSchool}
         items={educationItems}
       />
     </Box>

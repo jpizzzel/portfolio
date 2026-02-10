@@ -8,7 +8,6 @@ import {
     Icon,
     List,
     ListItem,
-    useColorModeValue,
     HStack
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
@@ -31,10 +30,6 @@ const Page = () => {
     return (
         <Layout>
             <Container>
-                <Box borderRadius="lg" bg={useColorModeValue('gray.100', 'whiteAlpha.200')} p={3} mb={6} align="center">
-                    Hello, I am a current 3rd year engineering student at Tufts!
-                </Box>
-                    
                 <Box display={{ md: 'flex' }}>
                     <Box flexGrow={1}>
                     <Heading as="h2" variant="page-title">
@@ -79,7 +74,7 @@ const Page = () => {
                         About Me!
                     </Heading>
                     <Paragraph>
-                        I love futbol, skiing, surfing, and messing around with new technologies. Currently I am working on a project centered around AI generated CAD.
+                        I am currently an AI Software Engineering Intern at Watershed Ventures and a 3rd year Computer Engineering student at Tufts.
                     </Paragraph>
                     <Box align="center" my={4}>
                         <Button
