@@ -7,6 +7,7 @@ import {
   Box,
   Heading,
   HStack,
+  Link,
   Stack,
   Text,
   useColorModeValue,
@@ -16,6 +17,7 @@ const workItems = [
   {
     dates: "May 2025 – Present",
     organization: "Watershed Ventures",
+    url: "https://watershed.vc",
     role: "AI Software Engineering Intern",
     details: [
       "https://watershed.vc/",
@@ -35,6 +37,7 @@ const workItems = [
   {
     dates: "Jun 2024 – Aug 2024",
     organization: "SoundSense",
+    url: "https://www.soundsense.com",
     role: "Engineering Intern",
     details: [
       "https://www.soundsense.com/",
@@ -58,6 +61,7 @@ const ExperienceSection = ({ title, icon: IconComponent, items }) => {
   const cardBorder = useColorModeValue("gray.200", "gray.700");
   const headingColor = useColorModeValue("gray.800", "gray.100");
   const muted = useColorModeValue("gray.600", "gray.400");
+  const linkColor = useColorModeValue("blue.600", "blue.300");
 
   return (
     <Box
@@ -94,7 +98,20 @@ const ExperienceSection = ({ title, icon: IconComponent, items }) => {
                   spacing={4}
                 >
                   <Stack spacing={0} align="flex-start">
-                    <Text fontWeight="semibold">{item.organization}</Text>
+                    <Text fontWeight="semibold">
+                      {item.url ? (
+                        <Link
+                          href={item.url}
+                          isExternal
+                          color={linkColor}
+                          _hover={{ textDecoration: "underline" }}
+                        >
+                          {item.organization}
+                        </Link>
+                      ) : (
+                        item.organization
+                      )}
+                    </Text>
                     <Text fontSize="sm" color={muted}>
                       {item.role}
                     </Text>
