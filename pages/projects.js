@@ -20,11 +20,28 @@ import studentLifeManager from '../public/student_life_manager.png'
 
 const projectList = [
   {
+    id: 'courtline',
+    title: 'Courtline',
+    description:
+      'NBA data graphics platform — turn stats into scroll-stopping visuals for social media. Currently building, in user waitlist mode.',
+    thumbnail: portfo,
+    badges: ['Next.js', 'NBA API', 'In Progress'],
+    external: 'https://v0-courtline.vercel.app/',
+  },
+  {
     id: 'arm-legv8-processor',
     title: '64-bit ARM LEGv8 Processor',
     description: 'VHDL implementation of a LEGv8 Processor',
     thumbnail: arm,
     badges: ['VHDL', 'Computer Architecture'],
+  },
+  {
+    id: 'watershed-ai',
+    title: 'Multi System AI Agent',
+    description:
+      'Automated venture capital research and data enrichment system using multi-agent AI architecture.',
+    thumbnail: watershed,
+    badges: ['Agentic AI', 'Python', 'Supabase', 'AWS'],
   },
   {
     id: 'smoosh-bros',
@@ -49,14 +66,6 @@ const projectList = [
       'Personal student life management system with Canvas, Google Drive, Calendar, and Gmail integrations.',
     thumbnail: studentLifeManager,
     badges: ['Next.js', 'Automation'],
-  },
-  {
-    id: 'watershed-ai',
-    title: 'Multi System AI Agent',
-    description:
-      'Automated venture capital research and data enrichment system using multi-agent AI architecture.',
-    thumbnail: watershed,
-    badges: ['AI', 'Python', 'Supabase'],
   },
   {
     id: 'HandJam',
@@ -114,7 +123,7 @@ const projectList = [
     title: 'Portfolio Website',
     description: 'My personal portfolio website showcasing my skills and projects.',
     thumbnail: portfo,
-    badges: ['Next.js', 'Chakra UI'],
+    badges: ['Next.js'],
   },
   {
     id: 'water',
@@ -123,15 +132,6 @@ const projectList = [
       'Assisted in the creation of the water automation system for the Malawi Greenhouse Project.',
     thumbnail: wate,
     badges: ['Automation', 'Arduino'],
-  },
-  {
-    id: 'courtline',
-    title: 'Courtline',
-    description:
-      'NBA data graphics platform — turn stats into scroll-stopping visuals for social media. Currently building, in user waitlist mode.',
-    thumbnail: portfo,
-    badges: ['Next.js', 'NBA API', 'In Progress'],
-    external: 'https://v0-courtline.vercel.app/',
   },
   {
     id: 'upcoming',
@@ -147,7 +147,7 @@ const Projects = () => {
 
   return (
     <Layout title="Projects">
-      <Container maxW="container.lg" pt={6}>
+      <Container maxW="container.lg">
         <Section>
           <Heading
             as="h3"
