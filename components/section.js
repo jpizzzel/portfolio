@@ -15,9 +15,9 @@ const Section = ({ children, delay = 0 }) => {
   return (
     <StyledDiv
       ref={ref}
-      initial={{ y: 10, opacity: 0 }}
-      animate={isInView ? { y: 0, opacity: 1 } : { y: 10, opacity: 0 }}
-      transition={{ duration: 0.6, delay }}
+      initial={{ y: 20, opacity: 0, rotate: -0.5 }}
+      animate={isInView ? { y: 0, opacity: 1, rotate: 0 } : { y: 20, opacity: 0, rotate: -0.5 }}
+      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
       mb={6}
     >
       {children}

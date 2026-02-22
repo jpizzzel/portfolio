@@ -13,7 +13,7 @@ import Layout from '../../components/layouts/article'
 
 const Work = () => (
   <Layout title="Multi System AI Agent">
-    <Container>
+    <Container pt={6}>
       <Title>
         Multi-Agent AI System<Badge>2025</Badge>
       </Title>

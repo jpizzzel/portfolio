@@ -17,10 +17,62 @@ import {
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
 
+const SquiggleUnderline = ({ active }) => (
+  <Box
+    position="absolute"
+    bottom="-2px"
+    left="0"
+    w="100%"
+    h="6px"
+    overflow="hidden"
+    opacity={active ? 1 : 0}
+    transition="opacity 0.2s ease"
+  >
+    <svg
+      viewBox="0 0 60 6"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      style={{ width: '100%', height: '6px' }}
+    >
+      <path
+        d="M0 3 C5 1, 10 5, 15 3 S25 1, 30 3 S40 5, 45 3 S55 1, 60 3"
+        stroke="#D4735E"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        fill="none"
+      />
+    </svg>
+  </Box>
+)
+
+const NavWaveBorder = () => {
+  const color = useColorModeValue('#E8DCD0', '#3D352C')
+
+  return (
+    <Box position="absolute" bottom="-8px" left={0} w="100%" h="8px" zIndex={1}>
+      <svg
+        viewBox="0 0 1200 8"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+        style={{ width: '100%', height: '8px', display: 'block' }}
+      >
+        <path
+          d="M0 4 C100 1, 200 7, 300 4 S500 1, 600 4 S800 7, 900 4 S1100 1, 1200 4"
+          stroke={color}
+          strokeWidth="1.5"
+          fill="none"
+          strokeLinecap="round"
+        />
+      </svg>
+    </Box>
+  )
+}
+
 const LinkItem = ({ href, path, children }) => {
   const active = path === href
-  const color = useColorModeValue('gray.700', 'gray.200')
-  const activeColor = useColorModeValue('brand.500', 'brand.400')
+  const color = useColorModeValue('#2D2319', '#F0E8DE')
+  const activeColor = useColorModeValue('#2B7A8C', '#3D9DB0')
 
   return (
     <NextLink href={href} passHref legacyBehavior>
@@ -29,20 +81,22 @@ const LinkItem = ({ href, path, children }) => {
         px={3}
         display="flex"
         alignItems="center"
+        position="relative"
         color={active ? activeColor : color}
         fontWeight={active ? '600' : '400'}
         fontSize="sm"
-        borderBottom="2px solid"
-        borderColor={active ? 'brand.400' : 'transparent'}
         borderRadius="0"
         _hover={{
           color: activeColor,
-          borderColor: 'brand.400',
           textDecoration: 'none',
+          '& .squiggle': { opacity: 1 },
         }}
         transition="all 0.2s ease"
       >
         {children}
+        <Box className="squiggle">
+          <SquiggleUnderline active={active} />
+        </Box>
       </Link>
     </NextLink>
   )
@@ -52,10 +106,10 @@ const Navbar = props => {
   const { path } = props
   const { isOpen, onToggle } = useDisclosure()
   const bg = useColorModeValue(
-    'rgba(250, 250, 250, 0.8)',
-    'rgba(10, 10, 10, 0.8)'
+    'rgba(251, 247, 242, 0.85)',
+    'rgba(26, 22, 18, 0.85)'
   )
-  const borderColor = useColorModeValue('gray.200', 'whiteAlpha.100')
+  const hoverBg = useColorModeValue('sand.100', 'sand.800')
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -70,8 +124,6 @@ const Navbar = props => {
       as="nav"
       w="100%"
       bg={bg}
-      borderBottom="1px solid"
-      borderColor={borderColor}
       style={{ backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}
       zIndex={10}
       {...props}
@@ -119,6 +171,8 @@ const Navbar = props => {
         </Box>
       </Container>
 
+      <NavWaveBorder />
+
       {/* Mobile menu */}
       <Collapse in={isOpen} animateOpacity>
         <Box display={{ md: 'none' }} pb={4} px={4}>
@@ -127,7 +181,7 @@ const Navbar = props => {
               <Link
                 p={3}
                 borderRadius="md"
-                _hover={{ bg: useColorModeValue('gray.100', 'whiteAlpha.100') }}
+                _hover={{ bg: hoverBg }}
                 onClick={onToggle}
               >
                 Home
@@ -137,7 +191,7 @@ const Navbar = props => {
               <Link
                 p={3}
                 borderRadius="md"
-                _hover={{ bg: useColorModeValue('gray.100', 'whiteAlpha.100') }}
+                _hover={{ bg: hoverBg }}
                 onClick={onToggle}
               >
                 Projects
@@ -147,7 +201,7 @@ const Navbar = props => {
               <Link
                 p={3}
                 borderRadius="md"
-                _hover={{ bg: useColorModeValue('gray.100', 'whiteAlpha.100') }}
+                _hover={{ bg: hoverBg }}
                 onClick={onToggle}
               >
                 Résumé
@@ -157,7 +211,7 @@ const Navbar = props => {
               <Link
                 p={3}
                 borderRadius="md"
-                _hover={{ bg: useColorModeValue('gray.100', 'whiteAlpha.100') }}
+                _hover={{ bg: hoverBg }}
                 onClick={onToggle}
               >
                 Contact

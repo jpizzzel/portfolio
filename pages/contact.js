@@ -28,9 +28,11 @@ const Contact = () => {
     message: '',
   })
   const toast = useToast()
-  const mutedText = useColorModeValue('gray.600', 'gray.400')
-  const cardBg = useColorModeValue('white', 'transparent')
-  const cardBorder = useColorModeValue('gray.200', 'whiteAlpha.100')
+  const mutedText = useColorModeValue('sand.500', 'sand.400')
+  const cardBg = useColorModeValue('#FFFFFF', 'transparent')
+  const cardBorder = useColorModeValue('sand.200', 'sand.800')
+  const inputBorder = useColorModeValue('sand.300', 'sand.600')
+  const shadowColor = useColorModeValue('#D4C4B0', '#3D352C')
 
   const handleChange = e => {
     const { id, value } = e.target
@@ -81,12 +83,25 @@ const Contact = () => {
 
   return (
     <Layout title="Contact Me">
-      <Container maxW="container.md">
+      <Container maxW="container.md" pt={6}>
         <Section>
-          <Heading as="h3" fontSize={28} mb={2} textAlign="center">
+          <Heading
+            as="h3"
+            fontSize={32}
+            mb={2}
+            textAlign="center"
+            fontFamily="var(--font-instrument-serif), Georgia, serif"
+            fontWeight="400"
+          >
             Get in Touch
           </Heading>
-          <Text textAlign="center" color={mutedText} mb={8} fontSize="sm">
+          <Text
+            textAlign="center"
+            fontFamily="var(--font-caveat), cursive"
+            color={mutedText}
+            mb={8}
+            fontSize="lg"
+          >
             Feel free to reach out via email or the form below
           </Text>
         </Section>
@@ -98,15 +113,15 @@ const Contact = () => {
               as="a"
               href="mailto:jonahpflaster23pj@gmail.com"
               p={4}
-              border="1px solid"
+              border="2px dashed"
               borderColor={cardBorder}
-              borderRadius="xl"
+              borderRadius="12px"
               bg={cardBg}
               transition="all 0.2s ease"
               _hover={{
                 borderColor: 'brand.400',
                 transform: 'translateY(-2px)',
-                shadow: 'md',
+                boxShadow: `3px 3px 0 ${shadowColor}`,
               }}
             >
               <HStack spacing={3}>
@@ -126,15 +141,15 @@ const Contact = () => {
               href="https://www.linkedin.com/in/jonah-pflaster-195359218/"
               target="_blank"
               p={4}
-              border="1px solid"
+              border="2px dashed"
               borderColor={cardBorder}
-              borderRadius="xl"
+              borderRadius="12px"
               bg={cardBg}
               transition="all 0.2s ease"
               _hover={{
                 borderColor: 'brand.400',
                 transform: 'translateY(-2px)',
-                shadow: 'md',
+                boxShadow: `3px 3px 0 ${shadowColor}`,
               }}
             >
               <HStack spacing={3}>
@@ -156,50 +171,81 @@ const Contact = () => {
         <Section delay={0.2}>
           <Box
             p={6}
-            border="1px solid"
+            border="2px solid"
             borderColor={cardBorder}
-            borderRadius="xl"
+            borderRadius="12px"
             bg={cardBg}
           >
             <form onSubmit={handleSubmit}>
               <FormControl id="name" mb={4} isRequired>
-                <FormLabel fontSize="sm">Name</FormLabel>
+                <FormLabel
+                  fontFamily="var(--font-caveat), cursive"
+                  fontSize="16px"
+                  color="sunset.400"
+                >
+                  Name
+                </FormLabel>
                 <Input
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={handleChange}
                   size="md"
-                  borderRadius="lg"
+                  variant="flushed"
+                  borderBottomWidth="2px"
+                  borderColor={inputBorder}
+                  _focus={{ borderColor: 'brand.400' }}
                 />
               </FormControl>
               <FormControl id="email" mb={4} isRequired>
-                <FormLabel fontSize="sm">Email</FormLabel>
+                <FormLabel
+                  fontFamily="var(--font-caveat), cursive"
+                  fontSize="16px"
+                  color="sunset.400"
+                >
+                  Email
+                </FormLabel>
                 <Input
                   type="email"
                   placeholder="Your Email"
                   value={formData.email}
                   onChange={handleChange}
                   size="md"
-                  borderRadius="lg"
+                  variant="flushed"
+                  borderBottomWidth="2px"
+                  borderColor={inputBorder}
+                  _focus={{ borderColor: 'brand.400' }}
                 />
               </FormControl>
               <FormControl id="message" mb={6} isRequired>
-                <FormLabel fontSize="sm">Message</FormLabel>
+                <FormLabel
+                  fontFamily="var(--font-caveat), cursive"
+                  fontSize="16px"
+                  color="sunset.400"
+                >
+                  Message
+                </FormLabel>
                 <Textarea
                   placeholder="Your Message"
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
-                  borderRadius="lg"
+                  variant="flushed"
+                  borderBottomWidth="2px"
+                  borderColor={inputBorder}
+                  _focus={{ borderColor: 'brand.400' }}
                 />
               </FormControl>
               <Button
                 type="submit"
-                colorScheme="cyan"
+                bg="brand.400"
+                color="white"
                 size="md"
+                transform="rotate(-0.5deg)"
+                boxShadow={`3px 3px 0 ${shadowColor}`}
                 _hover={{
-                  transform: 'translateY(-1px)',
-                  shadow: 'md',
+                  transform: 'rotate(0deg) translateY(-1px)',
+                  boxShadow: `4px 4px 0 ${shadowColor}`,
+                  bg: 'brand.500',
                 }}
                 transition="all 0.2s ease"
               >

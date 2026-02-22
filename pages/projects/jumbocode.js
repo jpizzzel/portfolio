@@ -18,7 +18,7 @@ import Layout from '../../components/layouts/article'
 
 const Work = () => (
 <Layout title="EWB">
-    <Container>
+    <Container pt={6}>
     <Title>
         JumboCode Project Currently In Progress<Badge>2024-2025</Badge>
     </Title>
@@ -51,7 +51,7 @@ const Work = () => (
         </ListItem>
     </List> 
         <Section>
-            <Tabs variant='soft-rounded' colorScheme='green'>
+            <Tabs variant='soft-rounded' colorScheme='brand'>
                 <TabList>
                     <Tab>Profile Page</Tab>
                     <Tab>Statscard</Tab>

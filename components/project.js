@@ -18,11 +18,11 @@ export const Title = ({ children }) => (
 )
 
 export const WorkImage = ({ src, alt }) => (
-  <Image borderRadius="lg" w="full" src={src} alt={alt} mb={4} />
+  <Image borderRadius="12px" w="full" src={src} alt={alt} mb={4} />
 )
 
 export const Meta = ({ children }) => (
-  <Badge colorScheme="green" mr={2}>
+  <Badge bg="sunset.400" color="white" mr={2} borderRadius="full" px={2}>
     {children}
   </Badge>
 )

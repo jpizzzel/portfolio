@@ -13,7 +13,7 @@ import Layout from '../../components/layouts/article'
 
 const Work = () => (
 <Layout title="AI CAD Project Builder">
-    <Container>
+    <Container pt={6}>
     <Title>
         AI CAD Project Builder <Badge>2025</Badge>
     </Title>

@@ -14,7 +14,7 @@ import logo from '../../public/smoosh_bros.jpeg';
 
 const Work = () => (
   <Layout title="Smoosh Bros">
-    <Container>
+    <Container pt={6}>
       <Title>
         Smoosh Bros - FPGA Fighting Game <Badge>2025</Badge>
       </Title>

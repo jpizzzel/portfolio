@@ -15,7 +15,7 @@ import Image from 'next/image'
 
 const Work = () => (
   <Layout title="Calendar Connect">
-    <Container>
+    <Container pt={6}>
       <Title>
         Calendar Connect <Badge>2024</Badge>
       </Title>

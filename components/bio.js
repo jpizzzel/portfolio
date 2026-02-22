@@ -7,7 +7,7 @@ export const BioSection = ({ children, ...props }) => (
 )
 
 export const BioYear = ({ children, ...props }) => (
-  <Text as="span" fontWeight="bold" mr="1em" {...props}>
+  <Text as="span" fontWeight="bold" mr="1em" color="sunset.400" {...props}>
     {children}
   </Text>
 )

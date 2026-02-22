@@ -1,12 +1,13 @@
-import { Box, Divider, HStack, IconButton, Text, useColorModeValue } from '@chakra-ui/react'
+import { Box, HStack, IconButton, Text, useColorModeValue } from '@chakra-ui/react'
 import { IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5'
+import { WaveDivider } from './divider'
 
 const Footer = () => {
-  const color = useColorModeValue('gray.500', 'gray.500')
+  const color = useColorModeValue('sand.500', 'sand.400')
 
   return (
     <Box as="footer" pb={6} pt={4} px={4}>
-      <Divider mb={4} borderColor={useColorModeValue('gray.200', 'whiteAlpha.200')} />
+      <WaveDivider my={4} />
       <Box textAlign="center">
         <HStack justify="center" spacing={3} mb={2}>
           <IconButton
@@ -18,8 +19,11 @@ const Footer = () => {
             variant="ghost"
             size="sm"
             color={color}
-            _hover={{ color: 'brand.400', transform: 'translateY(-1px)' }}
-            transition="all 0.2s ease"
+            _hover={{
+              color: 'brand.400',
+              animation: 'wiggle 0.4s ease-in-out',
+            }}
+            transition="color 0.2s ease"
           />
           <IconButton
             as="a"
@@ -30,8 +34,11 @@ const Footer = () => {
             variant="ghost"
             size="sm"
             color={color}
-            _hover={{ color: 'brand.400', transform: 'translateY(-1px)' }}
-            transition="all 0.2s ease"
+            _hover={{
+              color: 'brand.400',
+              animation: 'wiggle 0.4s ease-in-out',
+            }}
+            transition="color 0.2s ease"
           />
         </HStack>
         <Text fontSize="xs" color={color}>

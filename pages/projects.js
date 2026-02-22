@@ -2,6 +2,7 @@ import { Container, Heading, SimpleGrid, Text, useColorModeValue } from '@chakra
 import Section from '../components/section'
 import Layout from '../components/layouts/article'
 import ProjectCard from '../components/project-card'
+import { MountainDivider } from '../components/divider'
 
 import calendars from '../public/searchSS.png'
 import portfo from '../public/logo.png'
@@ -142,28 +143,37 @@ const projectList = [
 ]
 
 const Projects = () => {
-  const mutedText = useColorModeValue('gray.600', 'gray.400')
+  const mutedText = useColorModeValue('sand.500', 'sand.400')
 
   return (
     <Layout title="Projects">
-      <Container maxW="container.lg">
+      <Container maxW="container.lg" pt={6}>
         <Section>
-          <Heading as="h3" fontSize={28} mb={2} textAlign="center">
+          <Heading
+            as="h3"
+            fontSize={32}
+            mb={2}
+            textAlign="center"
+            fontFamily="var(--font-instrument-serif), Georgia, serif"
+            fontWeight="400"
+          >
             Projects
           </Heading>
           <Text
             textAlign="center"
+            fontFamily="var(--font-caveat), cursive"
             color={mutedText}
-            mb={8}
-            fontSize="sm"
+            mb={4}
+            fontSize="lg"
           >
-            A collection of things I&apos;ve built and contributed to
+            A collection of things I&apos;ve built and tinkered with
           </Text>
+          <MountainDivider my={4} />
         </Section>
 
-        <SimpleGrid columns={[1, 2, 3]} spacing={6}>
-          {projectList.map(item => (
-            <Section key={item.id}>
+        <SimpleGrid columns={[1, 2, 3]} spacing={8}>
+          {projectList.map((item, index) => (
+            <Section key={item.id} delay={index * 0.05}>
               <ProjectCard
                 href={item.external || `/projects/${item.id}`}
                 external={!!item.external}
@@ -171,6 +181,7 @@ const Projects = () => {
                 description={item.description}
                 thumbnail={item.thumbnail}
                 badges={item.badges}
+                index={index}
               />
             </Section>
           ))}

@@ -60,17 +60,17 @@ const educationItems = [
 ]
 
 const ExperienceSection = ({ title, items }) => {
-  const cardBg = useColorModeValue('white', 'transparent')
-  const cardBorder = useColorModeValue('gray.200', 'whiteAlpha.100')
-  const headingColor = useColorModeValue('gray.800', 'gray.100')
-  const muted = useColorModeValue('gray.600', 'gray.400')
-  const linkColor = useColorModeValue('brand.500', 'brand.400')
+  const cardBg = useColorModeValue('#FFFFFF', 'transparent')
+  const cardBorder = useColorModeValue('sand.200', 'sand.800')
+  const headingColor = useColorModeValue('#2D2319', '#F0E8DE')
+  const muted = useColorModeValue('#8B7D6B', '#A89882')
+  const linkColor = useColorModeValue('brand.400', 'brand.300')
 
   return (
     <Box
       borderWidth="1px"
       borderColor={cardBorder}
-      borderRadius="xl"
+      borderRadius="12px"
       p={4}
       mb={6}
       bg={cardBg}
@@ -78,7 +78,7 @@ const ExperienceSection = ({ title, items }) => {
       _hover={{ borderColor: 'brand.400' }}
     >
       <HStack spacing={2} mb={2}>
-        <Box w="3px" h="16px" bg="brand.400" borderRadius="full" />
+        <Box w="3px" h="16px" bg="sunset.400" borderRadius="full" />
         <Heading as="h3" size="sm" color={headingColor}>
           {title}
         </Heading>

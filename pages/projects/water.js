@@ -16,7 +16,7 @@ import Image from 'next/image'
 
 const Work = () => (
 <Layout title="EWB">
-    <Container>
+    <Container pt={6}>
     <Title>
         Engineering Without Borders (EWB) Greenhouse Automation<Badge>2024</Badge>
     </Title>

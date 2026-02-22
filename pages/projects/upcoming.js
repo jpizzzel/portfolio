@@ -14,7 +14,7 @@ import Layout from '../../components/layouts/article'
   
   const Work = () => (
     <Layout title="Upcoming">
-      <Container>
+      <Container pt={6}>
         <Title>
           My Current Projects/Ideas<Badge>2024</Badge>
         </Title>
@@ -28,7 +28,7 @@ import Layout from '../../components/layouts/article'
         started yet but hope to one day.
         </P>
         <Section>
-            <Tabs variant='soft-rounded' colorScheme='green'>
+            <Tabs variant='soft-rounded' colorScheme='brand'>
                 <TabList>
                     <Tab>Physics Simulator</Tab>
                     <Tab>Arduino Controlled Door Lock</Tab>

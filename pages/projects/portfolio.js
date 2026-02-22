@@ -12,7 +12,7 @@ import Layout from '../../components/layouts/article'
 
 const Work = () => (
   <Layout title="Calendar Connect">
-    <Container>
+    <Container pt={6}>
       <Title>
         Jonah&apos;s Portfolio Website<Badge>2024</Badge>
       </Title>

@@ -1,7 +1,7 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
 import Layout from '../components/layouts/main'
-import { mPlusRounded, inter } from '../components/fonts'
+import { instrumentSerif, dmSans, caveat } from '../components/fonts'
 import theme from '../lib/theme'
 import { AnimatePresence } from 'framer-motion'
 import { Analytics } from '@vercel/analytics/react'
@@ -14,7 +14,7 @@ const AI_CHAT_AGENT = dynamic(() => import('../components/ai-chat-agent'), {
 const Website = ({ Component, pageProps, router }) => {
   return (
     <ChakraProvider theme={theme}>
-      <div className={`${mPlusRounded.variable} ${inter.variable}`}>
+      <div className={`${instrumentSerif.variable} ${dmSans.variable} ${caveat.variable}`}>
         <Layout router={router}>
           <AnimatePresence mode="wait" initial={true}>
             <Component {...pageProps} key={router.route} />

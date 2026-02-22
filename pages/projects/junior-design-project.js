@@ -24,7 +24,7 @@ import ee31 from '../../public/ee31.jpeg'
 
 const Work = () => (
   <Layout title="EE31 Junior Design Project">
-    <Container>
+    <Container pt={6}>
       <Title>
         EE31 Junior Design Project <Badge>2025</Badge>
       </Title>

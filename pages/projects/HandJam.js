@@ -14,7 +14,7 @@ import Image from 'next/image'
 
 const Work = () => (
   <Layout title="HandJam">
-    <Container>
+    <Container pt={6}>
       <Title>
         HandJam <Badge>2025</Badge>
       </Title>

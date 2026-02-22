@@ -124,7 +124,7 @@ RESPONSE STYLE GUIDELINES (IMPORTANT):
         Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
       },
       body: JSON.stringify({
-        model: 'openrouter/aurora-alpha',
+        model: 'arcee-ai/trinity-large-preview:free',
         messages: [
           { role: 'system', content: jonahContext },
           { role: 'user', content: message },

@@ -2,10 +2,15 @@ import { Box, Stack, Badge, Text, Heading, useColorModeValue } from '@chakra-ui/
 import Image from 'next/image'
 import NextLink from 'next/link'
 
-const ProjectCard = ({ href, title, description, thumbnail, badges, external }) => {
-  const cardBg = useColorModeValue('white', 'rgba(255, 255, 255, 0.03)')
-  const borderColor = useColorModeValue('gray.200', 'whiteAlpha.100')
-  const descColor = useColorModeValue('gray.600', 'gray.400')
+const rotations = [-0.5, 0.3, -0.2, 0.4, -0.3]
+const badgeRotations = [-2, 1.5, -1, 2.5, -1.5, 2]
+
+const ProjectCard = ({ href, title, description, thumbnail, badges, external, index = 0 }) => {
+  const cardBg = useColorModeValue('#FFFFFF', '#241F1A')
+  const borderColor = useColorModeValue('#E8DCD0', '#3D352C')
+  const descColor = useColorModeValue('#8B7D6B', '#A89882')
+  const shadowColor = useColorModeValue('#D4C4B0', '#3D352C')
+  const rotation = rotations[index % rotations.length]
 
   const linkProps = external
     ? { as: 'a', href, target: '_blank', rel: 'noopener noreferrer' }
@@ -15,16 +20,17 @@ const ProjectCard = ({ href, title, description, thumbnail, badges, external }) 
     <Box
       {...linkProps}
       display="block"
-      border="1px solid"
+      border="2px solid"
       borderColor={borderColor}
-      borderRadius="xl"
+      borderRadius="12px"
       bg={cardBg}
       overflow="hidden"
-      transition="all 0.2s ease"
+      transition="all 0.3s ease"
+      transform={`rotate(${rotation}deg)`}
       _hover={{
-        transform: 'translateY(-4px)',
+        transform: 'rotate(0deg) translateY(-4px)',
         borderColor: 'brand.400',
-        boxShadow: '0 8px 25px rgba(0, 181, 216, 0.15)',
+        boxShadow: `4px 4px 0 ${shadowColor}`,
       }}
     >
       {/* Image area */}
@@ -35,7 +41,9 @@ const ProjectCard = ({ href, title, description, thumbnail, badges, external }) 
         alignItems="center"
         justifyContent="center"
         overflow="hidden"
-        bg={useColorModeValue('gray.50', 'rgba(255, 255, 255, 0.02)')}
+        bg={useColorModeValue('sand.50', 'sand.900')}
+        borderBottom="2px dashed"
+        borderColor={borderColor}
       >
         <Image
           src={thumbnail}
@@ -55,15 +63,16 @@ const ProjectCard = ({ href, title, description, thumbnail, badges, external }) 
           {description}
         </Text>
         <Stack direction="row" spacing={2} wrap="wrap">
-          {badges.map((badge, index) => (
+          {badges.map((badge, i) => (
             <Badge
-              key={index}
-              variant="outline"
-              colorScheme="cyan"
+              key={i}
+              bg="sunset.400"
+              color="white"
               fontSize="0.7em"
               px={2}
               py={0.5}
               borderRadius="full"
+              transform={`rotate(${badgeRotations[i % badgeRotations.length]}deg)`}
             >
               {badge}
             </Badge>

@@ -1,4 +1,3 @@
-import dynamic from 'next/dynamic'
 import NextLink from 'next/link'
 import {
   Container,
@@ -22,16 +21,7 @@ import {
   IoLogoLinkedin,
   IoMailOutline,
 } from 'react-icons/io5'
-import { DeskSpinner } from '../components/desk-loader'
-import ProjectCard from '../components/project-card'
-import watershed from '../public/watershed.png'
-import Leg64 from '../public/leg64.png'
-import smoosh_bros from '../public/smoosh_bros.jpeg'
-
-const Desk = dynamic(() => import('../components/desk'), {
-  ssr: false,
-  loading: () => <DeskSpinner />,
-})
+import { MountainDivider } from '../components/divider'
 
 const featuredProjects = [
   {
@@ -39,16 +29,12 @@ const featuredProjects = [
     title: 'Multi System AI Agent',
     description:
       'Automated VC research and data enrichment using multi-agent AI architecture.',
-    thumbnail: watershed,
-    badges: ['Python', 'Supabase', 'AWS'],
     href: '/projects/watershed-ai',
   },
   {
     id: 'arm-legv8-processor',
     title: '64-bit ARM LEGv8 Processor',
     description: 'A full LEGv8 processor designed and implemented in VHDL.',
-    thumbnail: Leg64,
-    badges: ['VHDL', 'Architecture'],
     href: '/projects/arm-legv8-processor',
   },
   {
@@ -56,22 +42,78 @@ const featuredProjects = [
     title: 'Smoosh Bros',
     description:
       'A fighting game built entirely in SystemVerilog on an FPGA.',
-    thumbnail: smoosh_bros,
-    badges: ['SystemVerilog', 'FPGA'],
     href: '/projects/smoosh-bros',
   },
 ]
 
+const WaveDoodle = () => (
+  <svg
+    width="16"
+    height="10"
+    viewBox="0 0 16 10"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    style={{ display: 'inline-block', marginRight: '6px', verticalAlign: 'middle' }}
+  >
+    <path
+      d="M1 5 C3 2, 5 8, 8 5 S12 2, 15 5"
+      stroke="#D4735E"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      fill="none"
+    />
+  </svg>
+)
+
+const SectionLabel = ({ children }) => (
+  <Text
+    fontFamily="var(--font-caveat), cursive"
+    fontSize="18px"
+    color="sunset.400"
+    fontWeight="700"
+    display="flex"
+    alignItems="center"
+  >
+    <WaveDoodle />
+    {children}
+  </Text>
+)
+
 const Page = () => {
-  const muted = useColorModeValue('gray.500', 'gray.400')
-  const subtleBorder = useColorModeValue('gray.200', 'whiteAlpha.100')
+  const muted = useColorModeValue('sand.500', 'sand.400')
+  const subtleBorder = useColorModeValue('sand.200', 'sand.800')
+  const pageBg = useColorModeValue('#FBF7F2', '#1A1612')
+  const topoOpacity = useColorModeValue(0.06, 0.04)
+  const heroOverlayGradient = useColorModeValue(
+    `linear-gradient(to bottom, transparent 40%, ${pageBg} 100%), linear-gradient(to right, ${pageBg} 0%, transparent 15%, transparent 85%, ${pageBg} 100%)`,
+    `linear-gradient(to bottom, transparent 40%, ${pageBg} 100%), linear-gradient(to right, ${pageBg} 0%, transparent 15%, transparent 85%, ${pageBg} 100%)`
+  )
 
   return (
     <Layout>
-      <Container maxW="container.md">
-        {/* ── Hero ── */}
+      {/* Topo pattern — ambient full-bleed layer behind entire hero zone */}
+      <Box
+        position="absolute"
+        top={0}
+        left={0}
+        w="100vw"
+        h="800px"
+        pointerEvents="none"
+        zIndex={0}
+        opacity={topoOpacity}
+        backgroundImage="url('/textures/topo-pattern.png')"
+        backgroundRepeat="repeat"
+        backgroundSize="300px 300px"
+        sx={{
+          maskImage: 'radial-gradient(ellipse 80% 70% at 50% 30%, black 20%, transparent 70%)',
+          WebkitMaskImage: 'radial-gradient(ellipse 80% 70% at 50% 30%, black 20%, transparent 70%)',
+        }}
+      />
+
+      <Container maxW="container.md" position="relative" zIndex={1}>
+        {/* Hero */}
         <Section delay={0}>
-          <Box pt={{ base: 10, md: 20 }} pb={{ base: 6, md: 10 }}>
+          <Box pt={{ base: 10, md: 20 }} pb={{ base: 4, md: 6 }}>
             <HStack spacing={5} align="center" mb={6}>
               <Box
                 flexShrink={0}
@@ -79,6 +121,8 @@ const Page = () => {
                 h="72px"
                 borderRadius="full"
                 overflow="hidden"
+                border="3px solid"
+                borderColor="sand.300"
               >
                 <Image
                   src={profileImages}
@@ -90,7 +134,13 @@ const Page = () => {
                 />
               </Box>
               <Box>
-                <Heading as="h1" fontSize={{ base: '2xl', md: '3xl' }} fontWeight="700" lineHeight="1.2">
+                <Heading
+                  as="h1"
+                  fontSize={{ base: '32px', md: '44px' }}
+                  fontWeight="400"
+                  lineHeight="1.2"
+                  fontFamily="var(--font-instrument-serif), Georgia, serif"
+                >
                   Jonah Pflaster
                 </Heading>
                 <Text fontSize="sm" color={muted} mt={1}>
@@ -99,7 +149,7 @@ const Page = () => {
               </Box>
             </HStack>
 
-            <Text fontSize={{ base: 'md', md: 'lg' }} lineHeight="1.75" color={useColorModeValue('gray.700', 'gray.300')}>
+            <Text fontSize={{ base: 'md', md: 'lg' }} lineHeight="1.75" color={useColorModeValue('#2D2319', '#F0E8DE')}>
               I build things at the intersection of software and hardware &mdash; from
               multi-agent AI systems to processors in VHDL and games on FPGAs.
               Currently interning at{' '}
@@ -147,17 +197,48 @@ const Page = () => {
           </Box>
         </Section>
 
-        {/* ── 3D Model ── */}
+        {/* Hero illustration — full-bleed with soft feathered edges */}
         <Section delay={0.05}>
-          <Desk />
+          <Box
+            mx={{ base: -4, md: '-60px' }}
+            position="relative"
+            overflow="hidden"
+          >
+            {/* Gradient overlays that feather the illustration edges into page bg */}
+            <Box
+              position="absolute"
+              inset={0}
+              zIndex={1}
+              pointerEvents="none"
+              background={heroOverlayGradient}
+            />
+            <Box
+              w="100%"
+              position="relative"
+            >
+              <Image
+                src="/textures/hero-illustration.png"
+                alt="Coastal mountain landscape"
+                width={1200}
+                height={500}
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  display: 'block',
+                  opacity: 0.85,
+                }}
+                priority
+              />
+            </Box>
+          </Box>
         </Section>
 
-        {/* ── Featured Work ── */}
+        <MountainDivider my={4} />
+
+        {/* Featured Work */}
         <Section delay={0.1}>
           <HStack justify="space-between" align="baseline" mb={5}>
-            <Text fontSize="xs" fontWeight="600" letterSpacing="0.1em" textTransform="uppercase" color={muted}>
-              Featured Work
-            </Text>
+            <SectionLabel>Featured Work</SectionLabel>
             <Button
               as={NextLink}
               href="/projects"
@@ -206,11 +287,12 @@ const Page = () => {
           </VStack>
         </Section>
 
-        {/* ── Experience ── */}
+        <MountainDivider />
+
+        {/* Experience */}
         <Section delay={0.15}>
-          <Text fontSize="xs" fontWeight="600" letterSpacing="0.1em" textTransform="uppercase" color={muted} mb={5}>
-            Experience
-          </Text>
+          <SectionLabel>Experience</SectionLabel>
+          <Box mt={4} />
 
           <VStack spacing={4} align="stretch">
             {[

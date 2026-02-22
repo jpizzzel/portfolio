@@ -14,7 +14,7 @@ import Layout from '../../components/layouts/article'
   
   const Work = () => (
     <Layout title="Upcoming">
-      <Container>
+      <Container pt={6}>
         <Title>
           C++ Projects<Badge>2024</Badge>
         </Title>
@@ -22,7 +22,7 @@ import Layout from '../../components/layouts/article'
         This is a description of multiple of my key C++ projects which focus on data structure and algorithms. All source code is available for request from jonah.pflaster@tufts.edu
         </P>
         <Section>
-            <Tabs variant='soft-rounded' colorScheme='green'>
+            <Tabs variant='soft-rounded' colorScheme='brand'>
                 <TabList>
                     <Tab>Gerp -- Grep Reimplementation</Tab>
                     <Tab>Huffman Encoder/Decoder -- Lossless Compression</Tab>

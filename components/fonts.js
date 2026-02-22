@@ -1,16 +1,22 @@
-import { M_PLUS_Rounded_1c } from 'next/font/google'
-import { Inter } from 'next/font/google'
+import { Instrument_Serif, DM_Sans, Caveat } from 'next/font/google'
 
-export const mPlusRounded = M_PLUS_Rounded_1c({
+export const instrumentSerif = Instrument_Serif({
   subsets: ['latin'],
-  weight: ['300', '700'],
+  weight: ['400'],
   display: 'swap',
-  variable: '--font-m-plus-rounded',
+  variable: '--font-instrument-serif',
 })
 
-export const inter = Inter({
+export const dmSans = DM_Sans({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['400', '500', '600'],
   display: 'swap',
-  variable: '--font-inter',
+  variable: '--font-dm-sans',
+})
+
+export const caveat = Caveat({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  display: 'swap',
+  variable: '--font-caveat',
 })

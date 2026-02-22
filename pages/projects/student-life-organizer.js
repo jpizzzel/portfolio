@@ -14,7 +14,7 @@ import studentLifeManager from '../../public/student_life_manager.png'
 
 const Work = () => (
   <Layout title="Student Life Organizer">
-    <Container>
+    <Container pt={6}>
       <Title>
         Student Life Organizer <Badge>2024</Badge>
       </Title>

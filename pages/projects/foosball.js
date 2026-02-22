@@ -26,7 +26,7 @@ const Table = () => {
 
   return (
     <Layout title="EWB">
-      <Container>
+      <Container pt={6}>
         <Title>
           Engineering Without Borders (EWB) Greenhouse Automation <Badge>2024</Badge>
         </Title>
@@ -41,7 +41,7 @@ const Table = () => {
         </List>
         <NextLink href="/static/Foosball.pdf" passHref legacyBehavior>
           <a download>
-            <Button colorScheme="cyan" mb={4}>
+            <Button bg="brand.400" color="white" _hover={{ bg: 'brand.500' }} mb={4}>
               Download Slides <ExternalLinkIcon mx="2px" />
             </Button>
           </a>

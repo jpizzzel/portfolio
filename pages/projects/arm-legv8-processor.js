@@ -22,7 +22,7 @@ import img from '../../public/leg64.png'
 
 const Work = () => (
   <Layout title="5-Stage Pipelined ARM CPU">
-    <Container>
+    <Container pt={6}>
       <Title>
         5-Stage Pipelined ARM CPU <Badge>2025</Badge>
       </Title>
