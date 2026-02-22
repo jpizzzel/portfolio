@@ -1,131 +1,173 @@
-import Logo from './logo';
-import React, { useState, useEffect } from 'react';
-import NextLink from 'next/link';
+import Logo from './logo'
+import React, { useState, useEffect } from 'react'
+import NextLink from 'next/link'
 import {
-    Container,
-    Box,
-    Link,
-    Stack,
-    Heading,
-    Flex,
-    Menu,
-    MenuItem,
-    MenuList,
-    MenuButton,
-    IconButton,
-    useColorModeValue,
-} from '@chakra-ui/react';
-import { HamburgerIcon } from '@chakra-ui/icons';
-import ThemeToggleButton from './theme-toggle-button';
-import { FaBriefcase, FaFileAlt, FaEnvelope } from 'react-icons/fa';
+  Container,
+  Box,
+  Link,
+  Stack,
+  Heading,
+  Flex,
+  IconButton,
+  useColorModeValue,
+  Collapse,
+  useDisclosure,
+  VStack,
+} from '@chakra-ui/react'
+import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
+import ThemeToggleButton from './theme-toggle-button'
 
-const LinkItem = ({ href, path, children, icon }) => {
-    const active = path === href;
-    const inactiveColor = useColorModeValue('gray200', 'whiteAlpha900');
-    const activeColor = useColorModeValue('gray.500', 'gray.400');
-    const hoverBg = useColorModeValue('yellow.200', 'yellow.600');
-    const hoverColor = useColorModeValue('gray.500', 'gray.400');
+const LinkItem = ({ href, path, children }) => {
+  const active = path === href
+  const color = useColorModeValue('gray.700', 'gray.200')
+  const activeColor = useColorModeValue('brand.500', 'brand.400')
 
-    return (
-        <NextLink href={href} passHref legacyBehavior>
-            <Link
-                p={2}
-                display="flex"
-                alignItems="center"
-                bg={active ? 'yellow.400' : undefined}
-                color={active ? activeColor : inactiveColor}
-                borderRadius="md"
-                _hover={{
-                    bg: hoverBg,
-                    color: hoverColor,
-                }}
-            >
-                {icon && <Box mr={2}>{icon}</Box>}
-                {children}
-            </Link>
-        </NextLink>
-    );
-};
+  return (
+    <NextLink href={href} passHref legacyBehavior>
+      <Link
+        p={2}
+        px={3}
+        display="flex"
+        alignItems="center"
+        color={active ? activeColor : color}
+        fontWeight={active ? '600' : '400'}
+        fontSize="sm"
+        borderBottom="2px solid"
+        borderColor={active ? 'brand.400' : 'transparent'}
+        borderRadius="0"
+        _hover={{
+          color: activeColor,
+          borderColor: 'brand.400',
+          textDecoration: 'none',
+        }}
+        transition="all 0.2s ease"
+      >
+        {children}
+      </Link>
+    </NextLink>
+  )
+}
 
 const Navbar = props => {
-    const { path } = props;
+  const { path } = props
+  const { isOpen, onToggle } = useDisclosure()
+  const bg = useColorModeValue(
+    'rgba(250, 250, 250, 0.8)',
+    'rgba(10, 10, 10, 0.8)'
+  )
+  const borderColor = useColorModeValue('gray.200', 'whiteAlpha.100')
+  const [mounted, setMounted] = useState(false)
 
-    const bg = useColorModeValue('linear(to-r, gray.100, yellow.300)', 'linear(to-r, gray.900, yellow.600)');
-    const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
-    useEffect(() => {
-        setMounted(true);
-    }, []);
+  if (!mounted) return null
 
-    if (!mounted) return null;
-
-    return (
-        <Box
-            position="fixed"
-            as="nav"
-            w="100%"
-            bgGradient={bg}
-            style={{ backdropFilter: 'blur(10px)' }}
-            zIndex={1}
-            {...props}
+  return (
+    <Box
+      position="fixed"
+      as="nav"
+      w="100%"
+      bg={bg}
+      borderBottom="1px solid"
+      borderColor={borderColor}
+      style={{ backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}
+      zIndex={10}
+      {...props}
+    >
+      <Container
+        display="flex"
+        p={2}
+        maxW="container.lg"
+        wrap="wrap"
+        align="center"
+        justify="space-between"
+      >
+        <Flex align="center" mr={5}>
+          <Heading as="h1" size="lg" letterSpacing="tighter">
+            <Logo />
+          </Heading>
+        </Flex>
+        <Stack
+          direction="row"
+          display={{ base: 'none', md: 'flex' }}
+          width="auto"
+          alignItems="center"
+          flexGrow={1}
         >
-            <Container
-                display="flex"
-                p={2}
-                maxW="container.md"
-                wrap="wrap"
-                align="center"
-                justify="space-between"
-            >
-                <Flex align="center" mr={5}>
-                    <Heading as="h1" size="lg" letterSpacing={'tighter'}>
-                        <Logo />
-                    </Heading>
-                </Flex>
-                <Stack
-                    direction={{ base: 'column', md: 'row' }}
-                    display={{ base: 'none', md: 'flex' }}
-                    width={{ base: 'full', md: 'auto' }}
-                    alignItems="center"
-                    flexGrow={1}
-                    mt={{ base: 4, nmd: 0 }}
-                >
-                    <LinkItem href="/projects" path={path} icon={<FaBriefcase />}>
-                        Projects
-                    </LinkItem>
-                    <LinkItem href="/resume" path={path} icon={<FaFileAlt />}>
-                        Résumé
-                    </LinkItem>
-                    <LinkItem href="/contact" path={path} icon={<FaEnvelope />}>
-                        Contact
-                    </LinkItem>
-                </Stack>
-                <Box flex={1} align="right">
-                    <ThemeToggleButton />
-                    <Menu>
-                        <MenuButton 
-                            as={IconButton} 
-                            icon={<HamburgerIcon />}
-                            variant="outline"
-                            aria-label="Options"
-                        />
-                        <MenuList>
-                            <NextLink href="/" passHref>
-                                <MenuItem as={Link}>About</MenuItem>
-                            </NextLink>
-                            <NextLink href="/projects" passHref>
-                                <MenuItem as={Link}>Projects</MenuItem>
-                            </NextLink>
-                            <NextLink href="/resume" passHref>
-                                <MenuItem as={Link}>Résumé</MenuItem>
-                            </NextLink>
-                            <MenuItem as={Link} href="https://github.com/jpizzzel">GitHub</MenuItem>
-                        </MenuList>
-                    </Menu>
-                </Box>
-            </Container>
+          <LinkItem href="/projects" path={path}>
+            Projects
+          </LinkItem>
+          <LinkItem href="/resume" path={path}>
+            Résumé
+          </LinkItem>
+          <LinkItem href="/contact" path={path}>
+            Contact
+          </LinkItem>
+        </Stack>
+        <Box flex={1} textAlign="right">
+          <ThemeToggleButton />
+          <IconButton
+            display={{ base: 'inline-flex', md: 'none' }}
+            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+            variant="ghost"
+            aria-label="Toggle menu"
+            onClick={onToggle}
+            ml={2}
+          />
         </Box>
-    );
-};
+      </Container>
+
+      {/* Mobile menu */}
+      <Collapse in={isOpen} animateOpacity>
+        <Box display={{ md: 'none' }} pb={4} px={4}>
+          <VStack spacing={1} align="stretch">
+            <NextLink href="/" passHref legacyBehavior>
+              <Link
+                p={3}
+                borderRadius="md"
+                _hover={{ bg: useColorModeValue('gray.100', 'whiteAlpha.100') }}
+                onClick={onToggle}
+              >
+                Home
+              </Link>
+            </NextLink>
+            <NextLink href="/projects" passHref legacyBehavior>
+              <Link
+                p={3}
+                borderRadius="md"
+                _hover={{ bg: useColorModeValue('gray.100', 'whiteAlpha.100') }}
+                onClick={onToggle}
+              >
+                Projects
+              </Link>
+            </NextLink>
+            <NextLink href="/resume" passHref legacyBehavior>
+              <Link
+                p={3}
+                borderRadius="md"
+                _hover={{ bg: useColorModeValue('gray.100', 'whiteAlpha.100') }}
+                onClick={onToggle}
+              >
+                Résumé
+              </Link>
+            </NextLink>
+            <NextLink href="/contact" passHref legacyBehavior>
+              <Link
+                p={3}
+                borderRadius="md"
+                _hover={{ bg: useColorModeValue('gray.100', 'whiteAlpha.100') }}
+                onClick={onToggle}
+              >
+                Contact
+              </Link>
+            </NextLink>
+          </VStack>
+        </Box>
+      </Collapse>
+    </Box>
+  )
+}
 
 export default Navbar

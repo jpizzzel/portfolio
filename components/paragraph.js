@@ -1,9 +1,9 @@
-import styled from '@emotion/styled'
+import { Text } from '@chakra-ui/react'
 
-const Paragraph = styled.p`
-  text-align: justify;
-  text-indent: 1em;
-  hyphens: auto;
-`
+const Paragraph = ({ children, ...props }) => (
+  <Text textAlign="justify" textIndent="1em" sx={{ hyphens: 'auto' }} {...props}>
+    {children}
+  </Text>
+)
 
 export default Paragraph

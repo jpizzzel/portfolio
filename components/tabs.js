@@ -11,85 +11,85 @@ import {
   Stack,
   Text,
   useColorModeValue,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react'
 
 const workItems = [
   {
-    dates: "May 2025 – Present",
-    organization: "Watershed Ventures",
-    url: "https://watershed.vc",
-    role: "AI Software Engineering Intern",
+    dates: 'May 2025 – Present',
+    organization: 'Watershed Ventures',
+    url: 'https://watershed.vc',
+    role: 'AI Software Engineering Intern',
     details: [
-      "https://watershed.vc/",
-      "Developing a multi-agent AI system that automates VC research, data enrichment, database management, and memo generation.",
-      "Reducing manual research and data entry time by over 90% while maintaining real-time startup data quality.",
-      "Utilzing: Python, Supabase, AWS, Next.js, Postgres.",
+      'https://watershed.vc/',
+      'Developing a multi-agent AI system that automates VC research, data enrichment, database management, and memo generation.',
+      'Reducing manual research and data entry time by over 90% while maintaining real-time startup data quality.',
+      'Utilzing: Python, Supabase, AWS, Next.js, Postgres.',
     ],
   },
   {
-    dates: "Sept 2025 – Dec 2025",
-    organization: "Tufts University",
-    url: "https://www.cs.tufts.edu/comp/11/",
-    role: "CS Teaching Assistant",
-    details: [
-      "TA for the CS 11: C++ course.",
-    ],
+    dates: 'Sept 2025 – Dec 2025',
+    organization: 'Tufts University',
+    url: 'https://www.cs.tufts.edu/comp/11/',
+    role: 'CS Teaching Assistant',
+    details: ['TA for the CS 11: C++ course.'],
   },
   {
-    dates: "Jun 2024 – Aug 2024",
-    organization: "SoundSense",
-    url: "https://www.soundsense.com",
-    role: "Engineering Intern",
+    dates: 'Jun 2024 – Aug 2024',
+    organization: 'SoundSense',
+    url: 'https://www.soundsense.com',
+    role: 'Engineering Intern',
     details: [
-      "https://www.soundsense.com/",
-      "Shadowed a senior engineer across project management, consulting, and data analysis.",
+      'https://www.soundsense.com/',
+      'Shadowed a senior engineer across project management, consulting, and data analysis.',
     ],
   },
-];
+]
 
 const educationItems = [
   {
-    dates: "Expected 2027",
-    organization: "Tufts University",
-    role: "B.S. in Computer Engineering",
-    details: [ "JumboCode Developer", "EWB Tech Group Lead", "Club Soccer Captain", "Chess Club Treasurer"
-      ],
+    dates: 'Expected 2027',
+    organization: 'Tufts University',
+    role: 'B.S. in Computer Engineering',
+    details: [
+      'JumboCode Developer',
+      'EWB Tech Group Lead',
+      'Club Soccer Captain',
+      'Chess Club Treasurer',
+    ],
   },
-];
+]
 
-const ExperienceSection = ({ title, icon: IconComponent, items }) => {
-  const cardBg = useColorModeValue("white", "#1c1c1e");
-  const cardBorder = useColorModeValue("gray.200", "gray.700");
-  const headingColor = useColorModeValue("gray.800", "gray.100");
-  const muted = useColorModeValue("gray.600", "gray.400");
-  const linkColor = useColorModeValue("blue.600", "blue.300");
+const ExperienceSection = ({ title, items }) => {
+  const cardBg = useColorModeValue('white', 'transparent')
+  const cardBorder = useColorModeValue('gray.200', 'whiteAlpha.100')
+  const headingColor = useColorModeValue('gray.800', 'gray.100')
+  const muted = useColorModeValue('gray.600', 'gray.400')
+  const linkColor = useColorModeValue('brand.500', 'brand.400')
 
   return (
     <Box
       borderWidth="1px"
       borderColor={cardBorder}
-      borderRadius="lg"
+      borderRadius="xl"
       p={4}
       mb={6}
       bg={cardBg}
-      boxShadow="sm"
+      transition="all 0.2s ease"
+      _hover={{ borderColor: 'brand.400' }}
     >
       <HStack spacing={2} mb={2}>
-        {IconComponent && (
-          <Box
-            as={IconComponent}
-            boxSize={4}
-            color="#d4ac0d"
-          />
-        )}
+        <Box w="3px" h="16px" bg="brand.400" borderRadius="full" />
         <Heading as="h3" size="sm" color={headingColor}>
           {title}
         </Heading>
       </HStack>
 
       <Accordion allowMultiple border="none">
-        {items.map((item) => (
-          <AccordionItem key={`${item.organization}-${item.dates}`} border="none">
+        {items.map(item => (
+          <AccordionItem
+            key={`${item.organization}-${item.dates}`}
+            border="none"
+          >
             <h2>
               <AccordionButton px={0} py={3}>
                 <HStack
@@ -105,7 +105,7 @@ const ExperienceSection = ({ title, icon: IconComponent, items }) => {
                           href={item.url}
                           isExternal
                           color={linkColor}
-                          _hover={{ textDecoration: "underline" }}
+                          _hover={{ textDecoration: 'underline' }}
                         >
                           {item.organization}
                         </Link>
@@ -144,23 +144,16 @@ const ExperienceSection = ({ title, icon: IconComponent, items }) => {
         ))}
       </Accordion>
     </Box>
-  );
-};
+  )
+}
 
-// Main Component
 const TabsW = () => {
   return (
-    <Box maxW="lg">
-      <ExperienceSection
-        title="Work"
-        items={workItems}
-      />
-      <ExperienceSection
-        title="Education"
-        items={educationItems}
-      />
+    <Box>
+      <ExperienceSection title="Work" items={workItems} />
+      <ExperienceSection title="Education" items={educationItems} />
     </Box>
-  );
-};
+  )
+}
 
-export default TabsW;
+export default TabsW

@@ -41,7 +41,7 @@ const Table = () => {
         </List>
         <NextLink href="/static/Foosball.pdf" passHref legacyBehavior>
           <a download>
-            <Button colorScheme="teal" mb={4}>
+            <Button colorScheme="cyan" mb={4}>
               Download Slides <ExternalLinkIcon mx="2px" />
             </Button>
           </a>
