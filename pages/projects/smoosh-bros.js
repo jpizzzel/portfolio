@@ -71,6 +71,14 @@ const Work = () => (
         height={600}
         style={{ borderRadius: '8px', marginTop: '20px' }}
       />
+      <video
+        width="640"
+        height="360"
+        controls
+        style={{ borderRadius: '8px', marginTop: '20px', maxWidth: '100%' }}
+      >
+        <source src="/smoosh_bros.mp4" type="video/mp4" />
+      </video>
     </Container>
   </Layout>
 )
