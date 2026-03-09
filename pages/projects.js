@@ -42,7 +42,7 @@ const projectList = [
     description:
       'Full-scale AI agent system built for a VC firm that automates research, company evaluation, investment memo drafting, and daily partner workflows. Tracks early-stage and stealth company developments, enriches deal flow data, and surfaces insights across the entire pipeline.',
     thumbnail: watershed,
-    badges: ['Agentic AI', 'Python', 'Supabase', 'AWS', 'Next.js'],
+    badges: ['Agentic AI', 'AWS', 'Python', 'Supabase', 'Next.js'],
     year: '2025-26',
     archived: false,
   },
