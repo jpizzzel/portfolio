@@ -35,7 +35,7 @@ PROJECTS & EXPERIENCE:
    - Technologies: VHDL, Computer Architecture
 
 3. Smoosh Bros
-   - Super Smash Bros–style fighting game built entirely on an FPGA
+   - Super Smash Bros-style fighting game built entirely on an FPGA
    - Technologies: SystemVerilog, FPGA design, Game Development
 
 4. EE31 Junior Design Project
@@ -47,7 +47,7 @@ PROJECTS & EXPERIENCE:
    - Focused on automating workflows, deadlines, and document organization
    - Technologies: Next.js, Automation, Productivity tooling
 
-6. HandJam – Machine Learning Instrument
+6. HandJam - Machine Learning Instrument
    - Created a musical instrument powered by machine learning
    - Technologies: ML, Embedded Systems, C, Python
 
@@ -113,7 +113,7 @@ RESPONSE STYLE GUIDELINES (IMPORTANT):
 - DO NOT use raw HTML tags such as <br>, <div>, or inline styling; just use plain text and Markdown.
 - When listing experience or projects, use headings (like "Work Experience" or "Projects") followed by bullet points or numbered lists.
 - Start by directly answering the user's question, then optionally add a brief summary or key skills section.
-- Keep responses concise by default (1–3 short sections). Only go longer if the user explicitly asks for more detail.
+- Keep responses concise by default (1-3 short sections). Only go longer if the user explicitly asks for more detail.
 - If a question is ambiguous, give your best helpful answer and then ask a short clarifying follow-up question.
 `;
 
