@@ -38,12 +38,12 @@ const projectList = [
   },
   {
     id: 'watershed-ai',
-    title: 'Multi System AI Agent',
+    title: 'Watershed VC AI System',
     description:
-      'Automated venture capital research and data enrichment system using multi-agent AI architecture. Agents coordinate to scrape, enrich, and score startup data across multiple sources.',
+      'Full-scale AI agent system built for a VC firm that automates research, company evaluation, investment memo drafting, and daily partner workflows. Tracks early-stage and stealth company developments, enriches deal flow data, and surfaces insights across the entire pipeline.',
     thumbnail: watershed,
-    badges: ['Agentic AI', 'Python', 'Supabase', 'AWS'],
-    year: '2025',
+    badges: ['Agentic AI', 'Python', 'Supabase', 'AWS', 'Next.js'],
+    year: '2025-26',
     archived: false,
   },
   {
@@ -87,16 +87,6 @@ const projectList = [
     archived: false,
   },
   {
-    id: 'AI-CAD',
-    title: 'AI CAD Project Builder',
-    description:
-      'Generate CAD models from text prompts using AI. Built with Hugging Face models to translate natural language descriptions into 3D-printable designs.',
-    thumbnail: CAD,
-    badges: ['AI', 'Hugging Face', 'Python'],
-    year: '2025',
-    archived: false,
-  },
-  {
     id: 'techlead',
     title: 'EWB Tech Group Lead',
     description:
@@ -128,6 +118,16 @@ const projectList = [
     archived: false,
   },
   {
+    id: 'calendar',
+    title: 'Calendar Connect',
+    description:
+      'Compare academic calendars across universities to help plan visits and coordinate schedules. Originally built in 2024, currently being reworked from the ground up.',
+    thumbnail: calendars,
+    badges: ['React', 'Full-Stack', 'Renovating'],
+    year: '2024 / 26',
+    archived: false,
+  },
+  {
     id: 'cplus',
     title: 'C++ Projects',
     description:
@@ -138,12 +138,12 @@ const projectList = [
     archived: true,
   },
   {
-    id: 'calendar',
-    title: 'Calendar Connect',
+    id: 'AI-CAD',
+    title: 'AI CAD Project Builder',
     description:
-      'A website designed to help users compare academic calendars across universities, making it easier to plan visits and coordinate schedules.',
-    thumbnail: calendars,
-    badges: ['React', 'Full-Stack'],
+      'Generate CAD models from text prompts using AI. Built with Hugging Face models to translate natural language descriptions into 3D-printable designs.',
+    thumbnail: CAD,
+    badges: ['AI', 'Hugging Face', 'Python'],
     year: '2024',
     archived: true,
   },

@@ -12,65 +12,56 @@ import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
 
 const Work = () => (
-  <Layout title="Multi System AI Agent">
+  <Layout title="Watershed VC AI System">
     <Container pt={6}>
       <Title>
-        Multi-Agent AI System<Badge>2025</Badge>
+        Watershed VC AI System<Badge>2025-26</Badge>
       </Title>
       <P>
-        I created a multi-agent AI system that automated Watershed Ventures' venture capital research and data enrichment process. 
-        The system streamlined sourcing, evaluating, and maintaining structured information on startups and investors, providing analysts 
-        with reliable, real-time data.
+        Built a complete AI agent system for Watershed Ventures that handles nearly every part of a VC partner's
+        daily workflow. The system automates research, company and people evaluation, investment memo drafting,
+        deal flow tracking, and monitoring of early-stage and stealth company developments as they happen.
       </P>
 
       <Heading as="h3" variant="section-title" mt={6} mb={4}>
-        Key Contributions
+        What It Does
       </Heading>
-      
+
       <Box mb={4}>
-        <Text fontWeight="bold" mb={2}>Agent Architecture:</Text>
-        <Text>Designed specialized agents for company retrieval, data enrichment, and database management, coordinated through a central orchestrator.</Text>
+        <Text fontWeight="bold" mb={2}>Research + Evaluation</Text>
+        <Text>Agents independently source, enrich, and score companies and founders across data providers, accelerators, and early-stage funds. Cross-references funding history, headcount trends, LinkedIn profiles, and more to build a full picture fast.</Text>
       </Box>
 
       <Box mb={4}>
-        <Text fontWeight="bold" mb={2}>API Integrations:</Text>
-        <Text>Connected to major data providers to automatically pull and cross-reference startup and investor data.</Text>
+        <Text fontWeight="bold" mb={2}>Memo Drafting</Text>
+        <Text>Generates structured investment memos from enriched data, saving partners hours of manual writing while keeping the output grounded in real data points.</Text>
       </Box>
 
       <Box mb={4}>
-        <Text fontWeight="bold" mb={2}>Database Engineering:</Text>
-        <Text>Built a Supabase/Postgres schema for company_profiles and people, with JSONB fields for founders and SQL triggers for automatic indexing and search.</Text>
+        <Text fontWeight="bold" mb={2}>Stealth + Early-Stage Tracking</Text>
+        <Text>Monitors rapid developments and changes at stealth and pre-seed companies that traditional tools miss. Surfaces signals before they hit the mainstream deal flow.</Text>
       </Box>
 
       <Box mb={4}>
-        <Text fontWeight="bold" mb={2}>Automated Pipelines:</Text>
-        <Text>Implemented workflows for importing CSVs, enriching missing fields (funding history, headcount, LinkedIn profiles), and updating investor portfolios.</Text>
+        <Text fontWeight="bold" mb={2}>Daily Partner Workflows</Text>
+        <Text>Handles CSV imports, database updates, portfolio monitoring, and recurring data hygiene tasks. Partners interact through an internal platform to view results, filter companies and people, and manually adjust when needed.</Text>
       </Box>
 
       <Box mb={4}>
-        <Text fontWeight="bold" mb={2}>LLM-Driven Reasoning:</Text>
-        <Text>Used Google Gemini to enable agents to make context-aware decisions on when to query APIs, update records, or escalate incomplete information.</Text>
+        <Text fontWeight="bold" mb={2}>Agent Architecture</Text>
+        <Text>Specialized agents for company retrieval, data enrichment, memo generation, and database management, all coordinated through a central orchestrator. LLM-driven reasoning (Google Gemini) lets agents decide when to query APIs, update records, or flag incomplete information.</Text>
       </Box>
 
       <Heading as="h3" variant="section-title" mt={6} mb={4}>
         Impact
       </Heading>
-      
+
       <List spacing={2} mb={4}>
         <ListItem>• Cut manual research and data entry time by over 50%</ListItem>
-        <ListItem>• Provided Watershed with an always up-to-date view of emerging startups across accelerators and early-stage funds</ListItem>
-        <ListItem>• Built the foundation for autonomous deal-sourcing workflows that improve speed and accuracy in venture research</ListItem>
-        <ListItem>• Created an internal platform for interacting with the agent, viewing results, manually updating data if needed, filtering and viewing companies and people</ListItem>
+        <ListItem>• Always up-to-date view of emerging startups, stealth companies, and fund activity</ListItem>
+        <ListItem>• Foundation for autonomous deal-sourcing workflows that keep getting better over time</ListItem>
+        <ListItem>• Internal platform used daily by the team to interact with the system</ListItem>
       </List>
-
-      <Heading as="h3" variant="section-title" mt={6} mb={4}>
-        Takeaways
-      </Heading>
-      
-      <P>
-        This project strengthened my experience in multi-agent AI systems, database design, and API-driven automation, 
-        and showed me how to align cutting-edge AI with practical business workflows in venture capital.
-      </P>
 
       <List ml={4} my={4}>
         <ListItem>
@@ -87,7 +78,7 @@ const Work = () => (
         </ListItem>
         <ListItem>
           <Meta>Stack</Meta>
-          <span>Python, Google Gemini, Supabase/Postgres, React, APIs</span>
+          <span>Python, Google Gemini, Supabase/Postgres, AWS, Next.js</span>
         </ListItem>
         <ListItem>
           <Meta>Key Technologies</Meta>
