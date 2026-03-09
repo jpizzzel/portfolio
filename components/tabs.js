@@ -15,7 +15,7 @@ import {
 
 const workItems = [
   {
-    dates: 'May 2025 – Present',
+    dates: 'May 2025 - Present',
     organization: 'Watershed Ventures',
     url: 'https://watershed.vc',
     role: 'AI Software Engineering Intern',
@@ -27,14 +27,14 @@ const workItems = [
     ],
   },
   {
-    dates: 'Sept 2025 – Dec 2025',
+    dates: 'Sept 2025 - Dec 2025',
     organization: 'Tufts University',
     url: 'https://www.cs.tufts.edu/comp/11/',
     role: 'CS Teaching Assistant',
     details: ['TA for the CS 11: C++ course.'],
   },
   {
-    dates: 'Jun 2024 – Aug 2024',
+    dates: 'Jun 2024 - Aug 2024',
     organization: 'SoundSense',
     url: 'https://www.soundsense.com',
     role: 'Engineering Intern',

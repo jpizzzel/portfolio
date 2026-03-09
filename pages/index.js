@@ -91,7 +91,7 @@ const Page = () => {
 
   return (
     <Layout>
-      {/* Topo pattern — ambient full-bleed layer behind entire hero zone */}
+      {/* Topo pattern - ambient full-bleed layer behind entire hero zone */}
       <Box
         position="absolute"
         top={0}
@@ -197,7 +197,7 @@ const Page = () => {
           </Box>
         </Section>
 
-        {/* Hero illustration — full-bleed with soft feathered edges */}
+        {/* Hero illustration - full-bleed with soft feathered edges */}
         <Section delay={0.05}>
           <Box
             mx={{ base: -4, md: '-60px' }}
@@ -296,7 +296,7 @@ const Page = () => {
 
           <VStack spacing={4} align="stretch">
             {[
-              { role: 'AI Software Engineering Intern', org: 'Watershed Ventures', date: '2025 – Present' },
+              { role: 'AI Software Engineering Intern', org: 'Watershed Ventures', date: '2025 - Present' },
               { role: 'CS Teaching Assistant', org: 'Tufts University', date: '2025' },
               { role: 'Engineering Intern', org: 'SoundSense', date: '2024' },
             ].map((item, i) => (

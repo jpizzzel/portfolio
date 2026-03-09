@@ -124,10 +124,45 @@ const ProjectListItem = ({
           </Text>
         </LinkWrapper>
 
+        {/* Preview tags - visible before expanding */}
+        <Flex
+          align="center"
+          gap={1.5}
+          display={{ base: 'none', md: 'flex' }}
+          flexShrink={1}
+          minW={0}
+          overflow="hidden"
+        >
+          {badges &&
+            badges
+              .filter((b) => b !== 'In Progress')
+              .slice(0, 3)
+              .map((badge, i) => (
+                <Badge
+                  key={i}
+                  bg="transparent"
+                  border="1px solid"
+                  borderColor={useColorModeValue('sand.300', 'sand.700')}
+                  color={descColor}
+                  fontSize="0.6em"
+                  fontWeight="400"
+                  px={1.5}
+                  py={0}
+                  borderRadius="3px"
+                  fontFamily="body"
+                  textTransform="lowercase"
+                  letterSpacing="0.02em"
+                  whiteSpace="nowrap"
+                >
+                  {badge}
+                </Badge>
+              ))}
+        </Flex>
+
         {/* Spacer */}
         <Box flex={1} />
 
-        {/* Badges area - right side */}
+        {/* Status & year - right side */}
         <Flex align="center" gap={2} flexShrink={0}>
           {archived && (
             <Badge

@@ -27,21 +27,10 @@ import studentLifeManager from '../public/student_life_manager.png'
 
 const projectList = [
   {
-    id: 'courtline',
-    title: 'Courtline',
-    description:
-      'NBA data graphics platform — turn stats into scroll-stopping visuals for social media. Currently building, in user waitlist mode.',
-    thumbnail: portfo,
-    badges: ['Next.js', 'NBA API', 'In Progress'],
-    external: 'https://v0-courtline.vercel.app/',
-    year: '2025',
-    archived: false,
-  },
-  {
     id: 'arm-legv8-processor',
     title: '64-bit ARM LEGv8 Processor',
     description:
-      'Full VHDL implementation of a 64-bit ARM LEGv8 Processor — pipelined datapath with hazard detection, forwarding, and branch prediction.',
+      'Full VHDL implementation of a 64-bit ARM LEGv8 Processor with a pipelined datapath, hazard detection, forwarding, and branch prediction.',
     thumbnail: arm,
     badges: ['VHDL', 'Computer Architecture'],
     year: '2025',
@@ -91,7 +80,7 @@ const projectList = [
     id: 'HandJam',
     title: 'HandJam',
     description:
-      'An instrument powered by machine learning — uses ASL hand sign recognition to trigger musical notes in real time via a camera feed.',
+      'An ML-powered instrument that uses ASL hand sign recognition to trigger musical notes in real time via a camera feed.',
     thumbnail: hand,
     badges: ['ML', 'Embedded', 'Python'],
     year: '2025',
@@ -114,23 +103,35 @@ const projectList = [
       'Leading an Engineering Without Borders tech group developing a data retrieval system for a community water project in Malawi.',
     thumbnail: wate,
     badges: ['Leadership', 'Hardware'],
-    year: '2024–25',
+    year: '2024-25',
     archived: false,
   },
   {
-    id: 'upcoming',
-    title: 'Ideas / In-progress',
-    description: 'Projects currently in development or on the drawing board.',
+    id: 'jumbocode',
+    title: 'JumboCode Project',
+    description:
+      'Built the Bread and Roses platform with a team of student developers for social impact through JumboCode at Tufts.',
+    thumbnail: jcode,
+    badges: ['Full-Stack', 'Social Impact'],
+    year: '2024',
+    archived: false,
+  },
+  {
+    id: 'courtline',
+    title: 'Courtline',
+    description:
+      'NBA data graphics platform that turns stats into scroll-stopping visuals for social media. Currently building, in user waitlist mode.',
     thumbnail: portfo,
-    badges: ['In Progress'],
-    year: '',
+    badges: ['Next.js', 'NBA API', 'In Progress'],
+    external: 'https://v0-courtline.vercel.app/',
+    year: '2025',
     archived: false,
   },
   {
     id: 'cplus',
     title: 'C++ Projects',
     description:
-      'Collection of data structures and algorithms projects — BSTs, graphs, sorting visualizers, and more.',
+      'Collection of data structures and algorithms projects including BSTs, graphs, sorting visualizers, and more.',
     thumbnail: Cplus,
     badges: ['C++', 'Algorithms'],
     year: '2024',
@@ -147,20 +148,10 @@ const projectList = [
     archived: true,
   },
   {
-    id: 'jumbocode',
-    title: 'JumboCode Project',
-    description:
-      'Built the Bread and Roses platform with a team of student developers for social impact through JumboCode at Tufts.',
-    thumbnail: jcode,
-    badges: ['Full-Stack', 'Social Impact'],
-    year: '2024',
-    archived: true,
-  },
-  {
     id: 'portfolio',
     title: 'Portfolio Website',
     description:
-      'This very site — built with Next.js, Chakra UI, Three.js, and Framer Motion. Constantly evolving.',
+      'This very site, built with Next.js, Chakra UI, Three.js, and Framer Motion. Constantly evolving.',
     thumbnail: portfo,
     badges: ['Next.js'],
     year: '2024',
@@ -170,7 +161,7 @@ const projectList = [
     id: 'foosball',
     title: 'Foosball Table',
     description:
-      'Designed and manufactured a miniature foosball table from scratch — CAD modeling, laser cutting, and assembly.',
+      'Designed and manufactured a miniature foosball table from scratch. CAD modeling, laser cutting, and assembly.',
     thumbnail: table,
     badges: ['CAD', 'Design'],
     year: '2023',
@@ -180,7 +171,7 @@ const projectList = [
     id: 'water',
     title: 'EWB Water Automation',
     description:
-      'Assisted in building the water automation system for the Malawi Greenhouse Project — Arduino-controlled pumps, sensors, and monitoring.',
+      'Helped build the water automation system for the Malawi Greenhouse Project. Arduino-controlled pumps, sensors, and monitoring.',
     thumbnail: wate,
     badges: ['Automation', 'Arduino'],
     year: '2023',
@@ -199,7 +190,7 @@ const Projects = () => {
 
   return (
     <Layout title="Projects">
-      <Container maxW="container.lg">
+      <Container maxW="container.lg" pt={6}>
         <Section>
           <Heading
             as="h3"
