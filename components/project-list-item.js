@@ -135,7 +135,7 @@ const ProjectListItem = ({
         >
           {badges &&
             badges
-              .filter((b) => b !== 'In Progress')
+              .filter((b) => b !== 'In Progress' && b !== 'Renovating')
               .slice(0, 3)
               .map((badge, i) => (
                 <Badge
@@ -197,6 +197,25 @@ const ProjectListItem = ({
               letterSpacing="0.02em"
             >
               in progress
+            </Badge>
+          )}
+
+          {badges && badges.includes('Renovating') && (
+            <Badge
+              bg="transparent"
+              border="1px solid"
+              borderColor="pine.400"
+              color={useColorModeValue('pine.500', 'pine.300')}
+              fontSize="0.65em"
+              fontWeight="500"
+              fontFamily="body"
+              textTransform="lowercase"
+              px={2}
+              py={0.5}
+              borderRadius="4px"
+              letterSpacing="0.02em"
+            >
+              renovating
             </Badge>
           )}
 
@@ -262,7 +281,7 @@ const ProjectListItem = ({
               <Stack direction="row" spacing={2} wrap="wrap">
                 {badges &&
                   badges
-                    .filter((b) => b !== 'In Progress')
+                    .filter((b) => b !== 'In Progress' && b !== 'Renovating')
                     .map((badge, i) => (
                       <Badge
                         key={i}
