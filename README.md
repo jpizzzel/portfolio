@@ -1,9 +1,21 @@
-# portfolio
+# Portfolio
 
-This is website that you are currently on! I made this in the summer of 2024 to showcase different projects from my past and projects I am currently working on.
-I also wanted to display my website design, three.js, javascript and 3D design skills through a portfolio site. I am not quite sure how else I want to add to this 
-site currently but I know in the future I want to continue to improve this site and experiment with new technologies I come across.
+This is my portfolio site that I first created in the summer of 2024 to showcase different projects from my past and projects I am currently working on.
 
-## Last updated
+I typically update it (and sometimes fully revamp it) every 1-2 months.
+
+## Main Features
+
+- The main page just lists some basic info about me, some featured projects and work experience.
+
+- The Projects page has a list of my projects, and each one has it's own page providing a more detailed overview of the project
+
+- Resume page, pretty obvious...
+
+- Contact page, email.js hooked up so people can contact me or just email me the old-fashioned way
+
+- Also have a little AI chatbot that has been set up to answer questions about me, my work, my projects, and more. But don't trust everything you hear from it, because it's AI, NOT ME!
+
+### Last updated
 
 3/9/2026
