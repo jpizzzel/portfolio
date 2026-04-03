@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import {
   Container,
   Heading,
@@ -9,6 +10,7 @@ import {
 import Section from '../components/section'
 import Layout from '../components/layouts/article'
 import ProjectListItem from '../components/project-list-item'
+import ProjectHoverPreview from '../components/project-hover-preview'
 import { MountainDivider } from '../components/divider'
 
 import calendars from '../public/searchSS.png'
@@ -184,6 +186,7 @@ const Projects = () => {
   const borderColor = useColorModeValue('sand.200', 'sand.800')
   const countColor = useColorModeValue('sand.400', 'sand.600')
   const labelColor = useColorModeValue('sand.500', 'sand.400')
+  const [hoveredIndex, setHoveredIndex] = useState(null)
 
   const activeProjects = projectList.filter((p) => !p.archived)
   const archivedProjects = projectList.filter((p) => p.archived)
@@ -214,83 +217,95 @@ const Projects = () => {
           <MountainDivider my={4} />
         </Section>
 
-        {/* Active projects */}
-        <Section delay={0.1}>
-          <Flex align="baseline" gap={3} mb={1} px={{ base: 2, md: 4 }}>
-            <Text
-              fontSize="xs"
-              fontFamily="body"
-              fontWeight="600"
-              textTransform="uppercase"
-              letterSpacing="0.1em"
-              color={labelColor}
+        <ProjectHoverPreview projects={projectList} hoveredIndex={hoveredIndex}>
+          {/* Active projects */}
+          <Section delay={0.1}>
+            <Flex align="baseline" gap={3} mb={1} px={{ base: 2, md: 4 }}>
+              <Text
+                fontSize="xs"
+                fontFamily="body"
+                fontWeight="600"
+                textTransform="uppercase"
+                letterSpacing="0.1em"
+                color={labelColor}
+              >
+                Recent
+              </Text>
+              <Text fontSize="xs" color={countColor} fontFamily="body">
+                {activeProjects.length}
+              </Text>
+            </Flex>
+
+            <Box
+              borderTop="1px solid"
+              borderColor={borderColor}
             >
-              Recent
-            </Text>
-            <Text fontSize="xs" color={countColor} fontFamily="body">
-              {activeProjects.length}
-            </Text>
-          </Flex>
+              {activeProjects.map((item, index) => {
+                const globalIndex = projectList.indexOf(item)
+                return (
+                  <ProjectListItem
+                    key={item.id}
+                    href={item.external || `/projects/${item.id}`}
+                    external={!!item.external}
+                    title={item.title}
+                    description={item.description}
+                    thumbnail={item.thumbnail}
+                    badges={item.badges}
+                    year={item.year}
+                    archived={item.archived}
+                    index={index}
+                    onHoverStart={() => setHoveredIndex(globalIndex)}
+                    onHoverEnd={() => setHoveredIndex(null)}
+                  />
+                )
+              })}
+            </Box>
+          </Section>
 
-          <Box
-            borderTop="1px solid"
-            borderColor={borderColor}
-          >
-            {activeProjects.map((item, index) => (
-              <ProjectListItem
-                key={item.id}
-                href={item.external || `/projects/${item.id}`}
-                external={!!item.external}
-                title={item.title}
-                description={item.description}
-                thumbnail={item.thumbnail}
-                badges={item.badges}
-                year={item.year}
-                archived={item.archived}
-                index={index}
-              />
-            ))}
-          </Box>
-        </Section>
+          {/* Archived projects */}
+          <Section delay={0.15}>
+            <Flex align="baseline" gap={3} mb={1} mt={6} px={{ base: 2, md: 4 }}>
+              <Text
+                fontSize="xs"
+                fontFamily="body"
+                fontWeight="600"
+                textTransform="uppercase"
+                letterSpacing="0.1em"
+                color={labelColor}
+              >
+                Archive
+              </Text>
+              <Text fontSize="xs" color={countColor} fontFamily="body">
+                {archivedProjects.length}
+              </Text>
+            </Flex>
 
-        {/* Archived projects */}
-        <Section delay={0.15}>
-          <Flex align="baseline" gap={3} mb={1} mt={6} px={{ base: 2, md: 4 }}>
-            <Text
-              fontSize="xs"
-              fontFamily="body"
-              fontWeight="600"
-              textTransform="uppercase"
-              letterSpacing="0.1em"
-              color={labelColor}
+            <Box
+              borderTop="1px solid"
+              borderColor={borderColor}
             >
-              Archive
-            </Text>
-            <Text fontSize="xs" color={countColor} fontFamily="body">
-              {archivedProjects.length}
-            </Text>
-          </Flex>
-
-          <Box
-            borderTop="1px solid"
-            borderColor={borderColor}
-          >
-            {archivedProjects.map((item, index) => (
-              <ProjectListItem
-                key={item.id}
-                href={item.external || `/projects/${item.id}`}
-                external={!!item.external}
-                title={item.title}
-                description={item.description}
-                thumbnail={item.thumbnail}
-                badges={item.badges}
-                year={item.year}
-                archived={item.archived}
-                index={index}
-              />
-            ))}
-          </Box>
-        </Section>
+              {archivedProjects.map((item, index) => {
+                const globalIndex = projectList.indexOf(item)
+                return (
+                  <ProjectListItem
+                    key={item.id}
+                    href={item.external || `/projects/${item.id}`}
+                    external={!!item.external}
+                    title={item.title}
+                    description={item.description}
+                    thumbnail={item.thumbnail}
+                    badges={item.badges}
+                    year={item.year}
+                    archived={item.archived}
+                    index={index}
+                    onHoverStart={() => setHoveredIndex(globalIndex)}
+                    onHoverEnd={() => setHoveredIndex(null)}
+                  />
+                )
+              })}
+            </Box>
+          </Section>
+        </ProjectHoverPreview>
       </Container>
     </Layout>
   )

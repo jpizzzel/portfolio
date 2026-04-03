@@ -22,6 +22,8 @@ const ProjectListItem = ({
   year,
   archived,
   index = 0,
+  onHoverStart,
+  onHoverEnd,
 }) => {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -38,7 +40,7 @@ const ProjectListItem = ({
 
   const linkProps = external
     ? { href, target: '_blank', rel: 'noopener noreferrer' }
-    : {}
+    : { scroll: false }
 
   const LinkWrapper = external ? 'a' : NextLink
 
@@ -49,6 +51,8 @@ const ProjectListItem = ({
       transition="background 0.2s ease"
       _hover={{ bg: hoverBg }}
       position="relative"
+      onMouseEnter={onHoverStart}
+      onMouseLeave={onHoverEnd}
     >
       {/* Main row */}
       <Flex
@@ -105,7 +109,6 @@ const ProjectListItem = ({
         {/* Title - clickable link to project page */}
         <LinkWrapper
           href={href}
-          scroll={false}
           {...linkProps}
           onClick={(e) => e.stopPropagation()}
           style={{ textDecoration: 'none' }}

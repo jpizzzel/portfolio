@@ -150,7 +150,7 @@ const Page = () => {
             </HStack>
 
             <Text fontSize={{ base: 'md', md: 'lg' }} lineHeight="1.75" color={useColorModeValue('#2D2319', '#F0E8DE')}>
-              I build things at the intersection of software and hardware &mdash; from
+              I work within intersection of software and hardware, from
               multi-agent AI systems to processors in VHDL and games on FPGAs.
               Currently interning at{' '}
               <Text as="a" href="https://watershed.vc" target="_blank" color="brand.400" _hover={{ color: 'brand.300' }}>
