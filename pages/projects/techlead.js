@@ -65,5 +65,4 @@ import Image from 'next/image'
   )
   
   export default Work
-  export { getServerSideProps } from '../../components/chakra'
   

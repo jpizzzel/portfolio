@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import {
   Box,
   Flex,
@@ -21,7 +21,6 @@ const ProjectListItem = ({
   external,
   year,
   archived,
-  index = 0,
   onHoverStart,
   onHoverEnd,
 }) => {
@@ -37,6 +36,9 @@ const ProjectListItem = ({
   const yearColor = useColorModeValue('sand.500', 'sand.400')
   const imgBorderColor = useColorModeValue('sand.200', 'sand.800')
   const titleHover = useColorModeValue('brand.500', 'brand.200')
+  const previewBadgeBorder = useColorModeValue('sand.300', 'sand.700')
+  const inProgressColor = useColorModeValue('gold.600', 'gold.300')
+  const renovatingColor = useColorModeValue('pine.500', 'pine.300')
 
   const linkProps = external
     ? { href, target: '_blank', rel: 'noopener noreferrer' }
@@ -145,7 +147,7 @@ const ProjectListItem = ({
                   key={i}
                   bg="transparent"
                   border="1px solid"
-                  borderColor={useColorModeValue('sand.300', 'sand.700')}
+                  borderColor={previewBadgeBorder}
                   color={descColor}
                   fontSize="0.6em"
                   fontWeight="400"
@@ -189,7 +191,7 @@ const ProjectListItem = ({
               bg="transparent"
               border="1px solid"
               borderColor="gold.400"
-              color={useColorModeValue('gold.600', 'gold.300')}
+              color={inProgressColor}
               fontSize="0.65em"
               fontWeight="500"
               fontFamily="body"
@@ -208,7 +210,7 @@ const ProjectListItem = ({
               bg="transparent"
               border="1px solid"
               borderColor="pine.400"
-              color={useColorModeValue('pine.500', 'pine.300')}
+              color={renovatingColor}
               fontSize="0.65em"
               fontWeight="500"
               fontFamily="body"

@@ -74,7 +74,7 @@ const Work = () => (
         </ListItem>
         <ListItem>
           <Meta>Duration</Meta>
-          <span>May 2025 - Present</span>
+          <span>May 2025 - May 2026</span>
         </ListItem>
         <ListItem>
           <Meta>Stack</Meta>

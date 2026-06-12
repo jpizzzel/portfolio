@@ -58,4 +58,3 @@ const Table = () => {
 };
 
 export default Table;
-export { getServerSideProps } from '../../components/chakra';

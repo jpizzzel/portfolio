@@ -15,15 +15,25 @@ import {
 
 const workItems = [
   {
-    dates: 'May 2025 - Present',
+    dates: 'Jun 2026 - Present',
+    organization: 'Antarctica Capital',
+    url: 'https://antarcticacapital.com',
+    role: 'Software Engineering Intern',
+    details: [
+      'https://antarcticacapital.com/',
+      'Working across AI tooling, investment data and analytics, and internal software at a global investment firm.',
+    ],
+  },
+  {
+    dates: 'May 2025 - May 2026',
     organization: 'Watershed Ventures',
     url: 'https://watershed.vc',
     role: 'AI Software Engineering Intern',
     details: [
       'https://watershed.vc/',
-      'Developing a multi-agent AI system that automates VC research, data enrichment, database management, and memo generation.',
-      'Reducing manual research and data entry time by over 90% while maintaining real-time startup data quality.',
-      'Utilzing: Python, Supabase, AWS, Next.js, Postgres.',
+      'Developed a multi-agent AI system that automates VC research, data enrichment, database management, and memo generation.',
+      'Reduced manual research and data entry time by over 90% while maintaining real-time startup data quality.',
+      'Utilized: Python, Supabase, AWS, Next.js, Postgres.',
     ],
   },
   {

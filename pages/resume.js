@@ -100,4 +100,3 @@ const Resume = () => {
 }
 
 export default Resume
-export { getServerSideProps } from '../components/chakra'

@@ -144,7 +144,7 @@ const Page = () => {
                   Jonah Pflaster
                 </Heading>
                 <Text fontSize="sm" color={muted} mt={1}>
-                  Computer Engineering @ Tufts &middot; AI Engineering Intern @ Watershed
+                  Computer Engineering @ Tufts &middot; Software Engineering Intern @ Antarctica Capital
                 </Text>
               </Box>
             </HStack>
@@ -153,8 +153,8 @@ const Page = () => {
               I work within intersection of software and hardware, from
               multi-agent AI systems to processors in VHDL and games on FPGAs.
               Currently interning at{' '}
-              <Text as="a" href="https://watershed.vc" target="_blank" color="brand.400" _hover={{ color: 'brand.300' }}>
-                Watershed Ventures
+              <Text as="a" href="https://antarcticacapital.com" target="_blank" color="brand.400" _hover={{ color: 'brand.300' }}>
+                Antarctica Capital
               </Text>
               .
             </Text>
@@ -296,7 +296,8 @@ const Page = () => {
 
           <VStack spacing={4} align="stretch">
             {[
-              { role: 'AI Software Engineering Intern', org: 'Watershed Ventures', date: '2025 - Present' },
+              { role: 'Software Engineering Intern', org: 'Antarctica Capital', date: '2026 - Present' },
+              { role: 'AI Software Engineering Intern', org: 'Watershed Ventures', date: '2025 - 2026' },
               { role: 'CS Teaching Assistant', org: 'Tufts University', date: '2025' },
               { role: 'Engineering Intern', org: 'SoundSense', date: '2024' },
             ].map((item, i) => (

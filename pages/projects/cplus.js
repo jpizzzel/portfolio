@@ -65,4 +65,3 @@ SEE: https://en.wikipedia.org/wiki/Reverse_Polish_notation</P>
   )
   
   export default Work
-  export { getServerSideProps } from '../../components/chakra'

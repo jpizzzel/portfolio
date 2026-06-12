@@ -96,14 +96,14 @@ const AI_CHAT_AGENT = () => {
     }
   }, [isOpen]);
 
-  const generateResponse = async (userMessage) => {
+  const generateResponse = async (userMessage, history) => {
     const response = await fetch('/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: userMessage }),
+      body: JSON.stringify({ message: userMessage, history }),
     });
-    if (!response.ok) throw new Error('Failed to get response');
-    const data = await response.json();
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(data.error || 'Failed to get response');
     return data.response;
   };
 
@@ -111,16 +111,25 @@ const AI_CHAT_AGENT = () => {
     const msg = (text || inputValue).trim();
     if (!msg || isLoading) return;
 
+    // Prior turns (minus the canned greeting) so the model keeps context
+    const history = messages
+      .slice(1)
+      .slice(-8)
+      .map(m => ({
+        role: m.sender === 'user' ? 'user' : 'assistant',
+        content: m.text,
+      }));
+
     setMessages(prev => [...prev, { id: Date.now(), text: msg, sender: 'user' }]);
     setInputValue('');
     setIsLoading(true);
     setError('');
 
     try {
-      const aiResponse = await generateResponse(msg);
+      const aiResponse = await generateResponse(msg, history);
       setMessages(prev => [...prev, { id: Date.now() + 1, text: aiResponse, sender: 'ai' }]);
     } catch (err) {
-      setError('Something went wrong. Try again.');
+      setError(err.message || 'Something went wrong. Try again.');
     } finally {
       setIsLoading(false);
     }
@@ -503,6 +512,7 @@ const AI_CHAT_AGENT = () => {
               onChange={(e) => setInputValue(e.target.value)}
               onKeyPress={handleKeyPress}
               placeholder="Ask something..."
+              maxLength={1000}
               size="sm"
               disabled={isLoading}
               border="none"
