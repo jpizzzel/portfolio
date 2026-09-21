@@ -29,6 +29,16 @@ import studentLifeManager from '../public/student_life_manager.png'
 
 const projectList = [
   {
+    id: 'rndyr',
+    title: 'Rndyr',
+    description:
+      'AI-powered study video generator that turns lecture notes, slides, or a topic list into a polished, narrated educational video. Currently in beta.',
+    thumbnail: portfo,
+    badges: ['BETA', 'Next.js', 'Remotion', 'AI'],
+    year: '2026',
+    archived: false,
+  },
+  {
     id: 'arm-legv8-processor',
     title: '64-bit ARM LEGv8 Processor',
     description:

@@ -88,57 +88,65 @@ PROJECTS & EXPERIENCE:
    - Cut manual research time by 50%+
    - Built automated pipelines for startup and investor data
 
-3. 64-bit ARM LEGv8 Processor
+3. Rndyr (BETA) - 2026
+   - AI-powered study video generator, currently in beta
+   - Turns pasted lecture notes, slides, textbook excerpts, or a topic list into polished, narrated educational videos
+   - Students pick a visual style, depth, length, and extras like a closing quiz or practice problems
+   - An LLM plans a structured script with word-synced visual cues (equations, graphs, diagrams, code, tables, Manim-style animations)
+   - Rendered with Remotion, narrated with ElevenLabs, stitched into an MP4 and saved to a personal library
+   - Technologies: Next.js 15, Remotion, Supabase, pg-boss, Node render worker, Stripe, pnpm/Turborepo
+
+4. 64-bit ARM LEGv8 Processor
    - VHDL implementation of a LEGv8-compatible 64‑bit ARM processor
    - Technologies: VHDL, Computer Architecture
 
-4. Smoosh Bros
+5. Smoosh Bros
    - Super Smash Bros-style fighting game built entirely on an FPGA
    - Technologies: SystemVerilog, FPGA design, Game Development
 
-5. EE31 Junior Design Project
+6. EE31 Junior Design Project
    - Autonomous robot with sensor system and real‑time WebSocket control
    - Technologies: Arduino, WebSocket, Embedded Systems
 
-6. Student Life Organizer
+7. Student Life Organizer
    - Personal student life management system that integrates Canvas, Google Drive, Google Calendar, and Gmail
    - Focused on automating workflows, deadlines, and document organization
    - Technologies: Next.js, Automation, Productivity tooling
 
-7. HandJam - Machine Learning Instrument
+8. HandJam - Machine Learning Instrument
    - Created a musical instrument powered by machine learning
    - Technologies: ML, Embedded Systems, C, Python
 
-8. AI CAD Project Builder
+9. AI CAD Project Builder
    - Utilized AI to develop CAD models
    - Technologies: AI, Hugging Face, Python
 
-9. C++ Projects
+10. C++ Projects
    - Data Structures and Algorithms projects
    - Technologies: C++, Algorithms, Data Structures
 
-10. EWB Tech Group Lead
+11. EWB Tech Group Lead
    - Leading Engineering Without Borders tech group
    - Developing data retrieval system for Malawi community
    - Technologies: Leadership, Hardware, Software
 
-11. Calendar Connect
+12. Calendar Connect
    - Website to compare academic calendars across universities
    - Technologies: React, Full-Stack, Data Organization
 
-12. JumboCode Project
+13. JumboCode Project
    - Working on Bread and Roses project for social impact
    - Technologies: Full-Stack, Social Impact, Teamwork
 
-13. Foosball Table
+14. Foosball Table
    - Designed and developed a small Foosball table
    - Technologies: CAD, Mechanics, Design
 
-14. Portfolio Website
+15. Portfolio Website
    - Personal portfolio website
    - Technologies: Next.js, Chakra UI
 
-15. EWB Water Automation Project
+16. EWB Water Automation Project
     - Water automation system for Malawi Greenhouse Project
     - Technologies: Automation, Engineering, Arduino
 
