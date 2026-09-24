@@ -8,7 +8,7 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   {
-    ignores: ['.next/**', 'node_modules/**', 'portfolio.git/**', 'public/**', 'static/**'],
+    ignores: ['.next/**', 'node_modules/**', 'public/**', 'static/**'],
   },
   ...compat.extends('next'),
   {
