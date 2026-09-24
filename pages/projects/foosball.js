@@ -9,26 +9,23 @@ import NextLink from 'next/link'
 import { Title, Meta } from '../../components/project';
 import P from '../../components/paragraph';
 import Layout from '../../components/layouts/article';
-import { Worker, Viewer } from '@react-pdf-viewer/core';
-import { GlobalWorkerOptions } from 'pdfjs-dist/build/pdf'; // Correct import for pdfjs
-import '@react-pdf-viewer/core/lib/styles/index.css'; // Styles for Viewer
-import '@react-pdf-viewer/default-layout/lib/styles/index.css'; // Styles for Default Layout
-import { useEffect } from 'react';
 import { ExternalLinkIcon } from '@chakra-ui/icons'
+import dynamic from 'next/dynamic'
+
+// pdf.js needs browser APIs, so skip it during server rendering
+const PdfSlides = dynamic(() => import('../../components/pdf-slides'), {
+  ssr: false,
+  loading: () => <p>Loading slides...</p>,
+})
 
 const table = '/static/Foosball.pdf';
 
 const Table = () => {
-  useEffect(() => {
-    // Dynamically set the worker URL
-    GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js`;
-  }, []);
-
   return (
-    <Layout title="EWB">
+    <Layout title="Foosball Table">
       <Container pt={6}>
         <Title>
-          Engineering Without Borders (EWB) Greenhouse Automation <Badge>2024</Badge>
+          Foosball Table <Badge>2024</Badge>
         </Title>
         <P>
           This Foosball table was designed and built entirely from scratch by my team and I. You can read more below.
@@ -39,7 +36,7 @@ const Table = () => {
             <span>OnShape, Sandcasting, 3D printing, Metalworking, Woodworking, etc.</span>
           </ListItem>
         </List>
-        <NextLink href="/static/Foosball.pdf" passHref legacyBehavior>
+        <NextLink href={table} passHref legacyBehavior>
           <a download>
             <Button bg="brand.400" color="white" _hover={{ bg: 'brand.500' }} mb={4}>
               Download Slides <ExternalLinkIcon mx="2px" />
@@ -47,10 +44,8 @@ const Table = () => {
           </a>
         </NextLink>
         {/* PDF Viewer */}
-        <div style={{ height: '750px', border: '1px solid black', marginTop: '20px' }}>
-          <Worker workerUrl={`https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js`}>
-            <Viewer fileUrl={table} />
-          </Worker>
+        <div style={{ border: '1px solid black', marginTop: '20px' }}>
+          <PdfSlides file={table} />
         </div>
       </Container>
     </Layout>

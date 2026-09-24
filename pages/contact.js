@@ -19,7 +19,7 @@ import { EmailIcon } from '@chakra-ui/icons'
 import { IoLogoLinkedin } from 'react-icons/io5'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
-import emailjs from 'emailjs-com'
+import emailjs from '@emailjs/browser'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
