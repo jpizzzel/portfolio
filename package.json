@@ -11,6 +11,9 @@
   "author": "Jonah Pflaster",
   "license": "MIT",
   "description": "Jonah's Website",
+  "engines": {
+    "node": "24.x"
+  },
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/react": "^2.10.4",
