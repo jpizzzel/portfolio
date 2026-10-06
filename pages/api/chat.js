@@ -88,13 +88,11 @@ PROJECTS & EXPERIENCE:
    - Cut manual research time by 50%+
    - Built automated pipelines for startup and investor data
 
-3. Rndyr (BETA) - 2026
-   - AI-powered study video generator, currently in beta
-   - Turns pasted lecture notes, slides, textbook excerpts, or a topic list into polished, narrated educational videos
-   - Students pick a visual style, depth, length, and extras like a closing quiz or practice problems
-   - An LLM plans a structured script with word-synced visual cues (equations, graphs, diagrams, code, tables, Manim-style animations)
-   - Rendered with Remotion, narrated with ElevenLabs, stitched into an MP4 and saved to a personal library
-   - Technologies: Next.js 15, Remotion, Supabase, pg-boss, Node render worker, Stripe, pnpm/Turborepo
+3. Rndyr - 2026 (launching soon at rndyr.com)
+   - Turns a student's own notes into a narrated, animated study video, in the style of CrashCourse, The Organic Chemistry Tutor and 3Blue1Brown
+   - Paste notes, pick one of eight visual styles, set length and depth; Rndyr writes the script, animates it, narrates it, and plays it in the browser with chapters and a synced transcript
+   - Optional closing quiz and practice problems; shareable video links; Free, Student, Unlimited and Exam Pass plans
+   - Technologies: Next.js 15, Remotion, Supabase, AWS (Amplify and ECS), Stripe, OpenRouter LLMs, Google Cloud text-to-speech
 
 4. 64-bit ARM LEGv8 Processor
    - VHDL implementation of a LEGv8-compatible 64‑bit ARM processor

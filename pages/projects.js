@@ -32,9 +32,9 @@ const projectList = [
     id: 'rndyr',
     title: 'Rndyr',
     description:
-      'AI-powered study video generator that turns lecture notes, slides, or a topic list into a polished, narrated educational video. Currently in beta.',
+      'Turns your own study notes into a narrated, animated study video in one of eight visual styles. Launching soon at rndyr.com.',
     thumbnail: portfo,
-    badges: ['BETA', 'Next.js', 'Remotion', 'AI'],
+    badges: ['Launching Soon', 'Next.js', 'Remotion', 'AI'],
     year: '2026',
     archived: false,
   },
