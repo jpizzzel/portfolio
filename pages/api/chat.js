@@ -88,7 +88,7 @@ PROJECTS & EXPERIENCE:
    - Cut manual research time by 50%+
    - Built automated pipelines for startup and investor data
 
-3. Rndyr - 2026 (launching soon at rndyr.com)
+3. Rndyr - 2026 (live at rndyr.com)
    - Turns a student's own notes into a narrated, animated study video, in the style of CrashCourse, The Organic Chemistry Tutor and 3Blue1Brown
    - Paste notes, pick one of eight visual styles, set length and depth; Rndyr writes the script, animates it, narrates it, and plays it in the browser with chapters and a synced transcript
    - Optional closing quiz and practice problems; shareable video links; Free, Student, Unlimited and Exam Pass plans

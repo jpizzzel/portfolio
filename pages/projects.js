@@ -32,9 +32,9 @@ const projectList = [
     id: 'rndyr',
     title: 'Rndyr',
     description:
-      'Turns your own study notes into a narrated, animated study video in one of eight visual styles. Launching soon at rndyr.com.',
+      'Turns your own study notes into a narrated, animated study video in one of eight visual styles. Live at rndyr.com.',
     thumbnail: portfo,
-    badges: ['Launching Soon', 'Next.js', 'Remotion', 'AI'],
+    badges: ['Live', 'Next.js', 'Remotion', 'AI'],
     year: '2026',
     archived: false,
   },
