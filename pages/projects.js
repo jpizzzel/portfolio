@@ -26,6 +26,7 @@ import smoosh from '../public/smoosh_bros.jpeg'
 import hand from '../public/hj.jpg'
 import watershed from '../public/watershed.png'
 import studentLifeManager from '../public/student_life_manager.png'
+import rndyr from '../public/rndyr.webp'
 
 const projectList = [
   {
@@ -33,7 +34,7 @@ const projectList = [
     title: 'Rndyr',
     description:
       'Turns your own study notes into a narrated, animated study video in one of eight visual styles. Live at rndyr.com.',
-    thumbnail: portfo,
+    thumbnail: rndyr,
     badges: ['Live', 'Next.js', 'Remotion', 'AI'],
     year: '2026',
     archived: false,

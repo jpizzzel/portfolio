@@ -9,6 +9,8 @@ import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, Meta } from '../../components/project'
 import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
+import Image from 'next/image'
+import rndyr from '../../public/rndyr.webp'
 
 const Work = () => (
   <Layout title="Rndyr">
@@ -48,6 +50,11 @@ const Work = () => (
           <span>LLM script planning, Google Cloud text-to-speech</span>
         </ListItem>
       </List>
+      <Image
+        src={rndyr}
+        alt="The Rndyr home page"
+        style={{ width: '100%', height: 'auto', borderRadius: '8px', marginTop: '20px' }}
+      />
     </Container>
   </Layout>
 )
