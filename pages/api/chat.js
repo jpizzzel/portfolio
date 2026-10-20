@@ -94,57 +94,63 @@ PROJECTS & EXPERIENCE:
    - Optional closing quiz and practice problems; shareable video links; Free, Student, Unlimited and Exam Pass plans
    - Technologies: Next.js 15, Remotion, Supabase, AWS (Amplify and ECS), Stripe, OpenRouter LLMs, Google Cloud text-to-speech
 
-4. 64-bit ARM LEGv8 Processor
+4. Satsuma - 2026 (satsumaforwindows.vercel.app, open source soon)
+   - A file converter that lives under your cursor on Windows, inspired by Tangerine on the Mac (not affiliated with Tangerine or LEAP STUDIO)
+   - Drag a file, hold a key, and a wheel pops up: Shift converts formats (images, video, audio, PDFs, subtitles), Ctrl opens tools (compress, resize, merge, zip), Alt opens actions (copy, copy path, share, Float)
+   - Runs entirely on your PC, nothing gets uploaded; never overwrites the original
+   - Technologies: C#, .NET 10, WPF, Magick.NET, FFmpeg, PDFsharp, SharpCompress
+
+5. 64-bit ARM LEGv8 Processor
    - VHDL implementation of a LEGv8-compatible 64‑bit ARM processor
    - Technologies: VHDL, Computer Architecture
 
-5. Smoosh Bros
+6. Smoosh Bros
    - Super Smash Bros-style fighting game built entirely on an FPGA
    - Technologies: SystemVerilog, FPGA design, Game Development
 
-6. EE31 Junior Design Project
+7. EE31 Junior Design Project
    - Autonomous robot with sensor system and real‑time WebSocket control
    - Technologies: Arduino, WebSocket, Embedded Systems
 
-7. Student Life Organizer
+8. Student Life Organizer
    - Personal student life management system that integrates Canvas, Google Drive, Google Calendar, and Gmail
    - Focused on automating workflows, deadlines, and document organization
    - Technologies: Next.js, Automation, Productivity tooling
 
-8. HandJam - Machine Learning Instrument
+9. HandJam - Machine Learning Instrument
    - Created a musical instrument powered by machine learning
    - Technologies: ML, Embedded Systems, C, Python
 
-9. AI CAD Project Builder
+10. AI CAD Project Builder
    - Utilized AI to develop CAD models
    - Technologies: AI, Hugging Face, Python
 
-10. C++ Projects
+11. C++ Projects
    - Data Structures and Algorithms projects
    - Technologies: C++, Algorithms, Data Structures
 
-11. EWB Tech Group Lead
+12. EWB Tech Group Lead
    - Leading Engineering Without Borders tech group
    - Developing data retrieval system for Malawi community
    - Technologies: Leadership, Hardware, Software
 
-12. Calendar Connect
+13. Calendar Connect
    - Website to compare academic calendars across universities
    - Technologies: React, Full-Stack, Data Organization
 
-13. JumboCode Project
+14. JumboCode Project
    - Working on Bread and Roses project for social impact
    - Technologies: Full-Stack, Social Impact, Teamwork
 
-14. Foosball Table
+15. Foosball Table
    - Designed and developed a small Foosball table
    - Technologies: CAD, Mechanics, Design
 
-15. Portfolio Website
+16. Portfolio Website
    - Personal portfolio website
    - Technologies: Next.js, Chakra UI
 
-16. EWB Water Automation Project
+17. EWB Water Automation Project
     - Water automation system for Malawi Greenhouse Project
     - Technologies: Automation, Engineering, Arduino
 

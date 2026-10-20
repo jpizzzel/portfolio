@@ -40,6 +40,16 @@ const projectList = [
     archived: false,
   },
   {
+    id: 'satsuma',
+    title: 'Satsuma',
+    description:
+      'A file converter that lives under your cursor on Windows. Drag a file, hold a key, and drop it on a wheel to convert, compress or share it. Open source soon.',
+    thumbnail: portfo,
+    badges: ['C#', '.NET', 'Windows'],
+    year: '2026',
+    archived: false,
+  },
+  {
     id: 'arm-legv8-processor',
     title: '64-bit ARM LEGv8 Processor',
     description:
