@@ -9,6 +9,8 @@ import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, Meta } from '../../components/project'
 import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
+import Image from 'next/image'
+import satsuma from '../../public/satsuma.webp'
 
 const Work = () => (
   <Layout title="Satsuma">
@@ -52,6 +54,11 @@ const Work = () => (
           <span>Magick.NET, FFmpeg, PDFsharp, SharpCompress</span>
         </ListItem>
       </List>
+      <Image
+        src={satsuma}
+        alt="The Satsuma home page"
+        style={{ width: '100%', height: 'auto', borderRadius: '8px', marginTop: '20px' }}
+      />
     </Container>
   </Layout>
 )

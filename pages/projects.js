@@ -27,6 +27,7 @@ import hand from '../public/hj.jpg'
 import watershed from '../public/watershed.png'
 import studentLifeManager from '../public/student_life_manager.png'
 import rndyr from '../public/rndyr.webp'
+import satsuma from '../public/satsuma.webp'
 
 const projectList = [
   {
@@ -44,7 +45,7 @@ const projectList = [
     title: 'Satsuma',
     description:
       'A file converter that lives under your cursor on Windows. Drag a file, hold a key, and drop it on a wheel to convert, compress or share it.',
-    thumbnail: portfo,
+    thumbnail: satsuma,
     badges: ['C#', '.NET', 'Windows'],
     year: '2026',
     archived: false,
