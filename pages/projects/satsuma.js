@@ -44,10 +44,6 @@ const Work = () => (
           <span>Windows 10 and 11</span>
         </ListItem>
         <ListItem>
-          <Meta>Status</Meta>
-          <span>Open source soon</span>
-        </ListItem>
-        <ListItem>
           <Meta>Stack</Meta>
           <span>C#, .NET 10, WPF</span>
         </ListItem>

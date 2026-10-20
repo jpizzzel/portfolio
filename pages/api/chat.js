@@ -94,7 +94,7 @@ PROJECTS & EXPERIENCE:
    - Optional closing quiz and practice problems; shareable video links; Free, Student, Unlimited and Exam Pass plans
    - Technologies: Next.js 15, Remotion, Supabase, AWS (Amplify and ECS), Stripe, OpenRouter LLMs, Google Cloud text-to-speech
 
-4. Satsuma - 2026 (satsumaforwindows.vercel.app, open source soon)
+4. Satsuma - 2026 (satsumaforwindows.vercel.app)
    - A file converter that lives under your cursor on Windows, inspired by Tangerine on the Mac (not affiliated with Tangerine or LEAP STUDIO)
    - Drag a file, hold a key, and a wheel pops up: Shift converts formats (images, video, audio, PDFs, subtitles), Ctrl opens tools (compress, resize, merge, zip), Alt opens actions (copy, copy path, share, Float)
    - Runs entirely on your PC, nothing gets uploaded; never overwrites the original
