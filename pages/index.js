@@ -25,11 +25,11 @@ import { MountainDivider } from '../components/divider'
 
 const featuredProjects = [
   {
-    id: 'watershed-ai',
-    title: 'Multi System AI Agent',
+    id: 'rndyr',
+    title: 'Rndyr',
     description:
-      'Automated VC research and data enrichment using multi-agent AI architecture.',
-    href: '/projects/watershed-ai',
+      'Turns your own study notes into a narrated, animated study video.',
+    href: '/projects/rndyr',
   },
   {
     id: 'arm-legv8-processor',
